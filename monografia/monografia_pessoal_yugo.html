@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<TITLE>Monografia</TITLE>
+		<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+		<META NAME="GENERATOR" CONTENT="Notepad :p">
+		<link href="tcc.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<div id="linkTopo" class="linkTopo">
+			<a href="monografia_grupo.html#topo">Voltar ao topo</a>
+		</div>
+		<script type="text/javascript">
+			var ns = (navigator.appName.indexOf("Netscape") != -1);
+			var d = document;
+			var px = document.layers ? "" : "px";
+			function JSFX_FloatDiv(id, sx, sy)
+			{
+				var el=d.getElementById?d.getElementById(id):d.all?d.all[id]:d.layers[id];
+				window[id + "_obj"] = el;
+				if(d.layers)el.style=el;
+				el.cx = el.sx = sx;el.cy = el.sy = sy;
+				el.sP=function(x,y){this.style.left=x+px;this.style.top=y+px;};
+				el.flt=function()
+				{
+					var pX, pY;
+					pX = (this.sx >= 0) ? 0 : ns ? innerWidth : 
+					document.documentElement && document.documentElement.clientWidth ? 
+					document.documentElement.clientWidth : document.body.clientWidth;
+					pY = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+					document.documentElement.scrollTop : document.body.scrollTop;
+					if(this.sy<0) 
+					pY += ns ? innerHeight : document.documentElement && document.documentElement.clientHeight ? 
+					document.documentElement.clientHeight : document.body.clientHeight;
+					this.cx += (pX + this.sx - this.cx)/8;this.cy += (pY + this.sy - this.cy)/8;
+					this.sP(this.cx, this.cy);
+					setTimeout(this.id + "_obj.flt()", 40);
+				}
+				return el;
+			}
+			JSFX_FloatDiv("linkTopo", -135, 15).flt();
+		</script>
+
+
+		<div class=titulo>
+			<a name="topo"></a>Universidade de São Paulo
+			<br />
+			Instituto de Matemática e Estatística
+			<br />
+			Departamento de Ciências da Computação
+			<br/>
+			<br/>
+			<div class=subsubsubtitulo>MAC-0499 Trabalho de Formatura Supervisionado</div>
+			<br />
+			<br />
+			Sistema de Gerenciamento de Competências - SIGECO
+			<br />
+			<br />
+			Monografia Individual
+			<br />
+			<br />
+			<div class=subsubsubtitulo>
+				Yugo Watari - ywatari at gmail
+				<br />
+				<br />
+				Supervisor: Valdemar W. Setzer - vwsetzer at ime
+			</div>
+		</div>
+		<br />
+		<br />
+		<div class=subsubtitulo>Desafios e frustrações econtrados</div>
+		<br />
+		<br />
+		<div class=texto>
+			Um dos objetivos do grupo ao realizar este trabalho foi a de adquirir experiência de desenvolvimento de sistemas, e um dos grandes 
+			desafios encontrados por muitos desenvolvedores é escolher as ferramentas que serão utilizadas no sistema. E para o autor desta monografia
+			esse também foi um grande desafio.
+			<br />
+			<br />
+			Inicialmente a pedido do autor o grupo aceitou adotar o uso da IDE JDeveloper e o servidor de aplicações OC4J para a implementação do sistema.
+			Mas as aplicações geradas por esta IDE se provou extremamente difícil de ser configurado para outros servidores como o Tomcat e o JBoss, e 
+			como a idéia do professor era tornar este sistema um software livre e com código aberto, este simplesmente não poderia somente funcionar
+			na implementação particular da Oracle de servidor de aplicação (OC4J).
+			<br />
+			<br />
+			Após inúmeras frutrações tentando aumentar a portabilidade do sistema com o JDeveloper o grupo chegou à conclusão que seria melhor abandonar
+			o JDeveloper. Para evitar mais perda de tempo com ferramenta mal escolhida, o grupo resolveu gastar um tempo pesquisando qual seria o melhor
+			ambiente de desenvolvimento, e o ambiente resultante está detalhado na monografia em grupo.
+			<br />
+			<br />
+			No grupo de componentes que o autor indicou para o grupo utilizar, não há suporte direto para tabelas com colunas dinâmicas ainda. E isto acabou 
+			gerando um grande desafio para o autor de criar colunas via código Java manipulando diretamente os componentes que estão em uma página. Apesar 
+			de essa possibilidade ser uma funcionalidade do arcabouço, quase não há exemplos de situações mais complexas como há que o autor encontrou de 
+			gerar colunas dinâmicas com suporte a arrastar e derrubar objetos gerando algum comportamento. Mesmo com a falta de exemplos através de tentativa
+			e erro o autor conseguiu um bom compreendimento das funções mais complexas do arcabouço e com isso a situação foi contornada.
+		</div>
+		<br />
+		<br />
+		<div class=subsubtitulo>Trabalho e o curso</div>
+		<br />
+		<br />
+		<div class=texto>
+			Laboratório de Programação 2, Programação Orientada a Objetos e Tópicos Avançados de Programação Orientada a Objetos:  
+				Onde foi primeiro introduzido a noção de orientação a objetos. Para desenvolver sistemas grandes este é o conceito mais importante 
+				para poder implementar em grupo eficientemente. Há outras maneiras além de orientação a objetos, mas na opinião do autor esta é 
+				a forma mais eficiente e que produz o código mais legível para futuras mudanças.
+			<br />
+			<br />
+			Estrutura de dados: 
+				Primeira noção de como trabalhar com estruturas além de listas, como por exemplo mapas e árvores. Muito importante para saber decidir 
+				quando utilizar qual tipo de estrutura.
+			<br />
+			<br />
+			Introdução à Computação, Princípios de Desenvolvimento de Algoritmos e Análise de Algoritmos:
+				Primeira noção de buscas em listas e eficiência de código. Bastante utilizados para saber analisar quando utilizar uma busca e evitar 
+				códigos que podem diminuir muito a performance de um sistema.
+			<br />
+			<br />
+			Interação Humano Computador:
+				A única matéria que revela a importância de uma interface boa. A usabilidade e a aceitabilidade da interface do sistema são as 
+				principais causas de fracassos ou desuso de um sistema, e saber princípios de uma boa interface pode agregar muito valor a um 
+				sistema sendo projetado.
+			<br />
+			<br />
+			Sistemas de Bancos de Dados e Laboratório de Bancos de Dados:
+				O que são bancos de dados relacionais e structured query language. Com o volume de dados que os sistemas requerem na atualidade 
+				conhecimento de como utilizar o banco de dados é essencial.
+		</div>
+		<br />
+		<br />
+		<div class=subsubtitulo>Conhecimentos necessários para aprimorar o sistema</div>
+		<br />
+		<br />
+		<div class=texto>
+			<ul>
+				<li>Compreender necessidades e desafios de uma área de recursos humanos de uma empresa.
+				<li>Aprender sobre outras áreas do conhecimento para popular o sistema com mais matrizes de competência.
+				<li>Utilizar o sistema em alguma empresa e observar os resultados obtidos.
+			</ul>
+		</div>
+		<br />
+		<br />
+</BODY>
+</HTML>

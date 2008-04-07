@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<import resource="test-model-user-beans.xml" />
+	<import resource="test-model-search-beans.xml" />
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"
+		singleton="true">
+
+		<property name="configLocation">
+			<value>classpath:test.model.hibernate.cfg.xml</value>
+		</property>
+	</bean>
+
+</beans>

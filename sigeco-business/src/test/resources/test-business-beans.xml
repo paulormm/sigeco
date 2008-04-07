@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<import resource="classpath:test-business-search-beans.xml" />
+	<import resource="classpath:test-business-user-beans.xml" />
+	<import resource="classpath:sigeco-manager-beans.xml" />
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"
+		singleton="true">
+
+		<property name="configLocation">
+			<value>classpath:test.business.hibernate.cfg.xml</value>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean 
+		id="dao"
+		class="sigeco.utils.dao.impl.HibernateDao">		
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>		
+	</bean>
+
+	<bean id="tdao" singleton="true"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref local="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="dao" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="delete*">
+					PROPAGATION_REQUIRED, ISOLATION_READ_COMMITTED
+				</prop>
+				<prop key="remove*">
+					PROPAGATION_REQUIRED, ISOLATION_READ_COMMITTED
+				</prop>
+				<prop key="save*">
+					PROPAGATION_REQUIRED, ISOLATION_READ_COMMITTED
+				</prop>
+				<prop key="get*">
+					PROPAGATION_SUPPORTS, ISOLATION_READ_COMMITTED
+				</prop>
+				<prop key="list*">
+					PROPAGATION_SUPPORTS, ISOLATION_READ_COMMITTED
+				</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="password" class="sigeco.utils.crypto.MD5FactoryBean">
+		<property name="message" value="password" />
+	</bean>
+</beans>

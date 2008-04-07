@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>	
+	<bean id="userC" class="sigeco.model.User" singleton="false">
+		<property name="name" value="validUser3" />
+		<property name="username" value="username3" />
+		<property name="email" value="email3" />
+		<property name="password" ref="password" />
+	</bean>
+	
+	<bean id="userD" class="sigeco.model.User" singleton="false">
+		<property name="name" value="validUser4" />
+		<property name="username" value="username4" />
+		<property name="email" value="email4" />
+		<property name="password" ref="password" />
+	</bean>
+	
+	<bean id="groupA" class="sigeco.model.UserGroup" singleton="false">
+		<property name="name" value="validGroup1" />
+		<property name="managers">
+			<list>
+			</list>
+		</property>
+		<property name="users">
+			<list>
+			</list>
+		</property>
+	</bean>
+	<bean id="groupB" class="sigeco.model.UserGroup" singleton="false">
+		<property name="name" value="validGroup2" />
+		<property name="managers">
+			<list>
+			</list>
+		</property>
+		<property name="users">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+</beans>

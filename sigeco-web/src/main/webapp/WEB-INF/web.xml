@@ -1,0 +1,158 @@
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
+	<display-name>Sigeco - Web Application</display-name>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/classes/sigeco-beans.xml</param-value>
+	</context-param>
+	
+	<context-param>
+        <param-name>org.richfaces.SKIN</param-name>
+        <param-value>blueSky</param-value>
+    </context-param>
+
+	<!-- <listener>
+		<listener-class>
+		com.sun.faces.config.ConfigureListener
+		</listener-class>
+		</listener>
+		
+		<listener>
+		<listener-class>
+		com.sun.faces.application.WebappLifecycleListener
+		</listener-class>
+		</listener> -->
+
+	<!-- 
+		<context-param>
+		<param-name>javax.faces.CONFIG_FILES</param-name>
+		<param-value>/WEB-INF/faces-config.xml</param-value>
+		</context-param> -->
+
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>
+			sigeco.web.listener.DefaultSessionListener
+		</listener-class>
+	</listener>
+	
+	<!-- 
+		<listener>
+		<listener-class>
+		org.apache.myfaces.webapp.StartupServletContextListener
+		</listener-class>
+		</listener> -->
+
+	<filter>
+		<filter-name>HibernateFilter</filter-name>
+		<filter-class>
+			org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
+		</filter-class>
+		<!-- 
+		<init-param>
+			<param-name>flushMode</param-name>
+			<param-value>AUTO</param-value>
+		</init-param>
+		 -->
+	</filter>
+	
+	<filter> 
+        <display-name>RichFaces Filter</display-name> 
+        <filter-name>richfaces</filter-name> 
+        <filter-class>org.ajax4jsf.Filter</filter-class> 
+    </filter> 
+    
+    <filter>
+    	<display-name>User in Session Filter</display-name>
+    	<filter-name>userInSession</filter-name>
+    	<filter-class>sigeco.web.filter.UserInSessionFilter</filter-class>
+    </filter>
+    
+  	<filter-mapping>
+    	<filter-name>userInSession</filter-name>
+    	<url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+	<filter-mapping>
+		<filter-name>HibernateFilter</filter-name>
+		<url-pattern>*.faces</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>HibernateFilter</filter-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</filter-mapping>
+
+
+	<servlet>
+		<display-name>DWR Servlet</display-name>
+		<servlet-name>dwr-invoker</servlet-name>
+		<servlet-class>uk.ltd.getahead.dwr.DWRServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.faces</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>dwr-invoker</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+	
+    <filter-mapping> 
+        <filter-name>richfaces</filter-name> 
+        <servlet-name>Faces Servlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+    </filter-mapping>
+    
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error.faces</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/error.faces</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>javax.faces.el.EvaluationException</exception-type>
+		<location>/error.faces</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>sigeco.business.security.PermissionDeniedException</exception-type>
+		<location>/error.faces</location>
+	</error-page>
+	
+	
+
+	
+
+
+</web-app>

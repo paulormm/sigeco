@@ -1,0 +1,2492 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<TITLE>Monografia</TITLE>
+		<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+		<META NAME="GENERATOR" CONTENT="Notepad :p">
+		<link href="tcc.css" type="text/css" rel="stylesheet">
+</HEAD>
+	<BODY>
+		<div id="linkTopo" class="linkTopo">
+			<a href="monografia_grupo.html#topo">Voltar ao topo</a>		</div>
+		<script type="text/javascript">
+			var ns = (navigator.appName.indexOf("Netscape") != -1);
+			var d = document;
+			var px = document.layers ? "" : "px";
+			function JSFX_FloatDiv(id, sx, sy)
+			{
+				var el=d.getElementById?d.getElementById(id):d.all?d.all[id]:d.layers[id];
+				window[id + "_obj"] = el;
+				if(d.layers)el.style=el;
+				el.cx = el.sx = sx;el.cy = el.sy = sy;
+				el.sP=function(x,y){this.style.left=x+px;this.style.top=y+px;};
+				el.flt=function()
+				{
+					var pX, pY;
+					pX = (this.sx >= 0) ? 0 : ns ? innerWidth : 
+					document.documentElement && document.documentElement.clientWidth ? 
+					document.documentElement.clientWidth : document.body.clientWidth;
+					pY = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+					document.documentElement.scrollTop : document.body.scrollTop;
+					if(this.sy<0) 
+					pY += ns ? innerHeight : document.documentElement && document.documentElement.clientHeight ? 
+					document.documentElement.clientHeight : document.body.clientHeight;
+					this.cx += (pX + this.sx - this.cx)/8;this.cy += (pY + this.sy - this.cy)/8;
+					this.sP(this.cx, this.cy);
+					setTimeout(this.id + "_obj.flt()", 40);
+				}
+				return el;
+			}
+			JSFX_FloatDiv("linkTopo", -135, 15).flt();
+		</script>
+
+
+		<div class=titulo>
+			<a name="topo"></a>Universidade de S&atilde;o Paulo
+			<br />
+			Instituto de Matem&aacute;tica e Estat&iacute;stica
+			<br />
+			Departamento de Ci&ecirc;ncias da Computa&ccedil;&atilde;o
+			<br/>
+			<br/>
+			<div class=subsubsubtitulo>MAC-0499 Trabalho de Formatura Supervisionado</div>
+			<br />
+			<br />
+			Sistema de Gerenciamento de Compet&ecirc;ncias - SIGECO
+			<br />
+			<br />
+			<div class=subsubsubtitulo>
+				Alexandre Pitta Guedes - pitta at linux.ime
+				<br/>
+				Julien Renaut - oxygen at linux.ime
+				<br />
+				Yugo Watari - ywatari at gmail
+				<br />
+				<br />
+				Supervisor: Valdemar W. Setzer - vwsetzer at ime			</div>
+		</div>
+		<br />
+		<br />
+		<div class=subsubtitulo>Sum&aacute;rio</div>
+		<br />
+		<span class=bullet>1.</span>&nbsp;<a href="monografia_grupo.html#1">Introdu&ccedil;&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>1.1</span>&nbsp;<a href="monografia_grupo.html#1.1">Motiva&ccedil;&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>1.2</span>&nbsp;<a href="monografia_grupo.html#1.2">Objetivos</a>
+		<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>1.2.1</span>&nbsp;<a href="monografia_grupo.html#1.2.1">Implementar e testar o Sistema de Gerenciamento de Compet&ecirc;ncia</a><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>1.2.2</span>&nbsp;<a href="monografia_grupo.html#1.2.2">Adquirir experi&ecirc;ncia de desenvolvimento no processo</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>1.3</span>&nbsp;<a href="monografia_grupo.html#1.3">Resumo da monografia</a>
+		<br />
+		<br />
+        <span class=bullet>2.</span>&nbsp;<a href="monografia_grupo.html#2">Conceitos b&aacute;sicos</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>2.1</span>&nbsp;<a href="monografia_grupo.html#2.1">Dado</a>
+		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>2.2</span>&nbsp;<a href="monografia_grupo.html#2.2">Informa&ccedil;&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>2.3</span>&nbsp;<a href="monografia_grupo.html#2.3">Conhecimento</a>
+		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>2.4</span>&nbsp;<a href="monografia_grupo.html#2.4">Compet&ecirc;ncia</a>
+		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>2.5</span>&nbsp;<a href="monografia_grupo.html#2.5">Matrizes de Compet&ecirc;ncia</a>
+		<br />
+		<br />
+		<span class=bullet>3.</span>&nbsp;<a href="monografia_grupo.html#3">Hist&oacute;rico do desenvolvimento e experi&ecirc;ncia adquirida</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>3.1</span>&nbsp;<a href="monografia_grupo.html#3.1">Dificuldades iniciais</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>3.1.1</span>&nbsp;<a href="monografia_grupo.html#3.1.1">Importa&ccedil;&atilde;o de bibliotecas e cria&ccedil;&atilde;o do projeto inicial</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>3.1.2</span>&nbsp;<a href="monografia_grupo.html#3.1.2">Configura&ccedil;&otilde;es iniciais</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>3.1.3</span>&nbsp;<a href="monografia_grupo.html#3.1.3">Escolha de um servidor de aplica&ccedil;&otilde;es</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>3.2</span>&nbsp;<a href="monografia_grupo.html#3.2">Conven&ccedil;&otilde;es e metodologias</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>3.2.1</span>&nbsp;<a href="monografia_grupo.html#3.2.1">Estilo do c&oacute;digo e boas pr&aacute;ticas de programa&ccedil;&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>3.2.2</span>&nbsp;<a href="monografia_grupo.html#3.2.2">Testes Unit&aacute;rios</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>3.2.3</span>&nbsp;<a href="monografia_grupo.html#3.2.3">Programa&ccedil;&atilde;o Pareada</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>3.2.4</span>&nbsp;<a href="monografia_grupo.html#3.2.4">Internacionaliza&ccedil;&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>3.3</span>&nbsp;<a href="monografia_grupo.html#3.3">Dificuldades</a>
+        <br />
+        <br />
+		<span class=bullet>4.</span>&nbsp;<a href="monografia_grupo.html#4">Ferramentas utilizadas</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.1</span>&nbsp;<a href="monografia_grupo.html#4.1">Java</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.2</span>&nbsp;<a href="monografia_grupo.html#4.2">Subversion</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.2.1</span>&nbsp;<a href="monografia_grupo.html#4.2.1">Introdu&ccedil;&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.2.2</span>&nbsp;<a href="monografia_grupo.html#4.2.2">O Paradigma "<em>lock</em> - <em>modify</em> - <em>unlock</em>"</a>
+<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.2.3</span>&nbsp;<a href="monografia_grupo.html#4.2.3">O Paradigma "<em>copy</em> - <em>modify</em> - <em>merge</em>"</a>
+<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.2.3.1</span>&nbsp;<a href="monografia_grupo.html#4.2.3.1">A etapa "<em>merge</em>"</a>
+<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.2.3.2</span>&nbsp;<a href="monografia_grupo.html#4.2.3.2">A etapa "<em>conflict</em>"</a>
+<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.2.4</span>&nbsp;<a href="monografia_grupo.html#4.2.4">Conclus&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3</span>&nbsp;<a href="monografia_grupo.html#4.3">Maven2</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.1</span>&nbsp;<a href="monografia_grupo.html#4.3.1">Introdu&ccedil;&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.2</span>&nbsp;<a href="monografia_grupo.html#4.3.2">O "<em>Project Object Model</em>"</a>
+<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.2.1</span>&nbsp;<a href="monografia_grupo.html#4.3.2.1">Identifica&ccedil;&atilde;o do Artefato</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.2.2</span>&nbsp;<a href="monografia_grupo.html#4.3.2.2">Estrutura em disco do pacote</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.2.3</span>&nbsp;<a href="monografia_grupo.html#4.3.2.3">Configura&ccedil;&atilde;o por exce&ccedil;&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.2.4</span>&nbsp;<a href="monografia_grupo.html#4.3.2.4">Defini&ccedil;&atilde;o das depend&ecirc;ncias</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.2.5</span>&nbsp;<a href="monografia_grupo.html#4.3.2.5">Poss&iacute;veis configura&ccedil;&otilde;es adicionais</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.3</span>&nbsp;<a href="monografia_grupo.html#4.3.4">O ciclo de "<em>build</em>" do projeto</a>
+<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.3.1</span>&nbsp;<a href="monografia_grupo.html#4.3.3.1"><em>generate-sources</em></a>
+<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.3.2</span>&nbsp;<a href="monografia_grupo.html#4.3.3.2"><em>compile</em></a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.3.3</span>&nbsp;<a href="monografia_grupo.html#4.3.3.3"><em>test-compile</em></a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.3.4</span>&nbsp;<a href="monografia_grupo.html#4.3.3.4"><em>test</em></a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.3.5</span>&nbsp;<a href="monografia_grupo.html#4.3.3.5"><em>package</em></a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.3.6</span>&nbsp;<a href="monografia_grupo.html#4.3.3.6"><em>install</em></a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.3.7</span>&nbsp;<a href="monografia_grupo.html#4.3.3.7"><em>deploy</em></a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.4</span>&nbsp;<a href="monografia_grupo.html#4.3.4">O Reposit&oacute;rio de Artefatos</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.5</span>&nbsp;<a href="monografia_grupo.html#4.3.5">Resolu&ccedil;&atilde;o de depend&ecirc;ncias</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.3.6</span>&nbsp;<a href="monografia_grupo.html#4.3.6">Conclus&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.4</span>&nbsp;<a href="monografia_grupo.html#4.4">Checkstyle</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.4.1</span>&nbsp;<a href="monografia_grupo.html#4.4.1">Introdu&ccedil;&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.4.2</span>&nbsp;<a href="monografia_grupo.html#4.4.2">Funcionalidades</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.4.2.1</span>&nbsp;<a href="monografia_grupo.html#4.4.2.1"><em>Javadoc Comments</em></a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.4.2.2</span>&nbsp;<a href="monografia_grupo.html#4.4.2.2"><em>Naming Conventions</em></a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.4.2.3</span>&nbsp;<a href="monografia_grupo.html#4.4.2.3"><em>Size Violations</em></a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.4.2.4</span>&nbsp;<a href="monografia_grupo.html#4.4.2.4"><em>Miscellaneous</em></a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.4.3</span>&nbsp;<a href="monografia_grupo.html#4.4.3">Conclus&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.5</span>&nbsp;<a href="monografia_grupo.html#4.5">Spring Framework</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.5.1</span>&nbsp;<a href="monografia_grupo.html#4.5.1">Introdu&ccedil;&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.5.2</span>&nbsp;<a href="monografia_grupo.html#4.5.2">Inje&ccedil;&atilde;o de depend&ecirc;ncias</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.5.2.1</span>&nbsp;<a href="monografia_grupo.html#4.5.2.1">Motiva&ccedil;&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.5.2.2</span>&nbsp;<a href="monografia_grupo.html#4.5.2.2">A BeanFactory</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.5.3</span>&nbsp;<a href="monografia_grupo.html#4.5.3">Suporte ao Hibernate</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.5.4</span>&nbsp;<a href="monografia_grupo.html#4.5.4">Suporte a aspectos</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.5.5</span>&nbsp;<a href="monografia_grupo.html#4.5.5">Conclus&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.6</span>&nbsp;<a href="monografia_grupo.html#4.6">Java Server Faces</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.6.1</span>&nbsp;<a href="monografia_grupo.html#4.6.1">Introdu&ccedil;&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.6.2</span>&nbsp;<a href="monografia_grupo.html#4.6.2">Managed Beans</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.6.2.1</span>&nbsp;<a href="monografia_grupo.html#4.6.2.1"><em>Request</em></a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.6.2.2</span>&nbsp;<a href="monografia_grupo.html#4.6.2.2"><em>Session</em></a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.6.2.3</span>&nbsp;<a href="monografia_grupo.html#4.6.2.3"><em>Application</em></a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.6.2.4</span>&nbsp;<a href="monografia_grupo.html#4.6.2.4"><em>None</em></a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.6.3</span>&nbsp;<a href="monografia_grupo.html#4.6.3">Arquitetura baseada em componentes</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.6.4</span>&nbsp;<a href="monografia_grupo.html#4.6.4">Suporte Total &agrave; linguagem de express&otilde;es (EL - Expression Language)</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.6.5</span>&nbsp;<a href="monografia_grupo.html#4.6.5">Vantagens</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.6.6</span>&nbsp;<a href="monografia_grupo.html#4.6.6">Conclus&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.7</span>&nbsp;<a href="monografia_grupo.html#4.7">Java Persistence API (JPA)</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.7.1</span>&nbsp;<a href="monografia_grupo.html#4.7.1">Introdu&ccedil;&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.7.2</span>&nbsp;<a href="monografia_grupo.html#4.7.2">Entidade</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.7.3</span>&nbsp;<a href="monografia_grupo.html#4.7.3">Entity Manager</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.7.4</span>&nbsp;<a href="monografia_grupo.html#4.7.4">Java Persistence Query Language - (JPQL)</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>4.7.5</span>&nbsp;<a href="monografia_grupo.html#4.7.5">Conclus&atilde;o</a>
+		
+		<br />
+		<br />
+		<span class=bullet>5.</span>&nbsp;<a href="monografia_grupo.html#5">Avalia&ccedil;&atilde;o do ambiente de desenvolvimento utilizado</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>5.1</span>&nbsp;<a href="monografia_grupo.html#5.1">Introdu&ccedil;&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>5.2</span>&nbsp;<a href="monografia_grupo.html#5.2">Aspecto gerencial</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>5.3</span>&nbsp;<a href="monografia_grupo.html#5.3">Aspecto de programa&ccedil;&atilde;o</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>5.4</span>&nbsp;<a href="monografia_grupo.html#5.4">Conclus&atilde;o</a>
+		<br />
+		<br />
+		<span class=bullet>6.</span>&nbsp;<a href="monografia_grupo.html#6">Resultados obtidos</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>6.1</span>&nbsp;<a href="monografia_grupo.html#6.1">Caracter&iacute;sticas do sistema produzido</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>6.2</span>&nbsp;<a href="monografia_grupo.html#6.2">Funcionalidades do sistema</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>6.2.1</span>&nbsp;<a href="monografia_grupo.html#6.2.1">Cadastramento de usu&aacute;rios</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>6.2.2</span>&nbsp;<a href="monografia_grupo.html#6.2.2">Cadastramento de matrizes</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>6.2.3</span>&nbsp;<a href="monografia_grupo.html#6.2.3">Preenchimento de matrizes de compet&ecirc;ncias</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>6.2.4</span>&nbsp;<a href="monografia_grupo.html#6.2.4">Consulta de matrizes preenchidas</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>6.2.5</span>&nbsp;<a href="monografia_grupo.html#6.2.5">Busca de usu&aacute;rios cadastrados pelas suas compet&ecirc;ncias</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>6.2.6</span>&nbsp;<a href="monografia_grupo.html#6.2.6">##</a>
+		<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>6.2.7</span>&nbsp;<a href="monografia_grupo.html#6.2.7">##</a>
+		<br />
+		<br />
+		<span class=bullet>7.</span>&nbsp;<a href="monografia_grupo.html#7">Sugest&otilde;es de extens&otilde;es</a>
+		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>7.1</span>&nbsp;<a href="monografia_grupo.html#7.1">Subsistema de Permiss&atilde;o</a>
+ <br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>7.2</span>&nbsp;<a href="monografia_grupo.html#7.2">Sistemas M&uacute;ltiplos</a>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class=bullet>7.3</span>&nbsp;<a href="monografia_grupo.html#7.3">Curr&iacute;culo de compet&ecirc;ncias de usu&aacute;rio</a>
+<br />
+		<br />
+		<span class=bullet>8.</span>&nbsp;<a href="monografia_grupo.html#8">Refer&ecirc;ncias</a>
+		<br />
+		<br />
+		<div style="visibility:hidden;"><span class=bullet>Ap&ecirc;ndice 1.</span>&nbsp;<a href="monografia_grupo.html#a1">Manual t&eacute;cnico (manuten&ccedil;&atilde;o e extens&atilde;o)</a></div>
+		<br />
+		<br />
+		<div style="visibility:hidden;"><span class=bullet>Ap&ecirc;ndice 2.</span>&nbsp;<a href="monografia_grupo.html#a2">Manual do usu&aacute;rio</a></div>
+		<br />
+		<br />
+		<br />
+		<br />
+		<div class=titulo>
+			<a name="1"></a>1 - Introdu&ccedil;&atilde;o		</div>
+		<br />
+		<div class=subtitulo>
+			<a name="1.1"></a>1.1 - Motiva&ccedil;&atilde;o		</div>
+		<br />
+	<div class=texto>
+			A inspira&ccedil;&atilde;o para este Trabalho de Conclus&atilde;o de Curso foi o artigo "Dado, Informa&ccedil;&atilde;o, Conhecimento e Compet&ecirc;ncia" <a href="#8.SET">[SET]</a> de autoria
+			do <a href='http://www.ime.usp.br/~vwsetzer'>Professor Valdemar W. Setzer</a>. Neste artigo o autor discute as defini&ccedil;&otilde;es mencionadas em seu t&iacute;tulo mas tamb&eacute;m extende-se al&eacute;m das mesmas definindo 
+			Matrizes de Compet&ecirc;ncia e suas aplica&ccedil;&otilde;es. Conversando com o Professor e baseando-se no artigo foi proposta a elabora&ccedil;&atilde;o de um sistema para cria&ccedil;&atilde;o, preenchimento e busca de Matrizes de Compet&ecirc;ncia, e extendendo as
+			implementa&ccedil;&otilde;es que ele havia dirigido, citadas no artigo.	</div>
+    <br />
+	<div class=subtitulo>
+	  <a name="1.2"></a>1.2 - Objetivos	</div>
+		<br />
+		<div class=subsubtitulo>
+		  <a name="1.2.1"></a>1.2.1 - Implementar e testar o Sistema de Gerenciamento de Compet&ecirc;ncia		</div>
+        <br />
+    <div class=texto>
+			O Sistema de Gerenciamento de Compet&ecirc;ncia &eacute; um <em>software</em> que permite gerenciar
+		matrizes de compet&ecirc;ncia de in&uacute;meros indiv&iacute;duos, como por exemplo os profissionais de uma empresa, por exemplo.
+        A id&eacute;ia &eacute; armazenar os curr&iacute;culos dos profissionais de forma sistem&aacute;tica e quantificada, podendo-se fazer consultas aos curr&iacute;culos de forma &aacute;gil.
+        <br />
+        <br />
+        As vantagens desse sistema s&atilde;o facilmente observadas se se considerar uma empresa com centenas ou milhares de funcion&aacute;rios ou ent&atilde;o &oacute;rg&atilde;os p&uacute;blicos, como rede municipal ou estadual de educa&ccedil;&atilde;o que precisa manter os curr&iacute;culos de cada um dos milhares de professores.
+        <br />
+        <br />
+        O maior objetivo do sistema com a digitaliza&ccedil;&atilde;o e armazenamento quantificado dos curr&iacute;culos &eacute; agilizar os processos de aloca&ccedil;&atilde;o de recursos humanos em cargos e equipes, sele&ccedil;&atilde;o de profissionais capazes de dar treinamentos em uma certa &aacute;rea de conhecimento, conhecer as &aacute;reas de conhecimento mais deficientes na empresa, promover o contato pessoal entre os profissionais para a transpar&ecirc;ncia das informa&ccedil;&otilde;es, e muito mais.    </div>
+        <br />
+	<div class=subsubtitulo>
+	  <a name="1.2.2"></a>1.2.2 - Adquirir experi&ecirc;ncia de desenvolvimento no processo	</div>   
+    <br />  
+	<div class=texto>
+			Al&eacute;m da elabora&ccedil;&atilde;o do software, nosso objetivo neste TCC foi adquirir experi&ecirc;ncia de desenvolvimento. Quer&iacute;amos aprender como configurar um ambiente de desenvolvimento &aacute;gil e pr&aacute;tico
+			que permitisse facilmente o gerenciamento e compartilhamento de c&oacute;digo fonte e a padroniza&ccedil;&atilde;o do processo de compila&ccedil;&atilde;o, teste e implanta&ccedil;&atilde;o da aplica&ccedil;&atilde;o (implanta&ccedil;&atilde;o &eacute; o processo de executar a aplica&ccedil;&atilde;o em um servidor de aplica&ccedil;&otilde;es). Al&eacute;m disso, quer&iacute;amos usar tecnologias recentes
+			na constru&ccedil;&atilde;o de <em>software</em> como <a href='http://www.hibernate.org'>Hibernate</a> (arcabou&ccedil;o de mapeamento entidade-relacional e persist&ecirc;ncia de dados), <a href='http://www.springframework.org'>Spring Framework</a> (arcabou&ccedil;o de inje&ccedil;&atilde;o de depend&ecirc;ncias, programa&ccedil;&atilde;o orientada a aspectos, entre outras coisas) 
+			e <a href='http://java.sun.com/javaee/javaserverfaces/'>Java Server Faces</a> (arcabou&ccedil;o para a camada de vis&atilde;o de um <em>software</em> para Internet).	</div>
+        <br />
+		<div class=subtitulo>
+		  <a name="1.3"></a>1.3 - Resumo da monografia		</div>
+		<br />
+	<div class=texto>
+	No t&oacute;pico <a href="#2">2 (Conceitos b&aacute;sicos)</a> discorremos sobre o artigo de Setzer e sobre suas defini&ccedil;&otilde;es de <em>dado</em>, <em>informa&ccedil;&atilde;o</em>, <em>conhecimento</em>, <em>compet&ecirc;ncia</em> e com isso explicamos o que &eacute; uma Matriz de Compet&ecirc;ncias e o que &eacute; um Sistema de Gerenciamento de Compet&ecirc;ncias.
+        <br />
+		<br />
+        A descri&ccedil;&atilde;o do processo de desenvolvimento, as dificuldades que foram encontradas durante esse processo e a experi&ecirc;ncia que foi adquirida com ele s&atilde;o detalhadas no t&oacute;pico <a href="#3">3 (Hist&oacute;rico de desenvolvimento e experi&ecirc;ncia adquirida)</a>.
+        <br />
+        <br />
+        Um dos objetivos deste trabalho foi
+        
+        
+        configurar um ambiente de desenvolvimento &aacute;gil e pr&aacute;tico utilizando tecnologias recentes com ferramentas c&oacute;digo livre. No t&oacute;pico <a href="#4">4 (Ferramentas utilizadas)</a>, &eacute; descrito em detalhes cada uma das principais ferramentas que foram utilizadas para a cria&ccedil;&atilde;o desse ambiente de desenvolvimento.
+        <br />
+		<br />
+        O resultado da integra&ccedil;&atilde;o dessas ferramentas e a avalia&ccedil;&atilde;o do ambiente de desenvolvimento
+        que foi configurado para a cria&ccedil;&atilde;o do Sistema de Gerenciamento de Compet&ecirc;ncias est&atilde;o descritos no t&oacute;pico <a href="#5">5 (Avalia&ccedil;&atilde;o do ambiente de desenvolvimento utilizado  )</a><br />
+		<br />
+        No t&oacute;pico <a href="#6">6 (Resultados obtidos)</a> &eacute; detalhado o sistema final que foi produzido para o gerenciamento de compet&ecirc;ncias e no t&oacute;pico <a href="#7">7 (Sugest&otilde;es de extens&otilde;es)</a> s&atilde;o sugeridas algumas extens&otilde;es interessantes que podem ser desenvolvidas para o sistema.        </div>
+        <br />
+		<br />
+		<div class=titulo>
+		  <a name="2"></a>2 - Conceitos b&aacute;sicos		</div>
+		<br />
+        <div class=texto>
+        O objetivo do artigo que inspira este trabalho &eacute; tentar conceituar ou pelo menos caracterizar de forma clara o que &eacute; dado, informa&ccedil;&atilde;o, conhecimento e compet&ecirc;ncia, termos que s&atilde;o facilmente confundidos, muitas vezes sendo tratados meramente como sinônimos. 
+        </div>
+        <br />
+		<div class=subtitulo>
+			<a name="2.1"></a>2.1 - Dado
+    </div>  
+    <br />      
+	<div class=texto>Setzer define <em>dado</em> como &quot;uma representa&ccedil;&atilde;o simb&oacute;lica quantificada ou quantific&aacute;vel&quot; e cita como exemplo que um texto que pode ser considerado dado, pois &eacute; representado por meio de letras (s&iacute;mbolos) &agrave;s quais pode ser associado um sistema num&eacute;rico discreto (portanto, quantificado por natureza). Assim, pode-se estender essa id&eacute;ia para uma imagem, que pode ser mapeada como um conjunto de <em>pixels</em> e cada um destes <em>pixels</em> sendo um s&iacute;mbolo; o sistema num&eacute;rico discreto seria o conjunto finito das cores que podem ser representadas por um <em>pixel</em> (usualmente os valores de 0 a 255 para cada uma das componentes vermelha, verde e azul). 
+    <br />
+        <br />
+	Com essa defini&ccedil;&atilde;o &eacute; f&aacute;cil perceber que se podem armazenar dados em um computador, pois este oferece estrutura para armazenamento e manipula&ccedil;&atilde;o de s&iacute;mbolos que fazem parte de  sistemas num&eacute;ricos discretos. 
+	<br />
+        <br />
+	Importante notar que um texto escrito em russo sendo lido por algu&eacute;m que n&atilde;o compreende a escrita russa ainda constitui simplesmente uma cadeia de dados.</div>   
+    <br />  
+		<div class=subtitulo>
+			<a name="2.2"></a>2.2 - Informa&ccedil;&atilde;o
+        </div>  
+    <br />
+	<div class=texto>
+			&quot;Informa&ccedil;&atilde;o &eacute; uma abstra&ccedil;&atilde;o informal (isto &eacute;, n&atilde;o pode ser formalizada por meio de uma teoria l&oacute;gica ou matem&aacute;tica), que est&aacute; na mente de algu&eacute;m, representando algo significativo para essa pessoa.&quot;.
+        Um texto (<em>dado</em>) ao ser lido e compreendido por uma pessoa &eacute; incorporado nesta como informa&ccedil;&atilde;o. Como exemplo tem-se a frase &quot;a temperatura m&eacute;dia  de Paris em dezembro &eacute; de 5&deg;C&quot; que apesar de ser um dado, &eacute; incorporado como informa&ccedil;&atilde;o por cada pessoa que a l&ecirc; e compreende, pois h&aacute; uma associa&ccedil;&atilde;o mental com o conceito de frio. Note que se fosse 25&deg;C, por exemplo, alguns poderiam associar com frio, outros com calor.
+<br />
+        <br />
+        Qualquer pessoa pode obter informa&ccedil;&atilde;o por meio de de dados,  se estes  forem intelig&iacute;veis para ela. Mas uma pessoa tamb&eacute;m pode obter informa&ccedil;&atilde;o sem ter dados, como por exemplo, quando um vento sopra e sente-se frio. N&atilde;o houve dados, n&atilde;o houve s&iacute;mbolos, o corpo percebe o clima frio e incorpora essa informa&ccedil;&atilde;o.
+<br />
+        <br />
+        Enquanto dado &eacute; puramente sint&aacute;tico, informa&ccedil;&atilde;o cont&eacute;m necessariamente semântica. Disso conclui-se que o computador n&atilde;o armazena informa&ccedil;&otilde;es, mas apenas dados, pois o computador &eacute; puramente sint&aacute;tico. O que se faz geralmente &eacute; representar uma informa&ccedil;&atilde;o em forma de dados (gravando um som ou escrevendo um texto) e armazena-se esses dados no computador, mas para o computador ser&atilde;o apenas dados, para ele n&atilde;o h&aacute; significado; esses dados transformam-se em informa&ccedil;&atilde;o se a pessoa que os recebe pode compreend&ecirc;-los.    </div>   
+    <br />  
+		<div class=subtitulo>
+			<a name="2.3"></a>2.3 - Conhecimento
+        </div>  
+    <br />      
+		<div class=texto>
+        No artigo, <em>conhecimento</em> &eacute; caracterizado como &quot;uma abstra&ccedil;&atilde;o interior, pessoal, de algo que foi experimentado, vivenciado, por algu&eacute;m.&quot;. Conhecimento &eacute; subjetivo e envolve pragm&aacute;tica. Como exemplo s&atilde;o comparadas duas pessoas, uma que leu um manual de viagem sobre a cidade de Paris e outro que visitou a cidade. A primeira tem informa&ccedil;&otilde;es sobre Paris, j&aacute; a segunda tem conhecimento, pois ela &quot;experimentou&quot; a cidade. Pode ser que a primeira tenha at&eacute; mais informa&ccedil;&otilde;es que a pessoa que visitou a cidade, mas ela n&atilde;o possui nenhum conhecimento sobre Paris, no sentido estabelecido pelo artigo.
+        <br />
+        <br />
+        Pela
+        caracteriza&ccedil;&atilde;o apresentada, podemos dizer que um beb&ecirc; tem <em>conhecimento</em> pois ele pode reconhecer a m&atilde;e, mas por ainda n&atilde;o associar conceitos, n&atilde;o podemos dizer que ele tenha informa&ccedil;&otilde;es. O mesmo com os animais, que t&ecirc;m muito conhecimento, mas n&atilde;o tem informa&ccedil;&atilde;o. No entanto o que diferencia o ser humano na quest&atilde;o do <em>conhecimento</em> &eacute; que o este pode ter consci&ecirc;ncia do seu pr&oacute;prio conhecimento e por isso tentar descrev&ecirc;-lo.<br />
+        <br />
+        Apesar de o conhecimento n&atilde;o poder ser descrito completamente, pode-se faz&ecirc;-lo parcialmente e conceitualmente em termos de informa&ccedil;&atilde;o, que como foi visto, pode ser representada em forma de dados.        </div>      
+        <br /> 
+		<div class=subtitulo>
+			<a name="2.4"></a>2.4 - Compet&ecirc;ncia
+        </div>  
+    <br />
+		<div class=texto>
+			Segundo o artigo, <em>&quot;compet&ecirc;ncia</em> &eacute; uma capacidade j&aacute; demonstrada de produzir algo&quot;. N&atilde;o basta ter conhecimento para ser competente em certa &aacute;rea (como Paris), &eacute; necess&aacute;rio demonstrar a capacidade de produzir algo como, por exemplo, servir de guia tur&iacute;stico pela cidade. Uma <em>compet&ecirc;ncia</em> envolve uma certa <em>habilidade</em> sobre uma <em>&aacute;rea de conhecimento.</em> Voltando mais uma vez ao exemplo, poder&iacute;amos ent&atilde;o ter o caso de uma pessoa ter a compet&ecirc;ncia de servir de guia tur&iacute;stico (habilidade) em Paris (&aacute;rea de conhecimento).
+        <br />
+        <br />
+        Para haver compet&ecirc;ncia &eacute; necess&aacute;rio ent&atilde;o conhecimento e habilidade.
+        <br />
+<br />
+            Assim como <em>conhecimento</em>, n&atilde;o &eacute; poss&iacute;vel descrever totalmente uma <em>compet&ecirc;ncia</em>. O que se pode fazer &eacute; criar <em>graus de compet&ecirc;ncia</em> como por exemplo "iniciante", "avan&ccedil;ado", "especialista", mas note-se que assim o que se tem &eacute; apenas a descri&ccedil;&atilde;o de uma compet&ecirc;ncia  em termos de informa&ccedil;&atilde;o ou, se for colocada no computador, como dados.            
+        <br />
+        <br />
+        Ao criar um sistema para gerenciar as compet&ecirc;ncias das pessoas &eacute; muito importante observar que se est&aacute; representando algo totalmente subjetivo (as compet&ecirc;ncias das pessoas) em algo totalmente objetivo (dados). A perda da subjetividade pode trazer alguns erros, por isso, este tipo de sistema deve ser usado apenas como um filtro que proporciona uma lista de pessoas em potencial (dado os crit&eacute;rios de busca) e ap&oacute;s isso essas pessoas deveriam ser analisadas subjetivamente, por meio de an&aacute;lise do curr&iacute;culo em forma de texto, entrevistas, etc.</div>   
+<br /> 
+		<div class=subtitulo>
+			<a name="2.5"></a>2.5 - Matriz de Compet&ecirc;ncias
+        </div>  
+    <br /> 
+	<div class=texto>
+        Uma <em>matriz de compet&ecirc;ncia</em> &eacute; representada por <em>&aacute;reas de conhecimentos</em> em suas linhas e em suas colunas as v&aacute;rias <em>habilidades</em> aplic&aacute;veis a essas &aacute;reas de conhecimento. Cada c&eacute;lula dessa matriz armazena o grau de compet&ecirc;ncia de uma habilidade (coluna) em certa &aacute;rea de conhecimento (linha).
+        Cada matriz representa as competências de um único usuário, que pode ter várias matrizes. 
+        <br />
+        <br />
+        Por exemplo, a matriz de compet&ecirc;ncia em idiomas de uma pessoa tem em suas linhas os idiomas como portugu&ecirc;s, ingl&ecirc;s, alem&atilde;o, etc. e em suas colunas as habilidades aplic&aacute;veis a idiomas, como leitura, escrita, conversa&ccedil;&atilde;o, etc. e usando os graus de compet&ecirc;ncia definidos para essa matriz, por exemplo, "ruim", "bom" e "excelente". Assim, a c&eacute;lula da &aacute;rea de conhecimento <strong>ingl&ecirc;s</strong> e habilidade <strong>leitura</strong> armazena o grau de compet&ecirc;ncia dessa pessoa em ler textos em ingl&ecirc;s, e de acordo com sua compet&ecirc;ncia, ter&aacute; o valor "ruim", "bom" ou "excelente". Caso a pessoa n&atilde;o tenha compet&ecirc;ncia - nem mesmo ruim - , a c&eacute;lula fica em branco.
+        <br /><br />
+        <table border="1" align="center" cellspacing="0" cellpadding="3">
+        <tr><td bgcolor="#CCCCCC" colspan="2" rowspan="2">&nbsp;</td>
+        <td colspan="3" align="center" bgcolor="#CCCCCC">Habilidades</td>
+        </tr>
+        <tr bgcolor="#CCCCCC"><td>Leitura</td><td>Escrita</td><td>Conversa&ccedil;&atilde;o</td></tr>
+        <tr>
+          <td rowspan="3" align="center" bgcolor="#CCCCCC">&Aacute;reas<br />de<br />
+          conhecimento</td>
+          <td bgcolor="#CCCCCC">portugu&ecirc;s</td>
+        <td>excelente</td><td>bom</td><td>excelente</td></tr>
+        <tr>
+          <td bgcolor="#CCCCCC">ingl&ecirc;s</td>
+        <td>ruim</td><td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCCCCC">alem&atilde;o</td><td>bom</td>
+        <td>ruim</td>
+        <td>bom</td>
+        </tr>
+        </table>
+	</div>   
+    	<br />  		
+		<br />
+		<div class=titulo>
+			<a name="3"></a>3 - Hist&oacute;rico de desenvolvimento e experi&ecirc;ncia adquirida		</div>
+    <br />
+		<div class=subtitulo>
+			<a name="3.1"></a>3.1 - Dificuldades iniciais		</div>
+	    <br />
+		<div class=subsubtitulo>
+			<a name="3.1.1"></a>3.1.1 - Importa&ccedil;&atilde;o das Bibliotecas e cria&ccedil;&atilde;o do projeto inicial		</div>
+	    <br />
+		<div class=texto>
+			Como foram utilizados diversos arcabou&ccedil;os e ferramentas, havia uma grande quantidade de bibliotecas que era necess&aacute;rio importar. E muitas delas dependiam de outras bibliotecas comuns, isto &eacute;, utilizavam m&oacute;dulos dessas bibliotecas. Coletar todos estes arquivos e coloc&aacute;-los corretamente no projeto foi feito pela ferramenta Maven2.
+			<br />
+			<br />
+			Para esta tarefa o Maven2 foi de extrema importância, pois ele cria a estrutura de diret&oacute;rios inicial do projeto. Configurando-se corretamente 
+			os arquivos pom.xml o Maven2 j&aacute; busca na Internet e adiciona os arquivos comprimidos (jars) corretos na estrutura do projeto.		</div>
+	<br />
+		<div class=subsubtitulo>
+			<a name="3.1.2"></a>3.1.2 - Configura&ccedil;&otilde;es iniciais		</div>
+	    <br />
+		<div class=texto>
+			Como todos os arcabou&ccedil;os estavam bem documentados, n&atilde;o houve grandes problemas para definir as configura&ccedil;&otilde;es iniciais para os arcabou&ccedil;os do projeto funcionarem.
+            </div>
+	<br />
+		<div class=subsubtitulo>
+			<a name="3.1.3"></a>3.1.3 - Escolha de um servidor de aplica&ccedil;&otilde;es		</div>
+	    <br />
+		<div class=texto>
+			H&aacute; diversas implementa&ccedil;&otilde;es de servidor de aplica&ccedil;&otilde;es como por exemplo: JBOSS, OC4J, WebSphere etc. Dentre estas op&ccedil;&otilde;es muitos tem extens&otilde;es
+			e ferramentas adicionais que j&aacute; v&ecirc;m junto com o servidor, tendo uma vasta quantidade de bibliotecas comuns j&aacute; inclu&iacute;das no <em>classpath</em> do servidor, que &eacute; o conjunto de classes que est&atilde;o dispon&iacute;veis em tempo de execu&ccedil;&atilde;o.
+			<br />
+			<br />
+			Uma das grandes dificuldades encontradas foi o conflito de bibliotecas da aplica&ccedil;&atilde;o e dos servidores de aplica&ccedil;&otilde;es. Por exemplo o JBOSS somente
+			aceita JSF1.2, o OC4J somente aceita a implementa&ccedil;&atilde;o de JPA da pr&oacute;pria Oracle, para executar outras implementa&ccedil;&otilde;es era necess&aacute;rio adicionar diversas bibliotecas
+			e configurar em muitos locais, etc.
+			<br />
+			<br />
+			Por esses motivos selecionamos o Tomcat que &eacute; a implementa&ccedil;&atilde;o mais simples, mais leve e com menos bibliotecas embutidas, evitando assim a ocorr&ecirc;ncia de problemas de bibliotecas conflitantes. O Tomcat mostrou-se o servidor de aplica&ccedil;&otilde;es mais simples de se configurar e com boa intera&ccedil;&atilde;o com o Maven2 para executar as
+			aplica&ccedil;&otilde;es nos servidor.		</div>
+	<br />
+		<div class=subtitulo>
+			<a name="3.2"></a>3.2 - Conven&ccedil;&otilde;es e metodologias		</div>
+	    <br />
+		<div class=subsubtitulo>
+			<a name="3.2.1"></a>3.2.1 - Estilo do c&oacute;digo e boas pr&aacute;ticas de programa&ccedil;&atilde;o		</div>
+	    <br />
+		<div class=texto>
+			O estilo de c&oacute;digo adotado foi o padr&atilde;o da Sun. Como foi utilizada a ferramenta Checkstyle, garantir que o c&oacute;digo estava todo na mesma conven&ccedil;&atilde;o e devidamente
+			documentado foi simples, pois, onde n&atilde;o o estivesse, o Checkstyle lan&ccedil;ava avisos. Portanto o c&oacute;digo que n&atilde;o estava na mesma conven&ccedil;&atilde;o ou n&atilde;o estava utilizando 
+			conven&ccedil;&otilde;es de boas pr&aacute;ticas de programa&ccedil;&atilde;o foi identificado durante a programa&ccedil;&atilde;o e corrigido no momento, sem gerar nenhum trabalho posterior.
+			<br />
+			<br />
+			As conven&ccedil;&otilde;es verificadas est&atilde;o listadas na se&ccedil;&atilde;o <a href="monografia_grupo.html#4.4">4.4 (Checkstyle)</a> desta monografia.		</div>
+	<br />
+		<div class=subsubtitulo>
+			<a name="3.2.2"></a>3.2.2 - Testes Unit&aacute;rios		</div>
+	<br />
+		<div class=texto>
+        O objetivo dos testes unit&aacute;rios &eacute; verificar que as unidades funcionais do sistema comportam-se
+conforme o esperado.
+	<br />
+    	<br />
+A id&eacute;ia &eacute; testar o &quot;contrato&quot; (isto &eacute;, a interface) de cada unidade funcional, ou seja, a partir de determinada
+entrada verificar que a sa&iacute;da esperada &eacute; encontrada.
+	<br />
+    	<br />
+Bons testes unit&aacute;rios devem ser independentes da implementa&ccedil;&atilde;o de fato. Desta forma, caso
+alguma implementa&ccedil;&atilde;o precise ser modificada, o teste n&atilde;o ser&aacute; alterado. Caso a nova
+implementa&ccedil;&atilde;o esteja correta os testes continuar&atilde;o passando pois o contrato foi respeitado.
+	<br />
+    	<br />
+Um bom conjunto de testes unit&aacute;rios propicia uma maior liberdade por parte dos desenvolvedores
+de realizarem altera&ccedil;&otilde;es no c&oacute;digo. Se alguma modifica&ccedil;&atilde;o tiver alterado o funcionamento
+esperado de alguma unidade funcional, isso ser&aacute; acusado pelos testes.
+	<br />
+    	<br />
+	Um problema comum de programadores &eacute; n&atilde;o executarem os testes frequentemente. Isso &eacute; solucionado pelo Maven2; antes de qualquer implanta&ccedil;&atilde;o no  servidor de aplica&ccedil;&atilde;o o Maven2 for&ccedil;a a execu&ccedil;&atilde;o de todos os testes unit&aacute;rios, e se algum teste falhar a implanta&ccedil;&atilde;o &eacute; abortada.		</div>
+<br />
+		<div class=subsubtitulo>
+			<a name="3.2.3"></a>3.2.3 - Programa&ccedil;&atilde;o Pareada		</div>
+	<br />
+		<div class=texto>
+			Inicialmente tivemos dificuldade em desenvolver o sistema pois est&aacute;vamos cada um programando uma parte do sistema, sem os outros terem uma vis&atilde;o completa
+            do que cada um estava fazendo. Assim que percebemos a dificuldade, passamos a nos encontrar algumas vezes para praticar a programa&ccedil;&atilde;o pareada e
+            assim obtivemos uma vis&atilde;o detalhada de todo o sistema.
+        <br />
+            <br />
+            At&eacute; mesmo quando n&atilde;o podiamos estar no mesmo local programando pareadamente, procuravamos reservar o mesmo hor&aacute;rio para desenvolver o sistema
+            e nos comunic&aacute;vamos por VoIP (Voice over Internet Protocol), o que n&atilde;o traz as vantagens da programa&ccedil;&atilde;o pareada, como a verifica&ccedil;&atilde;o de c&oacute;digo
+           pela pessoa que acompanha quem est&aacute; programando, mas auxiliou na parte de compartilhar os detalhes de cada parte do sistema que cada um desenvolvia.</div>
+	<br />
+		<div class=subsubtitulo>
+			<a name="3.2.4"></a>3.2.4 - Internacionaliza&ccedil;&atilde;o		</div>
+	<br />
+		<div class=texto>
+			Uma das especifica&ccedil;&otilde;es do projeto dada pelo orientador &eacute; que a aplica&ccedil;&atilde;o fosse produzida de forma que fosse f&aacute;cil mudar a l&iacute;ngua do sistema. A solu&ccedil;&atilde;o encontrada pela equipe foi criar 
+			um arquivo de texto simples com chaves e valores. A aplica&ccedil;&atilde;o l&ecirc; esse arquivo e pega os valores para serem utilizados nas p&aacute;ginas. Portanto para traduzir o sistema
+			para outra l&iacute;ngua, basta editar esse arquivo contendo todas as palavras utilizadas pelo sistema.		</div>
+	<br />
+		<div class=subtitulo>
+			<a name="3.3"></a>3.3 - Dificuldades		</div>
+	<br />
+		<div class=texto>
+			Inicialmente a dificuldade estava em nivelar o conhecimento dos participantes da equipe, pois cada um conhecia um pouco de parte das ferramentas. Isso foi resolvido com 
+		algumas reuni&otilde;es, realizando tutoriais e pequenas palestras internamente.</div>
+		<br />
+		<br />
+		<div class=titulo>
+			<a name="4"></a>4 - Ferramentas utilizadas		</div>
+		<br />
+		<div class=subtitulo>
+			<a name="4.1"></a>4.1 - Java		</div>
+		<br />
+		<div class=texto>
+			Escolhemos <a href="http://java.sun.com">Java</a> como linguagem de programa&ccedil;&atilde;o pelos seguintes motivos:
+			<ul>
+				<li> Orienta&ccedil;&atilde;o a Objetos </li>
+				<li> Conhecimento pr&eacute;vio dos membros da equipe </li>
+				<li> Livre </li>
+				<li> Facilidade para encontrar arcabou&ccedil;os em c&oacute;digo aberto que resolvem problemas localizados (persist&ecirc;ncia de dados, <em>middle-tier</em> (camada intermedi&aacute;ria entre os dados de aplica&ccedil;&atilde;o e a interface visual), interface visual, etc) </li>
+			  <li> Esperan&ccedil;a de que Java seja "A" linguagem de programa&ccedil;&atilde;o dos pr&oacute;ximos anos (profissionalmente falando) </li>
+			</ul>
+		</div>
+		<br />
+		<div class=subtitulo>
+			<a name="4.2"></a>4.2 - Subversion		</div>
+		<br />
+		<div class=subsubtitulo>
+			<a name="4.2.1"></a>4.2.1 - Introdu&ccedil;&atilde;o		</div>
+		<br />
+		<div class=texto>
+			O <a href="http://subversion.tigris.org">Subversion</a> &eacute; um sistema para controle de vers&otilde;es de arquivos. Ele n&atilde;o se limita ao controle de c&oacute;digos-fonte de programas 
+			embora esse seja atualmente seu maior uso. A equipe original do Subversion era composta de antigos membros da equipe do CVS, outro sistema para controle de vers&otilde;es
+			mais antigo. Como j&aacute; era de conhecimento p&uacute;blico de que os maiores problemas do CVS n&atilde;o seriam resolvidos, esses antigos membros abandonaram o CVS para criar o 
+			Subversion, uma vers&atilde;o melhorada do CVS refeita do zero onde as falhas do CVS n&atilde;o seriam repetidas.
+			<br />
+			<br />
+			Sua arquitetura baseia-se num reposit&oacute;rio central de arquivos; os usu&aacute;rios fazem c&oacute;pias locais de arquivos que est&atilde;o no reposit&oacute;rio para edit&aacute;-las e depois envi&aacute;-las de volta 
+			para l&aacute;. O Subversion funciona no paradigma "copy - modify - merge". Existe outro paradigma muito utilizado (notoriamente pelo Microsoft SourceSafe) que &eacute; o 
+			"lock - modify - unlock". Vamos apresentar na sequ&ecirc;ncia as diferen&ccedil;as fundamentais entre esses paradigmas e o motivo pelo qual o Subversion escolheu o 
+			"copy - modify - merge".		</div>
+		<br />
+		<div class=subsubtitulo>
+			<a name="4.2.2"></a>4.2.2 - O Paradigma "lock - modify - unlock"		</div>
+		<br />
+		<div class=texto>
+			Neste paradigma, quando o usu&aacute;rio deseja realizar uma modifica&ccedil;&atilde;o em algum arquivo precisa conseguir o <em>lock</em> do arquivo, isto &eacute;, seu bloqueio. Estando com esse bloqueio o usu&aacute;rio realiza as
+			altera&ccedil;&otilde;es que desejar e quando tiver terminado libera-o - opera&ccedil;&atilde;o tamb&eacute;m conhecida como "unlock".
+<br />
+			<br />
+			A vantagem deste paradigma &eacute; que pessoas diferentes n&atilde;o ir&atilde;o tentar submeter vers&otilde;es conflitantes de um mesmo arquivo pois apenas uma delas ter&aacute; conseguido o <em>lock</em>		  necess&aacute;rio para edi&ccedil;&atilde;o do arquivo. Por&eacute;m, justamente isso pode ser considerado como desvantagem. Muitas vezes  v&aacute;rias pessoas precisam trabalhar ao mesmo tempo no mesmo arquivo, 
+			por exemplo um XML de configura&ccedil;&atilde;o ou uma interface comum ou uma p&aacute;gina da Internet. Al&eacute;m disso, o paradigma permite que uma pessoa, por exemplo, esque&ccedil;a de liberar o <em>lock</em> de um
+			arquivo no final do dia e impe&ccedil;a algu&eacute;m de trabalhar no mesmo arquivo at&eacute; que ele seja desbloqueado.		</div>
+<br />
+		<div class=subsubtitulo>
+			<a name="4.2.3"></a>4.2.3 - O Paradigma "copy - modify - merge"		</div>
+		<br />
+		<div class=texto>
+			Em contraste ao "lock - modify - unlock" o "copy - modify - merge" permite que v&aacute;rias pessoas possam trabalhar em um arquivo ao mesmo tempo. Na pr&aacute;tica, cada pessoa
+			copia para sua m&aacute;quina a vers&atilde;o mais atual do reposit&oacute;rio e altera aquilo que precisar. Terminadas estas altera&ccedil;&otilde;es, o novo arquivo &eacute; enviado para o reposit&oacute;rio. Caso ningu&eacute;m 
+			tenha enviado uma nova vers&atilde;o do arquivo no meio tempo, a devolu&ccedil;&atilde;o &eacute; bem sucedida. No caso contr&aacute;rio podem ocorrer duas coisas, "merge" ou "conflict".
+		</div>
+		<div class=subsubsubtitulo>
+			<a name="4.2.3.1"></a>4.2.3.1 - A etapa "merge"		</div>
+		<br />
+		<div class=texto>
+			O Subversion tenta combinar as altera&ccedil;&otilde;es enviadas ao reposit&oacute;rio com as novas altera&ccedil;&otilde;es do usu&aacute;rio e a opera&ccedil;&atilde;o &eacute; bem sucedida. Tipicamente em arquivos bem estruturados 
+			como C, C++, Java, HTML, XML a opera&ccedil;&atilde;o de "merge" &eacute; realizada com sucesso. Ainda assim, &agrave;s vezes a opera&ccedil;&atilde;o falha. De qualquer forma, &eacute; sempre bom verificar o que de fato 
+			foi feito no "merge" para n&atilde;o perder altera&ccedil;&otilde;es.		</div>
+		<div class=subsubsubtitulo>
+			<a name="4.2.3.2"></a>4.2.3.2 - A etapa "conflict"		</div>
+		<br />
+		<div class=texto>
+			Quando um "merge" n&atilde;o &eacute; bem sucedido um "conflict" &eacute; notificado ao usu&aacute;rio. Tr&ecirc;s vers&otilde;es do arquivo s&atilde;o apresentadas ao usu&aacute;rio: a sua pr&oacute;pria, a vers&atilde;o anterior &agrave;s altera&ccedil;&otilde;es
+			conflitantes e a vers&atilde;o conflitante. &Eacute; responsabilidade do usu&aacute;rio analisar estes tr&ecirc;s arquivos e combinar as altera&ccedil;&otilde;es da maneira mais adequada. Feito isso, o conflito &eacute; 
+			marcado no reposit&oacute;rio como resolvido e o arquivo &eacute; liberado para ser enviado.
+	</div>
+		<br />
+		<div class=subsubtitulo>
+			<a name="4.2.4"></a>4.2.4 - Conclus&atilde;o		</div>
+		<br />
+		<div class=texto>
+			O paradigma "lock - modify - unlock" &eacute; aparentemente mais seguro j&aacute; que impede que ocorram conflitos nas vers&otilde;es dos arquivos. Por&eacute;m, &eacute; pouco &aacute;gil j&aacute; que impede que v&aacute;rios 
+			usu&aacute;rios trabalhem no mesmo arquivo.
+			<br />
+			<br />
+			Em contrapartida, o paradigma "copy - modify - merge" permite que v&aacute;rios usu&aacute;rios trabalhem ao mesmo tempo num arquivo, com a desvantagem de que eventualmente um "conflict" pode ocorrer.
+			Apesar desta possibilidade, o paradigma proporciona um ambiente mais &aacute;gil.
+  			<br />
+			<br />
+			Por conta destas considera&ccedil;&otilde;es foi escolhido o Subversion (que usa o paradigma “copy - modify - merge") para efetuar o controle de vers&atilde;o de nossos arquivos.
+  			<br />
+			<br />
+			Como observa&ccedil;&atilde;o acrescentamos que o Subversion permite opcionalmente o uso do paradigma "lock - modify - unlock".
+		</div>
+		<br />
+		<div class=subtitulo>
+			<a name="4.3"></a>4.3 - Maven2		</div>
+		<br />
+		<div class=subsubtitulo>
+			<a name="4.3.1"></a>4.3.1 - Introdu&ccedil;&atilde;o		</div>
+		<br />
+		<div class="texto">
+			O Maven2 (<a target="_blank" href="http://maven.apache.org">http://maven.apache.org</a>) &eacute; uma ferramenta livre feita em Java para facilitar o gerenciamento de 
+			projetos nessa linguagem. A ferramenta busca alcan&ccedil;ar este objetivo da seguinte maneira:
+				<ul>
+					<li>Facilitando o processo de "build", isto é, compilação e integração dos vários módulos da aplicação</li>
+					<li>Padronizando a estrutura f&iacute;sica em disco do projeto</li>
+					<li>Gerando facilmente meta-informa&ccedil;&atilde;o do projeto</li>
+					<li>Provendo uma arquitetura expans&iacute;vel facilitando a adi&ccedil;&atilde;o de novos componentes</li>
+				</ul>
+			Em particular, discutiremos o "Project Object Model", o Reposit&oacute;rio de Artefatos e a resolu&ccedil;&atilde;o de depend&ecirc;ncias.
+			<br />
+			<br />
+			O "Project Object Model" &eacute; uma representa&ccedil;&atilde;o das informa&ccedil;&otilde;es de um projeto como: identifica&ccedil;&atilde;o, desenvolvedores, depend&ecirc;ncias, localiza&ccedil;&atilde;o do c&oacute;digo-fonte, etc.
+			<br />
+			<br />
+			Por Artefato denomina-se um pacote qualquer em Java, seja JAR (Java Archive), WAR (Web Archive) ou EAR (Enterprise Archive).
+			<br />
+			<br />
+			A resolu&ccedil;&atilde;o de depend&ecirc;ncias &eacute; o mecanismo pelo qual o Maven2 encontra as os pacotes que cada Artefato precisa para ser compilado
+			e executado corretamente.
+		</div>
+		<br />
+		<div class=subsubtitulo>
+			<a name="4.3.2"></a>4.3.2 - O "Project Object Model"		</div>
+		<br />
+		<div class="texto">
+			O "Project Object Model" ou "POM" &eacute; um arquivo escrito em XML que centraliza toda a informa&ccedil;&atilde;o sobre um pacote em Java. 
+			Muitas configura&ccedil;&otilde;es podem ser feitas no POM mas as mais usuais s&atilde;o:
+			<ul>
+				<li>
+					Defini&ccedil;&atilde;o do Artefato				</li>
+				<li>
+					Depend&ecirc;ncias do Pacote				</li>
+			</ul> 
+		</div>
+		<br />
+		<div class=subsubsubtitulo>
+			<a name="4.3.2.1"></a>4.3.2.1 - Identifica&ccedil;&atilde;o do Artefato		</div>
+		<br />
+		<div class="texto">
+			Cada "POM" representa um Artefato. Cada Artefato &eacute; identificado univocamente por tr&ecirc;s propriedades:
+			<ul>
+				<li>GroupID - Uma identifica&ccedil;&atilde;o para efeito de agrupamento de Artefatos em Grupos l&oacute;gicos, isto &eacute;, pacotes relacionados compartilham um mesmo GroupID</li>
+				<li>ArtifactID - Uma identifica&ccedil;&atilde;o do Artefato dentro do Grupo ao qual pertence</li>
+				<li>Version - A vers&atilde;o do Artefato</li>
+			</ul>
+			Exemplo:
+			<br />
+			<br />
+<pre>
+&lt;groupId&gt;sigeco&lt;/groupId&gt;
+&lt;artifactId&gt;sigeco-model&lt;/artifactId&gt;
+&lt;version&gt;0.1-SNAPSHOT&lt;/version&gt;
+</pre>
+		</div>
+		<br />
+		<div class=subsubsubtitulo>
+			<a name="4.3.2.2"></a>4.3.2.2 - Estrutura em disco do pacote		</div>
+		<br />
+		<div class="texto">
+			Por defini&ccedil;&atilde;o, um pacote do Maven2 tem a seguinte estrutura em disco:
+<pre>
+<em>src</em>
+ |--<em>main</em>
+ |   |--<em>java</em>
+ |   |--<em>resources</em>
+ |--<em>test</em>
+     |--<em>java</em>
+     |--<em>resources</em>
+<em>target</em>
+pom.xml
+</pre>
+			Onde:
+			<ul>
+				<li>
+					src/main/java: Diret&oacute;rio onde fica o c&oacute;digo fonte do pacote				</li>
+				<li>
+					src/main/resources: Diret&oacute;rio onde ficam arquivos n&atilde;o-Java que devem estar dispon&iacute;veis no <em>classpath</em> (ver <a href="#3.1.3">item 3.1.3</a>).				</li>
+				<li>
+					src/test/java: Diret&oacute;rio onde fica o c&oacute;digo-fonte dos testes para este pacote. As classes desta pasta 
+					n&atilde;o s&atilde;o inclu&iacute;das no pacote, s&atilde;o utilizadas apenas na fase de testes.				</li>
+				<li>
+					src/test/resources: Diret&oacute;rio onde ficam arquivos n&atilde;o-Java que devem estar no <em>classpath</em> apenas durante 
+					a execu&ccedil;&atilde;o dos testes.				</li>
+				<li>
+					target: Diret&oacute;rio onde ficam as classes compiladas e o pacote gerado.				</li>
+				<li>
+					pom.xml: O POM para este pacote.				</li>
+			</ul>
+	</div>
+		<br />
+		<div class=subsubsubtitulo>
+			<a name="4.3.2.3"></a>4.3.2.3 - Configura&ccedil;&atilde;o por exce&ccedil;&atilde;o
+		</div>
+		<br />
+		<div class=texto>
+			O Maven2 adota no POM o padr&atilde;o de "configura&ccedil;&atilde;o por exce&ccedil;&atilde;o", ou seja, s&atilde;o assumidos valores padr&otilde;es 
+			para a maioria dos itens configur&aacute;veis. Isso proporciona uma vantagem j&aacute; que, na maioria dos casos, o modelo padr&atilde;o
+			&eacute; adequado e portanto esta estrat&eacute;gia reduz significativamente a quantidade de configura&ccedil;&atilde;o necess&aacute;ria.
+			
+			Por exemplo, &eacute; poss&iacute;vel especificar a pasta na qual o pacote montado deve ser colocado:
+            <pre>
+&lt;build&gt;
+	&lt;directory&gt;
+		meuDiretorioDeSaida
+	&lt;/directory&gt;
+&lt;/build&gt;
+</pre>
+		Por&eacute;m, utilizando-se a estrutura padr&atilde;o de um projeto do Maven2, essa configura&ccedil;&atilde;o pode ser omitida e o valor padr&atilde;o 
+		"target" &eacute; assumido, condizendo com a estrutura vista no item anterior.
+		<br />
+		<br />
+		Essa t&eacute;cnica aplica-se a muitos outros itens do POM tornando muito vantajoso respeitar a estrutura proposta
+	pelo Maven2 para um projeto.		</div>
+		<br />
+		<div class=subsubsubtitulo>
+			<a name="4.3.2.4"></a>4.3.2.4 - Defini&ccedil;&atilde;o das depend&ecirc;ncias		</div>
+		<br />
+		<div class=texto>
+			Muitas vezes num projeto em Java bibliotecas externas s&atilde;o referenciadas para que seja poss&iacute;vel usar determinado arcabou&ccedil;o
+			ou determinada funcionalidade j&aacute; implementada por terceiros.
+			<br />
+			<br />
+			Pode-se configurar essas depend&ecirc;ncias no POM da seguinte forma:
+<pre>
+&lt;dependencies&gt;
+	&lt;dependency&gt;
+		&lt;groupId&gt;org.hibernate&lt;/groupId&gt;
+		&lt;artifactId&gt;hibernate&lt;/artifactId&gt;
+		&lt;version&gt;3.2.0.GA&lt;/version&gt;
+		&lt;scope&gt;compile&lt;/scope&gt;	
+	&lt;/dependency&gt;
+	&lt;dependency&gt;
+		&lt;groupId&gt;org.junit&lt;/groupId&gt;
+		&lt;artifactId&gt;junit&lt;/artifactId&gt;
+		&lt;version&gt;3.8.12&lt;/version&gt;
+		&lt;scope&gt;test&lt;/scope&gt;	
+	&lt;/dependency&gt;
+&lt;/dependencies&gt;
+</pre>
+			Duas coisas importantes devem ser notadas. S&oacute; se cria uma depend&ecirc;ncia (cf. <a href="#4.3.1">item 4.3.1</a>) para o componente que se deseja utilizar. Embora cada componente tenha suas pr&oacute;prias depend&ecirc;ncias,
+			estas n&atilde;o precisam ser mencionadas neste POM. Detalhes de como isto funciona s&atilde;o vistos no item <a href="monografia_grupo.html#4.3.5">4.3.5</a> abaixo.
+			<br />
+			<br />
+			Depend&ecirc;ncias t&ecirc;m escopo associado. Os escopos mais usuais s&atilde;o:
+			<ul>
+				<li>
+					test: Indica uma depend&ecirc;ncia que s&oacute; precisa estar dispon&iacute;vel para compilar e executar testes.				</li>
+				<li>
+					compile: Indica uma depend&ecirc;ncia que precisa estar dispon&iacute;vel tanto em tempo de compila&ccedil;&atilde;o quanto em tempo de execu&ccedil;&atilde;o.				</li>
+				<li>
+					runtime: Indica uma depend&ecirc;ncia que s&oacute; precisa estar dispon&iacute;vel em tempo de execu&ccedil;&atilde;o.				</li>
+				<li>
+					provided: Indica uma depend&ecirc;ncia que s&oacute; precisa estar dispon&iacute;vel em tempo de compila&ccedil;&atilde;o. Em tempo de execu&ccedil;&atilde;o esta depend&ecirc;ncia ser&aacute; fornecida pelo ambiente.				</li>
+			</ul>
+		</div>
+		<br />
+		<div class=subsubsubtitulo>
+			<a name="4.3.2.5"></a>4.3.2.5 - Poss&iacute;veis configura&ccedil;&otilde;es adicionais		</div>
+		<br />
+		<div class=texto>
+			Outras configura&ccedil;&otilde;es podem ser feitas no POM. Por exemplo, podem ser definidos perfis que s&atilde;o ativados ou desativados via vari&aacute;veis de ambiente. Assim,
+			&eacute; poss&iacute;vel determinar varia&ccedil;&otilde;es para o "build", isto &eacute;, a compila&ccedil;&atilde;o e implanta&ccedil;&atilde;o do pacote, como a seguir:
+<pre>
+&lt;profiles&gt;
+	&lt;profile&gt;
+		&lt;id&gt;jdk4&lt;/id&gt;
+		&lt;activation&gt;
+			&lt;property&gt;
+				&lt;name&gt;jdk4&lt;/name&gt;
+			&lt;/property&gt;
+		&lt;/activation&gt;
+		&lt;build&gt;
+			&lt;plugins&gt;
+				&lt;plugin&gt;
+					&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+					&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+					&lt;configuration&gt;
+						&lt;source&gt;1.4&lt;/source&gt;
+						&lt;target&gt;1.4&lt;/target&gt;
+						&lt;encoding&gt;UTF-8&lt;/encoding&gt;
+					&lt;/configuration&gt;
+				&lt;/plugin&gt;
+			&lt;/plugins&gt;
+		&lt;/build&gt;
+	&lt;/profile&gt;
+	&lt;profile&gt;
+		&lt;id&gt;jdk5&lt;/id&gt;
+		&lt;activation&gt;
+			&lt;property&gt;
+				&lt;name&gt;jdk5&lt;/name&gt;
+			&lt;/property&gt;
+		&lt;/activation&gt;
+		&lt;build&gt;
+			&lt;plugins&gt;
+				&lt;plugin&gt;
+					&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+					&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+					&lt;configuration&gt;
+						&lt;source&gt;1.5&lt;/source&gt;
+						&lt;target&gt;1.5&lt;/target&gt;
+						&lt;encoding&gt;UTF-8&lt;/encoding&gt;
+					&lt;/configuration&gt;
+				&lt;/plugin&gt;
+			&lt;/plugins&gt;
+		&lt;/build&gt;
+	&lt;/profile&gt;
+&lt;/profiles&gt;
+</pre>
+
+		Aqui pode ser visto que dois perfis foram definidos. O primeiro &eacute; ativado se a vari&aacute;vel de ambiente chamada "jdk4" estiver 
+		definida com qualquer valor, inclusive vazio. O segundo &eacute; ativado caso a vari&aacute;vel de ambiente "jdk5" esteja definida. O primeiro perfil
+		notifica o <em>plugin</em> de compila&ccedil;&atilde;o do Maven2 que deve ser assumido que o c&oacute;digo fonte est&aacute; escrito em Java 1.4 e que as classes
+		compiladas devem ser compat&iacute;veis com Java 1.4. J&aacute; o segundo perfil faz as mesmas notifica&ccedil;&otilde;es por&eacute;m para Java 1.5.
+		<br />
+		<br />
+		No item <a href="monografia_grupo.html#4.3.1">4.3.1</a> foi mencionado que o Maven2 tem uma arquitetura do tipo <em>plug-in</em>. Isto fica 
+		evidenciado na configura&ccedil;&atilde;o acima onde foi referenciado um <em>plugin</em> do Maven2 (maven-compiler-plugin) e foram alteradas as suas configura&ccedil;&otilde;es
+		(source, target e encoding). O mesmo poderia ser feito para qualquer um dos <em>plugins</em> do Maven2. Todo o ciclo de "build" do projeto 
+		&eacute; gerenciado por <em>plugins</em>. Esse ciclo ser&aacute; discutido no pr&oacute;ximo item.
+		</div>
+		<br />
+		<div class=subsubtitulo>
+			<a name="4.3.3"></a>4.3.3 - O ciclo de "build" do projeto		</div>
+		<br />
+		<div class=texto>
+			O Maven2 define um ciclo de "build" para o projeto em fases. Em cada fase determinados <em>plugins</em> s&atilde;o chamados e outros arbitr&aacute;rios 
+			podem ser inclu&iacute;dos. As fases s&atilde;o sempre executadas em ordem e caso algum erro ocorra em alguma delas o "build" &eacute; interrompido.
+			As fases mais comuns s&atilde;o:
+			<ul>
+				<li>
+					generate-sources				</li>
+				<li>
+					compile				</li>
+				<li>
+					test-compile				</li>
+				<li>
+					test				</li>
+				<li>
+					package				</li>
+				<li>
+					install				</li>
+				<li>
+					deploy				</li>
+			</ul>
+		</div>
+		<br />
+		<div class=subsubsubtitulo>
+			<a name="4.3.3.1"></a>4.3.3.1 - Generate-sources
+		</div>
+		<br />
+		<div class=texto>
+			Nesta fase s&atilde;o executados os <em>plugins</em> que t&ecirc;m por tarefa gerar arquivos de qualquer natureza. 
+			<br />
+			<br />
+			Por exemplo, nesta fase seriam gerados os Stubs, (interfaces geradas para se acessar um servi&ccedil;o) de 
+			componentes de uma aplica&ccedil;&atilde;o <a target="_blank" href='http://en.wikipedia.org/wiki/CORBA'>CORBA</a> a partir das defini&ccedil;&otilde;es de <a href="http://en.wikipedia.org/wiki/Interface_description_language">IDL</a>'s, isto &eacute;, defini&ccedil;&otilde;es de um servi&ccedil;o. Ou ent&atilde;o poderiam ser gerados XML's de configura&ccedil;&atilde;o a partir de um script
+			em <a target="_blank" href="http://velocity.apache.org">Velocity</a> ou em <a target="_blank" href="http://freemarker.org">Freemarker</a>.		</div>
+		<br />
+		<div class=subsubsubtitulo>
+			<a name="4.3.3.2"></a>4.3.3.2 - Compile
+		</div>
+		<br />
+		<div class=texto>
+			Nesta fase os arquivos em Java encontrados na pasta src/main/java (caso esta configura&ccedil;&atilde;o n&atilde;o tenha sido alterada) s&atilde;o compilados.
+		</div>
+		<br />
+		<div class=subsubsubtitulo>
+			<a name="4.3.3.3"></a>4.3.3.3 - Test-compile
+		</div>
+		<br />
+		<div class=texto>
+			Nesta fase os arquivos em Java encontrados na pasta src/test/java (caso esta configura&ccedil;&atilde;o n&atilde;o tenha sido alterada) s&atilde;o compilados.
+		</div>
+		<br />
+		<div class=subsubsubtitulo>
+			<a name="4.3.3.4"></a>4.3.3.4 - Test
+		</div>
+		<br />
+		<div class=texto>
+			Nesta fase os testes definidos na pasta src/test/java s&atilde;o todos executados. Note-se que esta fase &eacute; executada antes do 
+			empacotamento das classes, isto &eacute;, a reuni&atilde;o das classes compilados em um arquivo JAR, WAR ou EAR. Portanto, caso algum teste falhe e o "build" seja interrompido, o empacotamento n&atilde;o ser&aacute; feito. A 
+			consequ&ecirc;ncia positiva desse comportamento &eacute; que um projeto que tenha problemas evidenciados por seus testes unit&aacute;rios n&atilde;o ser&aacute;
+			empacotado enquanto esses problemas n&atilde;o forem resolvidos. Caso os testes unit&aacute;rios n&atilde;o evidenciem nenhum problema, o Maven2 segue 
+			para a fase seguinte.		</div>
+		<br />
+		<div class=subsubsubtitulo>
+			<a name="4.3.3.5"></a>4.3.3.5 - Package 
+		</div>
+		<br />
+		<div class=texto>
+			Nesta fase todas as classes compiladas a partir do c&oacute;digo fonte encontrado na pasta src/main/java s&atilde;o empacotados junto com os arquivos
+			encontrados na pasta src/main/resources e o arquivo gerado &eacute; colocado na pasta target.		</div>
+		<br />
+		<div class=subsubsubtitulo>
+			<a name="4.3.3.6"></a>4.3.3.6 - Install
+		</div>
+		<br />
+		<div class=texto>
+			Nesta fase o arquivo empacotado &eacute; copiado para o reposit&oacute;rio local para que fique dispon&iacute;vel para ser usado como depend&ecirc;ncia de outros 
+			projetos. Detalhes do reposit&oacute;rio ser&atilde;o discutidos no item <a href="monografia_grupo.html#4.3.4">4.3.4</a>.		</div>
+		<br />
+		<div class=subsubsubtitulo>
+			<a name="4.3.3.7"></a>4.3.3.7 - Deploy
+		</div>
+		<br />
+		<div class=texto>
+			Nesta fase o arquivo empacotado &eacute; copiado para o reposit&oacute;rio remoto para que fique dispon&iacute;vel para outros desenvolvedores. Este reposit&oacute;rio
+			pode estar situado na rede local ou mesmo na internet.		</div>
+		<br />
+		<div class=subsubtitulo>
+			<a name="4.3.4"></a>4.3.4 - O Reposit&oacute;rio de Artefatos		</div>
+		<br />
+		<div class=texto>
+			O Maven2 funciona com o aux&iacute;lio de um reposit&oacute;rio local de artefatos. Nesse reposit&oacute;rio, os artefatos s&atilde;o organizados de acordo com as defini&ccedil;&otilde;es
+			de seu identificador de grupo, identificador de artefato e vers&atilde;o, conforme vistos no item <a href="">4.3.2.1</a>. Para o seguinte artefato:
+<pre>
+&lt;groupId&gt;sigeco&lt;/groupId&gt;
+&lt;artifactId&gt;sigeco-model&lt;/artifactId&gt;
+&lt;version&gt;0.1-SNAPSHOT&lt;/version&gt;
+</pre>
+			
+			o pacote seria colocado na pasta:
+			
+<pre>
+sigeco/sigeco-model/0.1-SNAPSHOT/sigeco-model-0.1-SNAPSHOT.jar
+</pre>
+
+			Al&eacute;m disso, o POM do artefato &eacute; armazenado no mesmo diret&oacute;rio. Dessa forma, &eacute; poss&iacute;vel determinar as depend&ecirc;ncias de um artefato do reposit&oacute;rio ou 
+			outras informa&ccedil;&otilde;es.
+			<br />
+			<br />
+			Seguindo esta estrutura os artefatos ficam armazenados e categorizados em disco formando um local centralizado de onde os pacotes podem ser referenciados como
+			depend&ecirc;ncias de outros.
+			<br />
+			<br />
+			A mesma estrutura &eacute; utilizada nos reposit&oacute;rios remotos, aos quais o sistema pode ter acesso via rede local ou via internet.
+		</div>
+		<br />
+		<div class=subsubtitulo>
+			<a name="4.3.5"></a>4.3.5 - Resolu&ccedil;&atilde;o de depend&ecirc;ncias		</div>
+		<br />
+		<div class=texto>
+			Uma das grandes vantagens oferecidas pelo Maven2 &eacute; a resolu&ccedil;&atilde;o de depend&ecirc;ncias. Conforme visto acima, cada projeto relaciona no seu POM suas depend&ecirc;ncias. Por exemplo:
+<pre>
+&lt;dependency&gt;
+	&lt;groupId&gt;org.hibernate&lt;/groupId&gt;
+	&lt;artifactId&gt;hibernate&lt;/artifactId&gt;
+	&lt;version&gt;3.2.0.GA&lt;/version&gt;
+	&lt;scope&gt;compile&lt;/scope&gt;	
+&lt;/dependency&gt;
+</pre>
+
+			Quando executado o Maven2 analisa o POM do projeto e recupera do reposit&oacute;rio local as depend&ecirc;ncias especificadas. Cada depend&ecirc;ncia tem no reposit&oacute;rio o seu POM. Este POM &eacute;
+			analisado pelo Maven2 e suas depend&ecirc;ncias tamb&eacute;m s&atilde;o obtidas. Desta forma, o Maven2 percorre a &aacute;rvore de depend&ecirc;ncias e obt&eacute;m todos os pacotes necess&aacute;rios. Caso um 
+			pacote n&atilde;o seja encontrado no reposit&oacute;rio local o mesmo &eacute; procurado na Internet. O Maven2 mant&eacute;m na Internet um reposit&oacute;rio p&uacute;blico que disponibiliza a maior parte dos pacotes
+			em Java utilizados atualmente.
+			<br />
+			<br />
+			Caso um pacote n&atilde;o seja encontrado nem no reposit&oacute;rio da Internet &eacute; poss&iacute;vel baixar o pacote do local onde est&aacute; disponibilizado e coloc&aacute;-lo no reposit&oacute;rio local via um comando do Maven2.
+            <pre>
+mvn install:install-file -DgroupID=nome.do.grupo -DartifactId=nome-do-artefato -Dversion=1.0 -Dpackaging=jar -Dfile=pacote.jar
+</pre>
+			<br />
+			<br />
+			Al&eacute;m da busca de pacotes o Maven2 tamb&eacute;m procura na &aacute;rvore por refer&ecirc;ncias a vers&otilde;es diferentes de um mesmo artefato e utiliza a mais antiga por quest&otilde;es de compatibilidade. N&atilde;o &eacute;
+			poss&iacute;vel garantir que determinado pacote mant&eacute;m compatibilidade para tr&aacute;s entre suas vers&otilde;es.		</div>
+		<br />
+		<div class=subsubtitulo>
+			<a name="4.3.6"></a>4.3.6 - Conclus&atilde;o		</div>
+		<br />
+		<div class=texto>
+			O Maven2 &eacute; uma excelente ferramenta de gest&atilde;o de projetos. Auxilia a resolu&ccedil;&atilde;o de depend&ecirc;ncias e incentiva boas pr&aacute;ticas de gerenciamento de projetos como uma estrutura padronizada
+			de diret&oacute;rios ou ent&atilde;o empacotar apenas software devidamente testado.
+			<br />
+			<br />
+			Al&eacute;m disso, o POM permite a f&aacute;cil manuten&ccedil;&atilde;o das informa&ccedil;&otilde;es relacionadas ao projeto ao centralizar esta informa&ccedil;&atilde;o em um &uacute;nico arquivo. Al&eacute;m disso, o ciclo de "build" proposto
+			pelo Maven2 &eacute; bastante coerente e normalmente faz sentido seguir as fases propostas.
+			<br />
+			<br />
+			Com sua arquitetura flex&iacute;vel, permite alterar e configurar o funcionamento da ferramenta conforme necess&aacute;rio.
+			<br />
+			<br />
+			De uma maneira geral, o Maven2 &eacute; mais organizado e tem f&aacute;cil manuten&ccedil;&atilde;o. O mesmo n&atilde;o pode ser dito de solu&ccedil;&otilde;es anteriores de gerenciamento de projetos como por exemplo
+			o Ant.		</div>
+		<br />
+        
+        <div class=subtitulo>
+			<a name="4.4"></a>4.4 - Checkstyle		</div>
+<br />
+		<div class=subsubtitulo>
+			<a name="4.4.1"></a>4.4.1 - Introdu&ccedil;&atilde;o		</div>
+		<br />
+		<div class=texto>
+			Checkstyle &eacute; uma ferramenta  que auxilia o programador a manter o c&oacute;digo em Java dentro de padr&otilde;es de programa&ccedil;&atilde;o. A ferramenta permite configurar em que padr&atilde;o o programador deseja que ela mantenha o c&oacute;digo, e como valor padr&atilde;o a ferramenta j&aacute; vem configurada para manter o c&oacute;digo no padr&atilde;o Sun Code Conventions.
+			Este &eacute; um padr&atilde;o sugerido pela Sun para escrita de c&oacute;digo em Java. Por&eacute;m &eacute; poss&iacute;vel criar um padr&atilde;o qualquer configurando as regras de estilo e formata&ccedil;&atilde;o da ferramenta. 
+            <br />
+            <br />
+        	No desenvolvimento do projeto foi utilizado o Eclipse-cs, que &eacute; o <em>plugin</em> do Checkstyle para 
+        	o ambiente de desenvolvimento Eclipse. Este plugin integra toda a funcionalidade do Checkstyle ao Eclipse, utilizando 
+        	os sistemas de <em>warning</em>	e de mensagens de erro do Eclipse para informar o que 
+        	est&aacute; fora dos padr&otilde;es configurados para a ferramenta.</div>
+
+		<br />
+	<div class=subsubtitulo>
+	  <a name="4.4.2"></a>4.4.2 - Funcionalidades	</div>
+		<br />
+		<div class=texto>
+			S&atilde;o in&uacute;meras as funcionalidades do Checkstyle. O conjunto de verifica&ccedil;&otilde;es b&aacute;sicas de c&oacute;digo cont&eacute;m dezenas de fun&ccedil;&otilde;es, como o padr&atilde;o da documenta&ccedil;&atilde;o das classes e dos m&eacute;todos, conven&ccedil;&atilde;o de nomes de classes, m&eacute;todos e atributos, o <em>design</em> das classes, isto &eacute;, a estrutura l&oacute;gica de uma classe, trechos de c&oacute;digo duplicados, e muitas outras para manter o c&oacute;digo em padr&otilde;es que facilitam a compreens&atilde;o de c&oacute;digo que &eacute; desenvolvido em equipe e at&eacute; mesmo a preven&ccedil;&atilde;o de erros de programa&ccedil;&atilde;o que s&atilde;o muito dif&iacute;ceis de serem detectados. 
+            Uma lista completa das verifica&ccedil;&otilde;es dispon&iacute;veis com a ferramenta Checkstyle pode ser encontrada em: <a href="http://checkstyle.sourceforge.net/availablechecks.html">http://checkstyle.sourceforge.net/availablechecks.html</a>
+            <br />
+            <br />
+            Al&eacute;m das funcionalidades b&aacute;sicas, pode-se adicionar novas fucionalidades a ele. Utilizando o Checkstyle API pode-se escrever novas verifica&ccedil;&otilde;es que deseja-se que o Checkstyle aplique ao c&oacute;digo.</div>
+		<br />
+		<div class=subsubsubtitulo>
+			<a name="4.4.2.1"></a>4.4.2.1 - Javadoc Comments		</div>
+		<br />
+		<div class=texto>
+			Este &eacute; um grupo de verifica&ccedil;&otilde;es que analisa a documenta&ccedil;&atilde;o do c&oacute;digo nos padr&otilde;es Javadoc. Por exemplo:
+			<br />
+			<br />
+<pre>
+	/**
+	 * Returns the object of the given class with the given id or null.
+	 *
+	 * @param &lt;T&gt; The type of the object
+	 * @param clazz The class of the object
+	 * @param id The id of the object
+	 * @return The object of the desired type with the given id or null
+	 */
+	@SuppressWarnings("unchecked")
+	public &lt;T&gt; T get(final Class&lt;T&gt; clazz, final Serializable id) {
+		return (T) this.getHibernateTemplate().get(clazz, id);
+	}
+</pre>
+			<br />
+			<br />
+			Ele tornaa obrigat&oacute;ria a documenta&ccedil;&atilde;o de classes, construtores, m&eacute;todos
+    		e at&eacute; mesmo atributos, al&eacute;m de configurar o que &eacute; exigido na documenta&ccedil;&atilde;o, por exemplo, solicitando que todo m&eacute;todo e classe tenha documentado seu autor e sua vers&atilde;o.</div>
+        <br />
+		<div class=subsubsubtitulo>
+		  <a name="4.4.2.2"></a>4.4.2.2 - Naming Conventions		</div>
+		<br />
+		<div class=texto>
+			Este conjunto de m&oacute;dulos verifica o padr&atilde;o dos nomes dos pacotes, classes, m&eacute;todos e atributos. Utilizando-se express&otilde;es regulares para definir cada uma das classes definidas pelos m&oacute;dulos (classes abstratas, 
+            
+            
+             constantes, atributos, m&eacute;todos, pacotes, par&acirc;metros, etc) o plugin emite um aviso quando qualquer dos nomes n&atilde;o segue o padr&atilde;o definido pelas express&otilde;es regulares.</div>
+        <br />
+		<div class=subsubsubtitulo>
+		  <a name="4.4.2.3"></a>4.4.2.3 - Size Violations		</div>
+		<br />
+		<div class=texto>
+			Este conjunto 
+    		&eacute; respons&aacute;vel por verificar a quantidade de linhas de um arquivo, de um m&eacute;todo e 
+    		tamb&eacute;m a quantidade de par&acirc;metros de cada m&eacute;todo. Ao definirem-se tamanhos 
+    		m&aacute;ximos para esses itens, o <em>plugin</em> avisa quando uma classe est&aacute; al&eacute;m do 
+    		tamanho limite e sugere que a mesma seja &quot;refatorada&quot; em classes menores com 
+    		fun&ccedil;&otilde;es mais espec&iacute;ficas. O mesmo para m&eacute;todos: se um m&eacute;todo 
+    		estende-se al&eacute;m do n&uacute;mero m&aacute;ximo de linhas especificado o Checkstyle sugere 
+    		que o m&eacute;todo seja refatorado em dois ou mais m&eacute;todos menores. Esta t&eacute;cnica de 
+    		refatorar classes e m&eacute;todos grandes &eacute; muito praticada e &eacute; muito importante 
+    		para manter a compreens&atilde;o do c&oacute;digo.</div>
+        <br />
+		<div class=subsubsubtitulo>
+		  <a name="4.4.2.4"></a>4.4.2.4 - Miscellaneous		</div>
+		<br />
+		<div class=texto>
+			Neste grupo est&atilde;o v&aacute;rias verifica&ccedil;&otilde;es diversas mas bastante &uacute;teis, como o <em>TodoComment</em> 
+    		que avisa se existem coment&aacute;rios apenas com a string &quot;TODO&quot;, o 
+    		<em>Translation</em> que verifica os v&aacute;rios arquivos tipo <em>property</em> 
+    		(arquivos que armazenam as cadeias de caract&eacute;res (strings) utilizadas no software, como um dicion&aacute;rio, permitindo 
+    		que o software seja traduzido para outros idiomas apenas trocando estes arquivos) e 
+    		certifica que todos os &quot;verbetes&quot; est&atilde;o inclusos em cada arquivo, para garantir 
+    		que a tradu&ccedil;&atilde;o em cada idioma cont&eacute;m todas as cadeias do <em>software</em>. Outro 
+    		m&oacute;dulo &eacute; o <em>FinalParameters</em> que verifica se os par&acirc;metros de 
+    		m&eacute;todos, construtores e blocos <em>catch</em>, isto &eacute;, blocos para tratamento de exce&ccedil;&otilde;es, s&atilde;o do tipo <em>final</em>, para assegurar 
+    		que os ponteiros passados como par&acirc;metros n&atilde;o ser&atilde;o modificados.
+    	</div>
+        <br />
+		<div class=subsubtitulo>
+			<a name="4.4.3"></a>4.4.3 - Conclus&atilde;o		</div>
+		<br />
+		<div class=texto>
+			Quanto maior o projeto que se est&aacute; desenvolvendo, mais o Checkstyle mostra-se &uacute;til, devido &agrave;s suas 
+			in&uacute;meras verifica&ccedil;&otilde;es. Para projetos pequenos, utilizam-se  poucas de suas verifica&ccedil;&otilde;es, mas 
+			em projetos grandes, ele &eacute; um grande facilitador, apontando onde est&atilde;o partes do c&oacute;digo que 
+			ainda n&atilde;o foram documentadas, e ajudando o programador a se policiar durante o desenvolvimento 
+			do c&oacute;digo, garantindo que o &uacute;ltimo siga os padr&otilde;es de c&oacute;digo e documenta&ccedil;&atilde;o.    
+		</div>
+        <br />     
+        
+		<div class=subtitulo>
+			<a name="4.5"></a>4.5 - Spring Framework		</div>
+		<br />
+		<div class=subsubtitulo>
+			<a name="4.5.1"></a>4.5.1 - Introdu&ccedil;&atilde;o		</div>
+		<br />
+		<div class=texto>
+			O Spring Framework &eacute; um arcabou&ccedil;o que auxilia a constru&ccedil;&atilde;o de aplica&ccedil;&otilde;es. Ele prov&ecirc; diversas classes utilit&aacute;rias que facilitam diversos tipos de tarefas de programa&ccedil;&atilde;o proporcionando 
+			produtividade e ganho de qualidade. Os principais focos de atua&ccedil;&atilde;o do Spring s&atilde;o:
+			<ul>
+				<li>
+					Inje&ccedil;&atilde;o de Depend&ecirc;ncias				</li>
+				<li>
+					Abstra&ccedil;&atilde;o para gerenciamento de transa&ccedil;&otilde;es				</li>
+				<li>
+					Abstra&ccedil;&atilde;o para JDBC				</li>
+				<li>
+					Integra&ccedil;&atilde;o com ferramentas de mapeamento objeto / relacional				</li>
+				<li>
+					Suporte &agrave; programa&ccedil;&atilde;o orientada a aspectos
+				</li>
+				<li>
+					Arcabou&ccedil;o MVC para aplica&ccedil;&otilde;es Web				</li>
+			</ul>
+			
+			Entraremos nos detalhes da inje&ccedil;&atilde;o de depend&ecirc;ncias, do suporte a aspectos e por fim do suporte ao Hibernate.
+		</div>
+		<br />
+		<div class=subsubtitulo>
+			<a name="4.5.2"></a>4.5.2 - Inje&ccedil;&atilde;o de depend&ecirc;ncias		</div>
+		<br />
+		<div class=texto>
+			A inje&ccedil;&atilde;o de depend&ecirc;ncias &eacute; o mecanismo pelo qual objetos s&atilde;o constru&iacute;dos sem que precisem ter conhecimento sobre a estrat&eacute;gia de constru&ccedil;&atilde;o de suas
+			depend&ecirc;ncias. Ao inv&eacute;s do objeto ter que instanciar uma depend&ecirc;ncia ou busc&aacute;-la numa <em>f&aacute;brica de objetos</em> ele a recebe por interm&eacute;dio de um 
+			agente externo. Aliando esse mecanismo &agrave; boa pr&aacute;tica de programar para a interface e n&atilde;o para a implementa&ccedil;&atilde;o obt&eacute;m-se uma arquitetura altamente 
+			desacoplada, isto &eacute;, onde as classes tem pouca inter-depend&ecirc;ncia, e facilmente test&aacute;vel. 
+		</div>
+		<br />
+		<div class=subsubsubtitulo>
+			<a name="4.5.2.1"></a>4.5.2.1 - Motiva&ccedil;&atilde;o		</div>
+		<br />
+		<div class=texto>
+			Nos exemplos seguintes ser&atilde;o usados duas classes, Carro e Motor, sendo que a classe Carro tem uma depend&ecirc;ncia para a classe Motor.
+ 			<br />
+			<br />
+<pre>
+	public class Carro {
+		private Motor motor;
+		
+		public Carro() {
+			this.motor = new Motor(4);
+		}
+		
+		//getter setters
+	}
+	
+	public class Motor {
+		private int cilindros;
+		
+		public Motor(int cilindros) {
+			this.cilindros = cilindros;
+		}
+		
+		//getters setters
+	}
+</pre>
+
+			Esse exemplo mostra a forma tradicional de se construir objetos. Um carro tem uma depend&ecirc;ncia para um motor e portanto &eacute; respons&aacute;vel por
+			instanciar seu motor. Ou seja, o carro tem a responsabilidade de conhecer de que forma seu motor deve ser instanciado. Caso essa estrat&eacute;gia 
+			de instancia&ccedil;&atilde;o mude ou caso se queira mudar de motor a classe carro precisa ser alterada. Esta arquitetura &eacute; ruim pois uma mudan&ccedil;a na classe
+			motor facilmente ir&aacute; impactar em mudan&ccedil;as na classe carro. 
+			<br />
+			<br />
+			Segue outro exemplo:
+			<br />
+			<br />
+<pre>
+	public class Carro {
+		private Motor motor;
+		
+		public Carro() {
+			this.motor = new MotorImpl(4);
+		}
+		
+		//getter setters
+	}
+	
+	public interface Motor {
+		int getCilindros();
+	}
+	
+	public class MotorImpl implements Motor {
+		private int cilindros;
+		
+		public MotorImpl(int cilindros) {
+			this.cilindros = cilindros;
+		}
+		
+		public int getCilindros() {
+			return this.cilindros;
+		}
+	}
+</pre>			
+			<br />
+			<br />
+			Esse exemplo mostra a divis&atilde;o entre interface e implementa&ccedil;&atilde;o. A classe Carro tem uma depend&ecirc;ncia para a classe Motor mas n&atilde;o precisa saber
+			detalhes da implementa&ccedil;&atilde;o do Motor, apenas qual o contrato (interface) que um Motor deve respeitar. Por&eacute;m, ainda precisa conhecer 
+			alguma implementa&ccedil;&atilde;o da interface Motor para instanciar sua depend&ecirc;ncia. Mesmo se ao inv&eacute;s de instanciar diretamente MotorImpl o Carro
+			usasse uma <em>f&aacute;brica de objetos</em> o c&oacute;digo ficaria com baixo desacoplamento e qualquer mudan&ccedil;a na <em>f&aacute;brica de objetos</em> teria 
+			impacto sobre a implementa&ccedil;&atilde;o de Carro.
+			<br />
+			<br />
+			Segue um &uacute;ltimo exemplo:
+			<br />
+			<br />
+<pre>
+	public interface Carro {
+		Motor getMotor();
+	}	
+	
+	public class CarroImpl implements Carro {
+		private Motor motor;
+		
+		public CarroImpl() {
+		}
+		
+		public void setMotor(final Motor motor) {
+			this.motor = motor;
+		}
+		
+		public Motor getMotor() {
+			return this.motor;
+		}
+	}
+	
+	public interface Motor {
+		int getCilindros();
+	}
+	
+	public class MotorImpl implements Motor {
+		private int cilindros;
+		
+		public MotorImpl() {
+		}
+		
+		public int getCilindros() {
+			return this.cilindros;
+		}
+		
+		public void setCilindros(final int cilindros) {
+			this.cilindros = cilindros;
+		}
+	}
+</pre>	
+			<br />
+			<br />
+			Nesse exemplo &eacute; poss&iacute;vel ver que as classes MotorImpl e CarroImpl n&atilde;o tem nenhum c&oacute;digo relacionado &agrave; instancia&ccedil;&atilde;o de suas 
+			depend&ecirc;ncias. S&atilde;o classes simples com campos privados usados via <em>getters</em> e <em>setters</em>. Suas depend&ecirc;ncias s&atilde;o 
+			inseridas fazendo uso dos <em>setters</em> definidos, <em>setMotor</em> e <em>setCilindros</em>. Desta forma, qualquer mudan&ccedil;a
+			na implementa&ccedil;&atilde;o da interface Motor usada em objeto da classe Carro &eacute; totalmente transparente para Carro. Este apenas precisa saber que seu Motor
+			respeita o contrato definido na interface, independentemente da implementa&ccedil;&atilde;o.
+			<br />
+			<br />
+			Por&eacute;m, para uma arquitetura de classes funcionar desta forma &eacute; necess&aacute;rio que exista um mecanismo respons&aacute;vel por de fato injetar as
+			depend&ecirc;ncias nos objetos, isto &eacute;, instanciar cada um dos componentes separadamente e inser&iacute;-los por uso dos <em>setters</em>. 
+			No Spring, este mecanismo chama-se BeanFactory e &eacute; discutido no item seguinte. 
+		</div>
+		<br />
+		<div class=subsubsubtitulo>
+			<a name="4.5.2.2"></a>4.5.2.2 - Beans e a BeanFactory
+		</div>
+		<br />
+
+		<div class=texto>
+			Os <em>beans</em> ficam definidos em um arquivo XML. O exemplo a seguir mostra como seria este arquivo para as classes Carro e Motor do item anterior.
+			<br />
+			<br />
+<pre>
+&lt;beans&gt;
+	&lt;bean id="motorHonda" class="exemplo.MotorImpl"&gt;
+		&lt;property name="cilindros" value="6" /&gt;
+	&lt;/bean&gt;
+	
+	&lt;bean id="motorKa" class="exemplo.MotorImpl"&gt;
+		&lt;property name="cilindros" value="4" /&gt;
+	&lt;/bean&gt;
+	
+	&lt;bean id="carro" class="exemplo.CarroImpl"&gt;
+		&lt;property name="motor" ref="motorKa" /&gt;
+	&lt;/bean&gt;
+&lt;/beans&gt;
+</pre>
+			A BeanFactory &eacute; o mecanismo pelo qual o Spring gerencia a inje&ccedil;&atilde;o de depend&ecirc;ncias. Basicamente &eacute; um <em>container</em> de <em>beans</em>.
+			Um <em>bean</em> &eacute; identificado por um <em>id</em> &eacute; recuperado usando-se o m&eacute;todo <em>getBean</em> da BeanFactory passando-se este <em>id</em>.
+			<br />
+			<br />
+			<br />
+			<br />
+			Foram definidas duas instâncias de Motor, <em>motorHonda</em> e <em>motorKa</em> e uma instância de Carro, <em>carro</em>. 
+			As instâncias de Motor definidas t&ecirc;m uma quantidade diferente de cilindros. A instância de Motor definida recebe na sua 
+			propriedade <em>motor</em> uma refer&ecirc;ncia para o Motor <em>motorKa</em>.
+			<br />
+			<br />
+			Baseado nestas defini&ccedil;&otilde;es, quando o <em>bean carro</em> for solicitado na BeanFactory o Spring saber&aacute; construir esse objeto. 
+			Em primeiro lugar ir&aacute; instanciar um MotorImpl e usar o m&eacute;todo <em>setCilindros</em> com o valor 4. Depois ir&aacute; instanciar um
+			CarroImpl e usar o m&eacute;todo <em>setMotor</em> passando a instância de MotorImpl rec&eacute;m criada.
+			<br />
+			<br />
+			Desta forma, foi poss&iacute;vel criar uma instância de CarroImpl completa sem que a mesma tenha algum conhecimento de como instanciar
+			suas depend&ecirc;ncias e principalmente qual a implementa&ccedil;&atilde;o utilizada. Caso um dia seja necess&aacute;rio trocar o motor deste carro, basta
+			trocar a entrada
+<pre>
+		&lt;property name="motor" ref="motorKa" /&gt;	
+</pre>
+			para
+<pre>
+		&lt;property name="motor" ref="motorHonda" /&gt;	
+</pre>			
+
+			<br />
+			<br />
+			Al&eacute;m disso, caso um dia apare&ccedil;a uma nova implementa&ccedil;&atilde;o de Motor por exemplo:
+<pre>
+	public class MotorDuploImpl implements Motor {
+		private int cilindrosBase;
+		
+		public MotorDuploImpl() {
+		}
+		
+		public int getCilindros() {
+			return this.cilindrosBase * 2;
+		}
+		
+		public int getCilindrosBase() {
+			return this.cilindrosBase;
+		}
+		
+		public void setCilindrosBase(final int cilindrosBase) {
+			this.cilindrosBase = cilindrosBase;
+		}
+	}
+</pre>
+
+			&eacute; poss&iacute;vel adicionar uma nova entrada no arquivo de <em>beans</em> e trocar o motor usado pelo carro da seguinte forma:
+		
+<pre>
+	&lt;bean id="motorDuplo" class="exemplo.MotorDuploImpl"&gt;
+		&lt;property name="cilindrosBase" value="4" /&gt;
+	&lt;/bean&gt;
+	
+	&lt;bean id="carro" class="exemplo.CarroImpl"&gt;
+		&lt;property name="motor" ref="motorDuplo" /&gt;
+	&lt;/bean&gt;
+</pre>
+			<br />
+			<br />
+			Desta forma foi poss&iacute;vel introduzir uma nova implementa&ccedil;&atilde;o de Motor e utiliza-lo no carro sem que, novamente, o carro tenha
+			algum conhecimento de que isto esteja ocorrendo.		</div>
+		<br />
+		<div class=subsubtitulo>
+			<a name="4.5.3"></a>4.5.3 - Suporte ao Hibernate		</div>
+		<br />
+		<div class=texto>
+			Para executar uma consulta no Hibernate &eacute; necess&aacute;rio interagir com alguns objetos. Em particular, uma <em>SessionFactory</em> para conseguir 
+			uma <em>Session</em> que &eacute; o objeto pelo qual s&atilde;o executadas consultas. Al&eacute;m disso, &eacute; necess&aacute;rio tomar cuidado para n&atilde;o esquecer uma <em>Session</em> 
+			ou uma <em>SessionFactory</em> abertas terminado o uso das mesmas.
+			<br />
+			<br />
+			Para facilitar o uso da <em>SessionFactory</em> o Spring prov&ecirc; a classe <em>AnnotationSessionFactoryBean</em> que &eacute; usada como um <em>bean</em> no arquivo
+			de <em>beans</em>:
+<pre>
+&lt;bean id="sessionFactory"
+	class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"
+	singleton="true"&gt;
+
+	&lt;property name="configLocation"&gt;
+		&lt;value&gt;classpath:exemplo.hibernate.cfg.xml&lt;/value&gt;
+	&lt;/property&gt;
+&lt;/bean&gt;
+</pre>
+
+			Nota-se que este <em>bean</em> recebe a marca <em>singleton="true"</em> centralizando assim o controle de <em>Sessions</em> do Hibernate numa &uacute;nica
+			<em>SessionFactory</em>. Usando esse <em>bean</em> &eacute; poss&iacute;vel usar a SessionFactory em qualquer lugar do c&oacute;digo sem ter que conhecer os detalhes da 
+			instancia&ccedil;&atilde;o da mesma.
+			<br />
+			<br />
+			Outra classe de suporte ao Hibernate &eacute; a HibernateDaoSupport. Esta classe &eacute; abstrata e deve ser extendida por alguma outra. Segue um exemplo:
+<pre>
+	public interface CarroDao {
+		List getCarros();
+	}
+	
+	public class CarroDaoImpl extends HibernateDaoSupport implements CarroDao {
+		public List getCarros() {
+			return this.getHibernateTemplate().loadAll(Carro.class);
+		}
+	}
+</pre>
+
+			Est&atilde;o definidos um contrato de DAO (Data Access Object) para a Classe Carro em CarroDao e uma implementa&ccedil;&atilde;o CarroDaoImpl que estende de 
+			HibernateDaoSupport, isto &eacute;, CarroDaoImpl &eacute; uma sub-classe de HibernatedaoSupport herdando assim seus diversos membros e m&eacute;todos. Com o aux&iacute;lio 
+			de HibernateDaoSupport a classe CarroDaoImpl n&atilde;o precisa interagir em nenhum momento com a <em>SessionFactory</em> e nem com a <em>Session</em>. Todo esse trabalho 
+			&eacute; abstra&iacute;do pelo HibernateDaoSupport, que prov&ecirc; uma interface simplificada de acesso ao Hibernate pelo m&eacute;todo <em>getHibernateTemplate</em>.
+			<br />
+			<br />
+			Para que isto funcione basta adicionar no arquivo de <em>beans</em>:			
+<pre>
+&lt;bean id="carroDao" class="exemplo.CarroDaoImpl"&gt;
+	&lt;property name="sessionFactory"&gt;
+		&lt;ref bean="sessionFactory" /&gt;
+	&lt;/property&gt;
+&lt;/bean&gt;
+</pre>
+
+			Quando o <em>bean</em> carroDao for solicitado ele automaticamente receber&aacute; a sessionFactory definida no arquivo de <em>beans</em> e o controle
+			da SessionFactory e das Session's ser&aacute; feito transparentemente sem que CarroDaoImpl precise ter conhecimento destes procedimentos.
+		</div>
+		<br />
+		<div class=subsubtitulo>
+			<a name="4.5.4"></a>4.5.4 - Suporte a aspectos		</div>
+		<br />
+		<div class=texto>
+			O Spring, com o aux&iacute;lio da <em>BeanFactory</em>, prov&ecirc; facilmente suporte a Aspectos. Aspectos s&atilde;o comportamentos que queremos
+			adicionar &agrave; determinadas funcionalidades existentes como por exemplo: tratamento padronizado de erros, monitoramento de chamadas 
+			a m&eacute;todos para efeito de auditoria ou ent&atilde;o controle transacional. 
+			<br />
+			<br />
+			Em alguns casos, gra&ccedil;as ao Spring, n&atilde;o &eacute; nem necess&aacute;rio escrever c&oacute;digo. Segue exemplo
+			de um aspecto para controle transacional no banco de dados:
+<pre>
+&lt;bean id="tdao" singleton="true"
+	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"&gt;
+	&lt;property name="transactionManager"&gt;
+		&lt;ref local="transactionManager" /&gt;
+	&lt;/property&gt;
+	&lt;property name="target"&gt;
+		&lt;ref local="dao" /&gt;
+	&lt;/property&gt;
+	&lt;property name="transactionAttributes"&gt;
+		&lt;props&gt;
+			&lt;prop key="delete*"&gt;
+				PROPAGATION_REQUIRED, ISOLATION_READ_COMMITTED
+			&lt;/prop&gt;
+			&lt;prop key="remove*"&gt;
+				PROPAGATION_REQUIRED, ISOLATION_READ_COMMITTED
+			&lt;/prop&gt;
+			&lt;prop key="save*"&gt;
+				PROPAGATION_REQUIRED, ISOLATION_READ_COMMITTED
+			&lt;/prop&gt;
+			&lt;prop key="get*"&gt;
+				PROPAGATION_SUPPORTS, ISOLATION_READ_COMMITTED
+			&lt;/prop&gt;
+			&lt;prop key="list*"&gt;
+				PROPAGATION_SUPPORTS, ISOLATION_READ_COMMITTED
+			&lt;/prop&gt;
+		&lt;/props&gt;
+	&lt;/property&gt;
+&lt;/bean&gt;
+
+&lt;bean id="transactionManager"
+	class="org.springframework.orm.hibernate3.HibernateTransactionManager"&gt;
+	&lt;property name="sessionFactory"&gt;
+		&lt;ref local="sessionFactory" /&gt;
+	&lt;/property&gt;
+&lt;/bean&gt;
+</pre>
+ 			<br />
+ 			<br />
+ 			Neste exemplo &eacute; definido um gerenciador de transa&ccedil;&otilde;es associado &agrave; uma <em>Session Factory</em>. Depois disso, dado um bean "dao" para
+ 			o qual queremos exercer um controle transacional definimos um bean "tdao" da classe <em>TransactionProxyFactoryBean</em> que nada mais &eacute;
+ 			do que um <em>proxy</em> que intercepta as chamadas a m&eacute;todos do bean "dao" e aplica o controle transacional especificado na propriedade
+ 			"transactionAttributes".
+ 			<br />
+ 			<br />
+ 			Gra&ccedil;as a essa defini&ccedil;&atilde;o, qualquer <em>bean</em> que queira usar o <em>bean dao</em> com controle transacional s&oacute; precisa referenciar o <em>bean tdao</em> no 
+ 			lugar. Assim o controle transacional fica totalmente transparente para as classes que t&ecirc;m uma depend&ecirc;ncia para <em>dao</em>, proporcionando um maior
+ 			desacoplamento entre classes.		</div>
+		<br />
+		<div class=subsubtitulo>
+			<a name="4.5.5"></a>4.5.5 - Conclus&atilde;o		</div>
+		<br />
+		<div class=texto>
+			O Spring proporciona um excelente controle sobre os objetos de uma aplica&ccedil;&atilde;o. O mecanismo de inje&ccedil;&atilde;o de depend&ecirc;ncias prov&ecirc; um alto grau de 
+			desacoplamento entre as classes. Al&eacute;m disso, incentiva o uso de interfaces para os objetos, permitindo que implementa&ccedil;&otilde;es diferentes de componentes
+			sejam utilizadas sem afetar os objetos que usam os componentes.
+			<br />
+			<br />
+			Al&eacute;m disso, o suporte simples a aspectos permite que as classes sobre as quais o aspecto age n&atilde;o tenham conhecimento algum do mesmo.
+			<br />
+			<br />
+			De uma maneira geral, o Spring torna a programa&ccedil;&atilde;o mais &aacute;gil e test&aacute;vel e incentiva boas pr&aacute;ticas de programa&ccedil;&atilde;o.		</div>
+		<br />
+		<div class=subtitulo>
+			<a name="4.6"></a>4.6 - Java Server Faces		</div>
+		<br />
+		<div class=subsubtitulo>
+			<a name="4.6.1"></a>4.6.1 - Introdu&ccedil;&atilde;o		</div>
+		<br />
+		<div class=texto>
+			O JSF (Java Server Faces) &eacute; um padr&atilde;o, definido pela Sun, de um arcabou&ccedil;o para criar interfaces na Internet. Baseado no paradigma de componentes reutiliz&aacute;veis, 
+			este arcabou&ccedil;o facilita diversas tarefas complexas envolvidas na tarefa de criar aquelas interfaces, por exemplo: navega&ccedil;&atilde;o de p&aacute;ginas, controle de sess&atilde;o de um cliente, 
+			valida&ccedil;&atilde;o de entradas etc.
+			<br />
+			<br />
+			Uma aplica&ccedil;&atilde;o t&iacute;pica em JSF consiste das seguintes partes:
+			<br />
+			<ul>
+			<li>"Managed Beans" para controlar comportamento e estado da aplica&ccedil;&atilde;o
+			<li>Programa&ccedil;&atilde;o baseada em eventos
+			<li>P&aacute;ginas no modelo MVC, p&aacute;ginas acessam o seu comportamento que s&atilde;o definidos na pr&oacute;pria p&aacute;gina e n&atilde;o no componente
+			</ul>
+			A seguir ser&atilde;o apresentadas algumas das principais funcionalidades definidas no JSF.
+		</div>   
+    <br />  
+		<div class=subsubtitulo>
+			<a name="4.6.2"></a>4.6.2 - Managed Beans		</div>   
+    <br />  
+		<div class=texto>
+			As "Managed Beans" s&atilde;o classes utilizadas para definir os comportamentos e controlar o estado da aplica&ccedil;&atilde;o.
+			S&atilde;o instâncias de classes do programador que o arcabou&ccedil;o cria e vincula &agrave; sess&atilde;o. O acesso a essas instâncias 
+			pode ser feito pela interface por meio da linguagem de express&otilde;es (apresentado mais adiante) e o tempo de vida 
+			delas &eacute; controlado pelo arcabou&ccedil;o.
+			<br />
+			O interessante &eacute; que estas classes s&atilde;o objetos simples (<em>POJO - Plain Old Java Object</em>) definidos como "Managed Beans" em um arquivo de configura&ccedil;&otilde;es no formato XML.
+			Como as classes n&atilde;o necessitam de nenhum tipo de heran&ccedil;a ou interface implementada, &eacute; poss&iacute;vel definir arquiteturas simples ou complexas entre elas melhorando 
+			a organiza&ccedil;&atilde;o e a reutiliza&ccedil;&atilde;o do c&oacute;digo.
+			<br />
+			<br />
+			Exemplo de uma managed bean:
+			<br />
+			<br />
+<pre>
+public class MatrixEditionBean {
+	private Matrix matrixOnFocus;
+	
+	private String newKnowledgeGroupName;
+	private KnowledgeGroup groupOnFocus;
+	
+	private String abilityName;
+	
+	public void insertAbility(ActionEvent event) {
+		if (abilityName != null &amp;&amp; !abilityName.equals("")) {
+			Ability ability = new Ability(abilityName, matrixOnFocus);
+			matrixOnFocus.getAbilities().add(ability);
+			abilityName = "";
+		}
+	}
+	
+	public void save(ActionEvent event) {
+		MatrixManagerBean.getInstance(FacesContext.getCurrentInstance()).saveMatrix(matrixOnFocus);
+		resetBean();
+	}
+	
+	.
+	.
+	.
+	.
+	
+	public Matrix getMatrixOnFocus() {
+		return matrixOnFocus;
+	}
+
+	public void setMatrixOnFocus(Matrix matrixOnFocus) {
+		this.matrixOnFocus = matrixOnFocus;
+	}
+
+	public KnowledgeGroup getGroupOnFocus() {
+		return groupOnFocus;
+	}
+
+	public void setGroupOnFocus(KnowledgeGroup groupOnFocus) {
+		this.groupOnFocus = groupOnFocus;
+	}
+
+	.
+	.
+	.
+	.
+}
+</pre>
+			<br />
+			<br />
+			Exemplo da configura&ccedil;&atilde;o desse objeto como uma "managed bean":
+			<br />
+			<br />
+			<pre>
+&lt;managed-bean&gt;
+	&lt;managed-bean-name&gt;matrixEditionBean&lt;/managed-bean-name&gt;
+
+	&lt;managed-bean-class&gt;sigeco.web.jsf.beans.MatrixEditionBean&lt;/managed-bean-class&gt;
+	&lt;managed-bean-scope&gt;session&lt;/managed-bean-scope&gt;
+&lt;/managed-bean&gt;
+			</pre>
+			<br />
+			<br />
+			O tempo de vida das "Managed Beans" mencionado acima est&aacute; associado ao escopo das mesmas. 
+			H&aacute; quatro poss&iacute;veis escopos apresentados a seguir.
+		</div>
+		<div class=subsubsubtitulo>
+			<a name="4.6.2.1"></a>4.6.2.1 - Request
+		</div>   
+    <br />  
+		<div class=texto>
+			A instância da "Managed Bean" &eacute; criada ao receber uma requisi&ccedil;&atilde;o e destru&iacute;da ap&oacute;s enviar a resposta.		</div>   
+    <br />  
+		<div class=subsubsubtitulo>
+			<a name="4.6.2.2"></a>4.6.2.2 - Session		</div>   
+    <br />  
+		<div class=texto>
+			A instância da "Managed Bean" &eacute; criada ao receber uma requisi&ccedil;&atilde;o pela primeira vez durante a sess&atilde;o e destru&iacute;da ap&oacute;s expirar a sess&atilde;o do usu&aacute;rio.		</div>   
+    <br />  
+		<div class=subsubsubtitulo>
+			<a name="4.6.2.3"></a>4.6.2.3 - Application		</div>   
+    <br />  
+		<div class=texto>
+			A instância da "Managed Bean" &eacute; criada ao receber sua primeira requisi&ccedil;&atilde;o. Esta instância &eacute; mantida em mem&oacute;ria enquanto
+			a aplica&ccedil;&atilde;o estiver rodando. Este escopo assemelha-se &agrave; um <em>Singleton</em>.
+		</div>   
+    <br />  
+		<div class=subsubsubtitulo>
+			<a name="4.6.2.4"></a>4.6.2.4 - None		</div>   
+    <br />  
+		<div class=texto>
+			A nova instância da "Managed Bean" &eacute; criada sempre que for requisitada. 
+		</div>   
+    <br />  
+		<div class=subsubtitulo>
+			<a name="4.6.3"></a>4.6.3 - Arquitetura baseada em componentes		</div>   
+        <br />  
+		<div class=texto>
+			JSF possui componentes para todos os tipos de entradas no padr&atilde;o html e tamb&eacute;m permite ao programador criar componentes pr&oacute;prios para prop&oacute;sitos espec&iacute;ficos da aplica&ccedil;&atilde;o 
+			ou agrupar elementos em html para criar componentes compostos, por exemplo, uma entrade de formul&aacute;rio (elemento <em>input</em>) com uma legenda ao seu lado (elemento <em>label</em>). 
+			Estes componentes mant&eacute;m seus estados e tamb&eacute;m s&atilde;o utilizados para produzir as respostas, tudo isso controlado pelo arcabou&ccedil;o JSF. 
+			<br />
+			<br />
+			Os componentes providos pelo JSF ,al&eacute;m de entradas, tamb&eacute;m proporcionam: um modelo de chamada de eventos, valida&ccedil;&atilde;o no servidor ou cliente, convers&atilde;o de dados, 
+			administra&ccedil;&atilde;o de navega&ccedil;&atilde;o de p&aacute;ginas etc. 
+			<br />
+			<br />
+			Exemplo de um componente que exibe um bot&atilde;o para chamada de eventos e realiza a navega&ccedil;&atilde;o:
+			<pre>
+&lt;a4j:commandButton action="finish" actionListener="#{matrixFeederBean.save}" value="#{msgs['global.form.save']}" /&gt;
+			</pre>
+			<br />
+			Esse bot&atilde;o exibe escrito dentro dele o valor da vari&aacute;vel invocada: quando esse bot&atilde;o &eacute; ativado peo usuario &eacute; executada 
+			a a&ccedil;&atilde;o definida em no atributo <em>actionListener</em> e realizada a navega&ccedil;&atilde;o definida por <em>finish</em> na p&aacute;gina.
+			<br />
+			Exemplo de defini&ccedil;&atilde;o de navega&ccedil;&atilde;o:
+			<pre>
+&lt;navigation-rule&gt;
+	&lt;from-view-id&gt;/feeds/dragDropAbilities.jsp&lt;/from-view-id&gt;
+	&lt;navigation-case&gt;
+		&lt;from-outcome&gt;finish&lt;/from-outcome&gt;
+		&lt;to-view-id&gt;/feeds/list.jsp&lt;/to-view-id&gt;
+	&lt;/navigation-case&gt;
+&lt;/navigation-rule&gt;
+			</pre>
+			Ao invocar "finish" acima no componente a4j:commandButton, &eacute; realizada a navega&ccedil;&atilde;o de dragDropAbilities.jsp para list.jsp.
+			<br />
+			<br />
+			Os componentes podem tanto ser definidos no corpo da p&aacute;gina ou criados manualmente atrav&eacute;s de c&oacute;digo em Java em alguma "backing bean". 
+			Neste &uacute;ltimo caso, d&aacute;-se flexibilidade para pequenas altera&ccedil;&otilde;es e maior controle sobre os componentes.
+		  <br />
+			<br />
+			<br />
+			Pela possibilidade de criar ou estender componentes surgiram muitos pacotes de componentes de terceiros 
+			(padronizados seguindo o arcabou&ccedil;o) que podem ser utilizados de em forma de <em>plugin</em>.
+		</div>   
+        <br />  
+		<div class=subsubtitulo>
+			<a name="4.6.4"></a>4.6.4 - Compatibilidade total com a linguagem de express&otilde;es (EL - Expression Language)
+		</div>   
+        <br />  
+		<div class=texto>
+			&eacute; por meio da EL que, por exemplo, a ativa&ccedil;&atilde;o de um componente de "bot&atilde;o" &eacute; associada a um evento. Essa linguagem &eacute; 
+			utilizada diretamente na p&aacute;gina ou em uma chamada ao arcabou&ccedil;o por meio de c&oacute;digo em Java. Al&eacute;m de definir eventos (cliques,
+			altera&ccedil;&otilde;es de valores, atualiza&ccedil;&otilde;es, etc) em componentes tamb&eacute;m &eacute; poss&iacute;vel mapear entradas ou sa&iacute;das a vari&aacute;veis 
+			em "Managed Beans", facilitando o processo de validar e converter a entrada do usu&aacute;rio ou converter uma sa&iacute;da.
+	    <br />
+			<br />
+			Exemplo:
+			<pre>
+&lt;t:inputText value="#{matrixEditionBean.matrixOnFocus.name}" /&gt;
+			</pre>
+			Neste exemplo &eacute; exibida uma caixa para o usu&aacute;rio colocar a entrada que ser&aacute; salva na vari&aacute;vel "name" de "matrixOnFocus" 
+			que est&aacute; na bean "matrixEditionBean".
+			<br />
+			No acesso &agrave;s vari&aacute;veis s&atilde;o chamados os acessores das vari&aacute;veis, isto &eacute;, o <em>getter</em> e o <em>setter</em> associados.
+		</div>   
+    <br />  
+		<div class=subsubtitulo>
+			<a name="4.6.5"></a>4.6.5 - Vantagens do arcabou&ccedil;o JSF
+		</div>   
+    	<br />  
+		<div class=texto>
+			<ul>
+				<li>Controle de estados em n&iacute;vel de componente
+				<li>Separa&ccedil;&atilde;o clara entre apresenta&ccedil;&atilde;o e comportamento
+				<li>Eventos facilmente associados a c&oacute;digo em Java executado no servidor
+				<li>Tarefas complexas como escopo de session (confira item <a href="monografia_grupo.html#4.6.2.2">4.6.2.2</a>, valida&ccedil;&atilde;o autom&aacute;tica de formul&aacute;rios, etc tornam-se simples com o uso do arcabou&ccedil;o
+				<li>Muitos pacotes de componentes de terceiros dispon&iacute;veis
+				<li>Por ser um padr&atilde;o existem muitas implementa&ccedil;&otilde;es do JSF dispon&iacute;veis
+			</ul>
+		</div>
+	<br />
+		<div class=subsubtitulo>
+			<a name="4.6.6"></a>4.6.6 - Conclus&atilde;o		</div>
+	<br />
+		<div class=texto>
+			JSF &eacute; o primeiro padr&atilde;o de um arcabou&ccedil;o baseado em componentes para aplica&ccedil;&otilde;es na internet. &eacute; meio complicado realizar 
+			a configura&ccedil;&atilde;o inicial, mas feito isso a melhoria na reutiliza&ccedil;&atilde;o do c&oacute;digo e a organiza&ccedil;&atilde;o segundo o padr&atilde;o MVC trazem 
+			enormes benef&iacute;cios &agrave; qualidade da arquitetura e do c&oacute;digo sendo produzido.
+		</div>
+	<br />
+		<div class=subtitulo>
+			<a name="4.7"></a>4.7 - Java Persistence API (JPA)		</div>
+	<br />
+		<div class=subsubtitulo>
+			<a name="4.7.1"></a>4.7.1 - Introdu&ccedil;&atilde;o		</div>
+	<br />
+		<div class=texto>
+			Persist&ecirc;ncia &eacute; a manuten&ccedil;&atilde;o permanente de dados, mesmo se objetos que os cont&eacute;m deixam de existir. O JPA d&aacute; a 
+			possibilidade de se armazenar automaticamente dados contidos em objetos em Java em algum banco de dados relacional. 
+			A JPA &eacute; um padr&atilde;o definido pela Sun para realizar essa persist&ecirc;ncia por meio da t&eacute;cnica chamada 
+			"Mapeamento Objeto-Relacional" (Object-Relational Mapping - ORM).
+			<br />
+			O ORM &eacute; definido como o processo de mapear dados em objetos em Java para o banco de dados relacional utilizando 
+			configura&ccedil;&otilde;es. No caso da JPA esta configura&ccedil;&atilde;o &eacute; realizada atrav&eacute;s das "annotations", recurso que foi introduzido 
+			na Java a partir da vers&atilde;o 5.0.
+			<br />
+			A JPA define um padr&atilde;o para:
+			<ul>
+				<li>Definir metadados (<em>metadata</em>) para mapear entidades escritas em Java em tabelas do banco de dados relacional
+				<li>A API do EntityManager, que &eacute; a classe por interm&eacute;dio da qual interage-se com o banco de dados
+				<li>JPQL - Java Persistence Query Language, que permite a constru&ccedil;&atilde;o de consultas usando uma linguagem mais pr&oacute;xima dos objetos
+			</ul>
+		</div>
+<br />
+		<div class=subsubtitulo>
+			<a name="4.7.2"></a>4.7.2 - Entidade		</div>
+	<br />
+		<div class=texto>
+			Entidade &eacute; um objeto que se tornar&aacute; persistente no banco de dados. Para declarar que um objeto &eacute; uma entidade &eacute; necess&aacute;rio adicionar a anota&ccedil;&atilde;o "Entity" &agrave; classe.
+			<pre>
+@Entity
+public class Ability {
+	.
+	.
+	.
+}
+			</pre>
+			A JPA est&aacute; definida com o paradigma de configura&ccedil;&atilde;o por exce&ccedil;&atilde;o, semelhante ao POM do Spring, visto no item <a href="monografia_grupo.html#4.3.2.3">4.3.2.3</a>. 
+			Portanto, valores padr&otilde;es s&atilde;o assumidos para todos os campos dispon&iacute;veis. Isto reduz a quantidade
+			de metadados que s&atilde;o necess&aacute;rios. No exemplo anterior, seguindo este paradigma, &eacute; assumido que esta entidade 
+			ser&aacute; mapeada &agrave; uma tabela no banco de dados com nome "Ability". Caso 
+			seja necess&aacute;rio ser mapeado em outra tabela, &eacute; colocado as configura&ccedil;&otilde;es que fogem do padr&atilde;o assumido.
+			<pre>
+@Entity
+@Table(name = "abilities")
+public class Ability {
+	.
+	.
+	.
+}			
+			</pre>
+			<br />
+			<br />
+			No exemplo acima, usando a anota&ccedil;&atilde;o <em>@Table</em> determinamos que as instâncias da entidade Ability ser&atilde;o mapeados
+			na tabela "abilities" do banco de dados. Caso esta tabela n&atilde;o exista, ela ser&aacute; automaticamente criada na inicializa&ccedil;&atilde;o
+			da aplica&ccedil;&atilde;o. Dados adicionais da tabela como chaves e &iacute;ndices s&atilde;o extra&iacute;dos dos metadados fornecidos na classe pelas
+			anota&ccedil;&otilde;es. 
+			<br />
+			<br />
+			Vari&aacute;veis n&atilde;o transientes, isto &eacute;, que devem ser persistidas, s&atilde;o mapeadas, por padr&atilde;o, para colunas da tabela.
+			Para especificar caracter&iacute;sticas &agrave; esta coluna &eacute; usada a anota&ccedil;&atilde;o <em>@Column</em>. 
+			<pre>
+@Entity
+@Table(name = "abilities")
+public class Ability {
+	private String name;
+	.
+	.
+	/**
+	 * Gets the name of this Ability
+	 * @return String
+	 */
+	@Column(nullable = false)
+	public String getName() {
+		return this.name;
+	}
+	.
+	.
+	.
+}	
+			</pre>
+			<br />
+			<br />
+			No exemplo acima, foi especificado pela anota&ccedil;&atilde;o <em>@Column</em> que a coluna que ir&aacute; guardar o nome da habilidade n&atilde;o
+			deve permitir o valor <em>NULL</em> (@Column(nullable = false)).
+			<br />
+			<br />			
+			Existem diversas outras anota&ccedil;&otilde;es para mapear as entidades ao banco de dados, mas n&atilde;o &eacute; o escopo desta monografia apresentar todas elas. A especifica&ccedil;&atilde;o da JPA
+			pode ser encontrada na p&aacute;gina da <a target="_blank" href="java.sun.com">Sun</a> e nesse documento s&atilde;o detalhadas todas as anota&ccedil;&otilde;es.
+		</div>
+	<br />
+		<div class=subsubtitulo>
+			<a name="4.7.3"></a>4.7.3 - Entity Manager		</div>
+	<br />
+		<div class=texto>
+			As entidades descrevem como elas s&atilde;o mapeadas para o banco de dados, e o "EntityManager" l&ecirc; essas configura&ccedil;&otilde;es e prov&ecirc; opera&ccedil;&otilde;es de persist&ecirc;ncia.
+			<br />
+			Ele &eacute; uma interface que prov&ecirc; funcionalidades para buscar, inserir, atualizar e remover uma entidade no banco. Al&eacute;m disso,
+			ele ainda prov&ecirc; funcionalidades para controlar o ciclo de vida das entidades, melhorar o desempenho, utilizar 
+			<em>caches</em>, isto &eacute;, armazenamento em mem&oacute;ria dos dados mais utilizados, e administrar uma transa&ccedil;&atilde;o.
+			<br />
+			<br />
+			Com essa interface &eacute; eliminado o processo de escrita de in&uacute;meras <em>queries</em> e <em>stored procedures</em> 
+			(m&eacute;todos executados diretamento no banco de dados) semelhantes para funcionalidades similares como por exemplo inser&ccedil;&otilde;es. 
+			Tamb&eacute;m elimina o trabalho de reescrever estss <em>queries</em> caso alguma entidade seja alterada.
+		  <br />
+			<br />
+			Com isso pode ser dito que o EntityManager elimina a necessidade de escrever queries simples, muito repetitivas e altamente sucet&iacute;veis a erros. Fazendo o programador
+			dedicar sua aten&ccedil;&atilde;o somente &agrave;s queries mais complexas de buscas.		</div>
+	<br />	
+		<div class=subsubtitulo>
+			<a name="4.7.4"></a>4.7.4 - Java Persistence Query Language - (JPQL)		</div>
+	<br />
+		<div class=texto>
+			Apesar de o "EntityManager" realizar todas as tarefas mais simples, ainda &eacute; necess&aacute;ria uma forma de poder especificar buscas mais complexas e espec&iacute;ficas &agrave; aplica&ccedil;&atilde;o. 
+			Para esses casos a JPA prov&ecirc; uma linguagem muito similar ao SQL chamada de Java Persistence Query Language (JPQL). 
+			A JPQL &eacute; bem definida e flex&iacute;vel, tornando poss&iacute;vel escrever quase todas as consultas que podem ser escritas em SQL, 
+			ela at&eacute; prov&ecirc; alguns comandos particulares de alguns gerenciadores de bancos de dados.
+			<br />
+			<br />
+			Uma das melhorias sobre o SQL &eacute; a facilidade de expressar restri&ccedil;&otilde;es sobre os relacionamentos entre as entidades 
+			nas consultas.
+			Antes feito por meio dos comandos "INNER JOIN", "OUTER JOIN" etc, o acesso a entidades relacionadas pode ser realizada 
+			simplesmente invocando a vari&aacute;vel que representa este relacionamento. Por exemplo:
+	    <pre>
+@NamedQuery(
+	name = "usersFromConditionGreaterEquals",
+	query = "select v.user from CellValue v "
+	+		"where v.cell.matrix = ? and v.cell.knowledge = ? and v.cell.ability = ? and v.grade &gt;= ? "),
+			</pre>
+			<br />
+			<br />
+			Para que o exemplo acima fique claro &eacute; necess&aacute;rio introduzir que existe um entidade CellValue que tem uma refer&ecirc;ncia
+			para um Usu&aacute;rio, outra para uma C&eacute;lula e outra para um Grau (o Grau de Compet&ecirc;ncia). Esta entidade representa o Grau
+			de Compet&ecirc;ncia que um Usu&aacute;rio tem em uma C&eacute;lula de Matriz.
+			<br />
+			<br />
+			A entidade Cell (a C&eacute;lula da Matriz), por sua vez, tem uma refer&ecirc;ncia para uma Matriz, para uma Habilidade e para uma
+			&aacute;rea de Conhecimento.
+			<br />
+			<br />
+			A consulta acima pode ser definida como: ache todos os usu&aacute;rios que para determinada matriz, determinada habilidade
+			e determinada &aacute;rea de conhecimento informaram um grau de compet&ecirc;ncia maior ou igual &agrave; determinado outro grau de compet&ecirc;ncia.
+			<br />
+			<br />
+			Qualquer pessoa com um pouco de conhecimento de SQL consegue perceber que escrever esta consulta em termos das tabelas
+			e de seus relacionamentos pode ser bem trabalhoso. Por&eacute;m, ao usarmos a JPQL, &eacute; poss&iacute;vel escrever esta consulta
+			em termos das entidades e de suas refer&ecirc;ncias para outras entidades.
+			<br />
+			<br />
+			No exemplo acima, especificamos "select v.user from CellValue v". Isto quer dizer que queremos os usu&aacute;rios referenciados
+			pela instâncias persistidas da entidade CellValue e demos &agrave; entidade o apelido "v". Depois especificamos
+			"where v.cell.matrix = ? and v.cell.knowledge = ? and v.cell.ability = ? and v.grade &gt;= ?". Isto significa que
+			queremos filtrar as instâncias da entidade CellValue. Os filtros aplicados s&atilde;o: 
+			<ul>
+				<li>"v.cell.matrix = ?" - a matriz referenciada pela c&eacute;lula referenciada pelas instâncias de CellValue deve ser igual 
+				&agrave; determinada refer&ecirc;ncia passada como parâmetro</li>
+				<li>"v.cell.knowledge = ?" - a &aacute;rea de conhecimento referenciada pela c&eacute;lula referenciada pelas instâncias de CellValue 
+				deve ser igual &agrave; determinada refer&ecirc;ncia passada como parâmetro</li>
+				<li>"v.cell.ability = ?" - a habilidade referenciada pela c&eacute;lula referenciada pelas instâncias de CellValue deve ser igual 
+				&agrave; determinada refer&ecirc;ncia passada como parâmetro</li>
+				<li>"v.grade >= ?" - a grau de compet&ecirc;ncia referenciado pela c&eacute;lula referenciada pelas instâncias de CellValue deve ser 
+				maior ou igual &agrave; determinada refer&ecirc;ncia passada como parâmetro</li>
+			</ul>
+			<br />
+			<br />
+			Percebe-se ent&atilde;o que gra&ccedil;as &agrave; JPQL foi poss&iacute;vel especificar uma consulta em fun&ccedil;&atilde;o das entidades e de suas refer&ecirc;ncias e n&atilde;o
+			em fun&ccedil;&atilde;o das tabelas no banco de dados e seus relacionamentos. Em particular, n&atilde;o foi necess&aacute;rio se preocupar com quais tabelas 
+			deveriam ser combinadas com "INNER JOIN" ou "OUTER JOIN". &eacute; responsabilidade da JPQL traduzir a consulta expressa em fun&ccedil;&atilde;o das
+			entidades em uma consulta expressa em SQL tradicional para ent&atilde;o ser de fato executada no banco de dados.
+			<br />
+			<br />
+			Embora seja a JPQL seja muito &uacute;til, simples de usar e flex&iacute;vel, ela atualmente n&atilde;o suporta "Stored Procedures". Portanto, caso a 
+			aplica&ccedil;&atilde;o tenha necessidade de utilizar "Stored Procedures" a JPQL n&atilde;o conseguir&aacute; atender a necessidade. Nos outros casos,
+			ela consegue suprir e facilitar a utiliza&ccedil;&atilde;o de consultas.
+		</div>
+	<br />
+		<div class=subsubtitulo>
+			<a name="4.7.5"></a>4.7.5 - Conclus&atilde;o		</div>
+	<br />
+	<div class=texto>
+			A JPA prov&ecirc; uma boa alternativa ao m&eacute;todo tradicional de escrever consultas e utilizar JDBC (<a target="_blank" href="http://java.sun.com/javase/technologies/database/">Java Database Connectivity</a>) 
+			para realizar o acesso ao banco de dados. Com ela, reduz-se o tempo gasto com tarefas simples e repetitivas. Al&eacute;m disso,
+			facilita o mapeamento entre entidades em Java e tabelas do banco de dados. Por fim, permite que a manuten&ccedil;&atilde;o da camada
+			de persist&ecirc;ncia de uma aplica&ccedil;&atilde;o seja uma tarefa r&aacute;pida e simples.
+	</div>
+		<br />
+	<br />
+		<div class=titulo>
+			<a name="5"></a>5 - Avalia&ccedil;&atilde;o do ambiente de desenvolvimento proporcionado		</div>
+	<br />
+		<div class=subtitulo>
+			<a name="5.1"></a>5.1 - Introdu&ccedil;&atilde;o		</div>
+	<br />
+		<div class=texto>
+			O conjunto das ferramentas utilizadas proporcionou um ambiente de desenvolvimento &aacute;gil e padronizado. Isto vale
+			tanto no aspecto gerencial quanto no aspecto de programa&ccedil;&atilde;o. Essas propriedades facilitam o trabalho, pois aceleram o processo de desenvolvimento sem perder em clareza de documenta&ccedil;&atilde;o, e com c&oacute;digo limpo e f&aacute;cil de ser entendido.		</div>
+	<br />
+		<div class=subtitulo>
+			<a name="5.2"></a>5.2 - Aspecto gerencial		</div>
+	<br />
+		<div class=texto>
+			As ferramentas que melhoraram o gerenciamento do projeto foram o Subversion e o Maven2.
+			<br />
+			<br />
+			O Subversion proporcionou um f&aacute;cil controle de vers&otilde;es de arquivos de c&oacute;digo programado e documenta&ccedil;&atilde;o. Os comandos s&atilde;o simples e objetivos. 
+			Seu paradigma (<em>copy</em> - <em>modify</em> - <em>merge</em>) permite, conforme explicado no item <a href='monografia_grupo.html#4.2.3'>4.2.3</a>,
+			 o trabalho simultâneo de v&aacute;rias pessoas em um mesmo arquivo e n&atilde;o permite que recursos do reposit&oacute;rio fiquem
+			inacess&iacute;veis por inadvert&ecirc;ncia dos usu&aacute;rios. Al&eacute;m disso, as ferramentas auxiliares como <a href='http://tortoisesvn.tigris.org/'>TortoiseSVN</a> 
+			e <a href='http://subclipse.tigris.org/'>Subclipse</a> est&atilde;o em um estado maduro de desenvolvimento e facilitam ainda mais o uso de vers&otilde;es de 
+			arquivos com o Subversion.
+			<br />
+			<br />
+			O Maven2 tornou o procedimento de compila&ccedil;&atilde;o, teste e implanta&ccedil;&atilde;o do sistema simples e pr&aacute;tico. A configura&ccedil;&atilde;o dos <a href='monografia_grupo.html#4.3.2'>POM</a>'s de cada
+			camada &eacute; suficiente para essa ferramenta deduzir a ordem de compila&ccedil;&atilde;o das camadas, buscar suas depend&ecirc;ncias, executar os testes
+			e empacotar a aplica&ccedil;&atilde;o no arquivo comprimido WAR (<em>web application archive</em>) para implanta&ccedil;&atilde;o.
+			<br />
+			<br />
+			Al&eacute;m disso, a padroniza&ccedil;&atilde;o da estrutura f&iacute;sica do projeto armazenada em disco proposta pelo Maven2, quando seguida, permite que seja f&aacute;cil
+			e intuitivo trabalhar em projetos diferentes gerenciados por essa ferramenta. Fica definido em quais diret&oacute;rios ficam c&oacute;digo fonte, testes,
+			recursos (como os arquivos xml de configura&ccedil;&atilde;o, os arquivos de texto que definem o idioma da aplica&ccedil;&atilde;o, etc), classes compiladas e o  projeto final, facilitando a navega&ccedil;&atilde;o e localiza&ccedil;&atilde;o de arquivos. Adotar a estrutura 
+			sugerido tem a vantagem adicional de reduzir significativamente a configura&ccedil;&atilde;o necess&aacute;ria de cada <a href='monografia_grupo.html#4.3.2'>POM</a>
+			pois na aus&ecirc;ncia de configura&ccedil;&atilde;o s&atilde;o assumidos os valores correspondentes &agrave; estrutura sugerida.
+			<br />
+			<br />
+			Para exemplificar, o comando a seguir compila, testa, empacota e implanta o software numa instância do servidor de aplica&ccedil;&otilde;es Tomcat:
+          <pre>
+mvn clean install tomcat:deploy
+</pre>
+		</div>
+	<br />
+		<div class=subtitulo>
+			<a name="5.3"></a>5.3 - Aspecto de programa&ccedil;&atilde;o		</div>
+	    <br />
+		<div class=texto>
+			As ferramentas que melhoraram a programa&ccedil;&atilde;o do projeto foram o Checkstyle, o Hibernate, o Spring e o Java Server Faces.
+			<br />
+			<br />
+			O Checkstyle ajudou a padronizar o c&oacute;digo escrito pela equipe. Dessa forma, fica mais f&aacute;cil examinar o c&oacute;digo que outra pessoa
+			escreveu e entender o que est&aacute; sendo feito, pois a estrutura e o formato do c&oacute;digo de programa&ccedil;&atilde;o &eacute; a mesma  entre os membros. Al&eacute;m disso, o Checkstyle
+			incentiva boas pr&aacute;ticas de programa&ccedil;&atilde;o como escrever documenta&ccedil;&atilde;o para m&eacute;todos e classes. Utilizamos no Checkstyle o padr&atilde;o <em>Sun Code Conventions</em> e o padr&atilde;o <em>Javadoc</em> de documenta&ccedil;&atilde;o.
+			<br />
+			<br />
+			O Hibernate auxiliou no mapeamento entre os objetos e sua representa&ccedil;&atilde;o no banco de dados. Esta ferramenta proporciona uma camada
+			entre a aplica&ccedil;&atilde;o e o acesso ao banco de dados, ou seja, a aplica&ccedil;&atilde;o acessa o banco de dados por meio do Hibernate. Com isso as classes de neg&oacute;cio n&atilde;o ficam polu&iacute;das com 
+			constru&ccedil;&atilde;o de consultas ao banco de dados ou com controle de conex&otilde;es ao banco de dados, elas s&oacute; precisam se comunicar com o Hibernate. O Hibernate por sua vez pode ser configurado para trabalhar com praticamente qualquer banco de dados, sendo assim, a aplica&ccedil;&atilde;o fica independente do bando de dados e havendo a necessidade de alterar o banco de dados utilizado, nenhuma altera&ccedil;&atilde;o precisa ser feita na aplica&ccedil;&atilde;o, basta alterar o arquivo de configura&ccedil;&atilde;o do Hibernate para que ele passe a trabalhar com o novo bando de dados desejado.
+		  <br />
+			<br />
+			Al&eacute;m disso, toda a constru&ccedil;&atilde;o das <em>queries</em> de consultas ao banco de dados &eacute; responsabilidade da ferramenta e n&atilde;o do programador, apenas usando <em>Annotations</em> e arquivos de configura&ccedil;&atilde;o, como foi explicado no t&oacute;pico <a href="#4.7">4.7 - Java Persistence API (JPA)</a>. O programador pode concentrar-se mais nas tarefas
+			de programa&ccedil;&atilde;o que realmente interessam ao inv&eacute;s de perder tempo com c&oacute;digo repetitivo relacionado &agrave; consultas ao banco de dados.
+			<br />
+			<br />
+			O Spring facilitou o gerenciamento das depend&ecirc;ncias entre objetos. Sem o Spring um objeto que tenha depend&ecirc;ncia de outros objetos precisa se certificar que os objetos dos quais depende est&atilde;o instanciados, se foram corretamente iniciados e se est&atilde;o no estado correto, antes de manipular esses objetos. Com o Spring,  os objetos n&atilde;o s&atilde;o respons&aacute;veis pela recupera&ccedil;&atilde;o de 
+			suas depend&ecirc;ncias, pois ele prov&ecirc; um mecanismo de inje&ccedil;&atilde;o de depend&ecirc;ncias muito f&aacute;cil de manusear. Desta forma, a codifica&ccedil;&atilde;o
+			dos objetos fica mais limpa, test&aacute;vel e extens&iacute;vel.
+			<br />
+			<br />
+			O f&aacute;cil suporte do Spring &agrave; programa&ccedil;&atilde;o orientada a aspectos permitiu que fosse criado um mecanismo de controle transacional de
+			forma r&aacute;pida. Desta forma, mais uma vez, o programador &eacute; poupado de escrever c&oacute;digo repetitivo e pode trabalhar nas tarefas mais
+			importantes.
+			<br />
+			<br />
+			Por fim, o JSF, facilmente integrado ao Spring, possibilitou a constru&ccedil;&atilde;o de p&aacute;ginas para Internet de forma r&aacute;pida e intuitiva gra&ccedil;as a sua
+			arquitetura orientada a componentes e eventos. As classes de neg&oacute;cio s&atilde;o facilmente disponibilizadas pelo Spring para o JSF; este intermedia
+			a&ccedil;&otilde;es do usu&aacute;rio &agrave;s requisi&ccedil;&otilde;es de componentes de neg&oacute;cio de maneira clara para o programador. Todo o trabalho que se tinha antigamente
+			para tratar uma requisi&ccedil;&atilde;o &eacute; assumido pela ferramenta que prov&ecirc; ao desenvolvedor uma API muito mais amig&aacute;vel.		</div>
+	<br />
+		<div class=subtitulo>
+			<a name="5.4"></a>5.4 - Conclus&atilde;o		</div>
+	<br />
+		<div class=texto>
+			Gra&ccedil;as ao conjunto de ferramentas utilizadas foi poss&iacute;vel estabelecer um ambiente de programa&ccedil;&atilde;o &aacute;gil, onde as mais diversas tarefas
+			s&atilde;o realizadas por comandos simples. A programa&ccedil;&atilde;o de todas as camadas do projeto (modelo, neg&oacute;cios e Internet) foi amplamente facilitada
+			pelas ferramentas adotadas.
+			<br />
+			<br />
+			Neste ambiente de programa&ccedil;&atilde;o o desenvolvedor consegue trabalhar mais nas tarefas de neg&oacute;cios e menos nas tarefas repetitivas como acesso ao 
+			banco de dados e escrita de consultas. Os ganhos de produtividade decorrentes s&atilde;o significativos.
+			<br />
+			<br />
+			Existe a contra-partida de que cada uma destas ferramentas tem uma curva de aprendizado. Usar todas elas em conjunto tamb&eacute;m exige um
+			certo preparo. Por&eacute;m esse esfor&ccedil;o &eacute; apenas inicial. Adquirido o conhecimento b&aacute;sico de cada uma delas j&aacute; &eacute; poss&iacute;vel tirar muito proveito
+			da integra&ccedil;&atilde;o entre estas ferramentas. Cada uma delas poupa o programador ou ent&atilde;o facilita muito a realiza&ccedil;&atilde;o de uma tarefa espec&iacute;fica.		</div>
+	<br />
+	<br />
+		<div class=titulo>
+			<a name="6"></a>6 - Resultados obtidos		</div>
+
+	<br />
+		<div class=subtitulo>
+			<a name="6.1"></a>6.1 - Caracter&iacute;sticas do sistema produzido		</div>
+	    <br />
+		<div class=texto>
+			O sistema produzido tem como objetivo dar um apoio ao gerenciamento de compet&ecirc;ncias. O sistema permite o 
+			cadastramento de usu&aacute;rios de vários perfis. Para cada um destes o sistema permite o preenchimento de 
+			matrizes de compet&ecirc;ncias. A partir dessas matrizes podem ser feitas buscas de usuários por v&aacute;rios 
+			crit&eacute;rios de competência.
+			Este sistema foi nomeado de Sistema de Gerenciamento de Compet&ecirc;ncias (SIGECO).
+			<br />
+			<br />
+			O Sigeco &eacute; destinado a aplica&ccedil;&otilde;es em &aacute;reas de recursos humanos, onde atualmente 
+			existem poucos sistemas de gerenciamento de competências &agrave; disposi&ccedil;&atilde;o. Os sistemas que existem ou 
+			guardam o curr&iacute;culo em forma de texto ou guardam as compet&ecirc;ncias sem a utilização de matrizes bidimensionais. 
+			<br />
+			<br />
+			Este sistema poderia por exemplo ser utilizado na rede estadual de ensino p&uacute;blico, tornando mais eficiente a busca de professores com 
+			as compet&ecirc;ncias desejadas para o cargo. Ou mesmo em uma empresa particular de programa&ccedil;&atilde;o com muitos funcion&aacute;rios que tenha necessidade
+			de alocar rapidamente recursos de um projeto para outro.
+			<br/>
+			<br/>
+			A tela de preenchimento de matrizes de compet&ecirc;ncias original baseava-se na estrutura das matrizes. Era necess&aacute;rio selecionar 
+            um grau de compet&ecirc;ncia para cada par de conhecimento e habilidade, como sugerido no artigo citado. Esta intera&ccedil;&atilde;o estava extremamente ma&ccedil;ante, 
+            e a equipe resolveu introduzir uma modificação invertendo as habilidades com as competências. Exemplo de uma matriz original para preenchimento:
+			<br />
+			<br />
+			<table border="1" align="center" cellspacing="0" cellpadding="3">
+		        <tr>
+		        	<td bgcolor="#CCCCCC" colspan="2" rowspan="2">&nbsp;</td>
+		        	<td colspan="3" align="center" bgcolor="#CCCCCC">HABILIDADES</td>
+		        </tr>
+		        <tr bgcolor="#CCCCCC">
+		        	<td>Leitura</td>
+		        	<td>Escrita</td>
+		        	<td>Conversa&ccedil;&atilde;o</td>
+		        </tr>
+				<tr>
+				  <td rowspan="3" align="center" bgcolor="#CCCCCC">&aacute;reas<br />de<br />conhecimento</td>
+					<td bgcolor="#CCCCCC">portugu&ecirc;s</td>
+					<td>excelente</td><td>bom</td><td>excelente</td>
+				</tr>
+				<tr>
+					<td bgcolor="#CCCCCC">ingl&ecirc;s</td>
+					<td>ruim</td><td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td bgcolor="#CCCCCC">alem&atilde;o</td>
+					<td>bom</td>
+					<td>ruim</td>
+					<td>bom</td>
+				</tr>
+			</table>
+			<br />
+			<br />
+			A equipe considerou mais interessante que, no preenchimento, cada grau de competência em uma área de conhecimento fosse atribuído a várias habilidades ao qual ele se aplica. 
+			Com este procedimento foi poss&iacute;vel criar uma interface mais r&aacute;pida e com menos repeti&ccedil;&atilde;o de 
+			intera&ccedil;&otilde;es. Na nova interface basta o usu&aacute;rio arrastar uma habilidade para a coluna do grau de 
+			compet&ecirc;ncia que o usu&aacute;rio possui nessa habilidade e nessa &aacute;rea de conhecimento.
+			<br />
+			<br />
+<table border="1" align="center" cellspacing="0" cellpadding="3">
+		        <tr>
+		        	<td bgcolor="#CCCCCC" colspan="2" rowspan="2">&nbsp;</td>
+		        	<td colspan="4" align="center" bgcolor="#CCCCCC">Graus de compet&ecirc;ncia</td>
+		        </tr>
+		        <tr bgcolor="#CCCCCC">
+		        	<td>N&atilde;o preenchido</td>
+		        	<td>Ruim</td>
+		        	<td>Bom</td>
+		        	<td>Excelente</td>
+		        </tr>
+				<tr>
+				  <td rowspan="3" align="center" bgcolor="#CCCCCC">&aacute;reas<br />de<br />
+					conhecimento</td>
+					<td bgcolor="#CCCCCC">portugu&ecirc;s</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>Escrita</td>
+					<td>Leitura, Conversa&ccedil;&atilde;o</td>
+				</tr>
+				<tr>
+					<td bgcolor="#CCCCCC">ingl&ecirc;s</td>
+					<td>Conversa&ccedil;&atilde;o, Escrita</td>
+					<td>Leitura</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td bgcolor="#CCCCCC">alem&atilde;o</td>
+					<td>&nbsp;</td>
+					<td>Escrita</td>
+					<td>Leitura, Conversa&ccedil;&atilde;o</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+            <br />
+            Nesse exemplo, na coluna "Não Preenchido" as habilidades (Leitura, Escrita e Conversação) aparecem automaticamente em todas as linhas. No exemplo, foram arrastadas as habilidades "Leitura" e "Conversação" para a coluna do grau de competência "Bom" para a área de conhecimento "Alemão" e assim por diante.
+            Quando uma ou mais habilidades para uma &aacute;rea de conhecimento ficam sem grau de compet&ecirc;ncia, o sistema automaticamente inclui-as na coluna “N&atilde;o preenchido”.
+           </div>
+	<br />
+		<div class=subtitulo>
+			<a name="6.2"></a>6.2 - Funcionalidades do sistema		</div>
+	<br />
+		<div class=subsubtitulo>
+			<a name="6.2.1"></a>6.2.1 - Perfis de usu&aacute;rios		</div>
+	    <br />
+		<div class=texto>
+			O sistema contempla quatro <em>perfis</em> diferentes de usu&aacute;rio, todos eles com possibilidade de realizar buscas de usuários que satisfazem certos critérios de competência:
+			<ul>
+				<li>
+					<strong>Usuário Simples</strong>: Não tem matrizes de competências cadastradas. 
+				</li>
+				<li>
+					<strong>Usuário com Matrizes</strong>: Tem matrizes de competências cadastradas; pode ver os dados de seu cadastro e preencher 
+					suas matrizes se para isso for habilitado.
+				</li>
+				<li>
+					<strong>Gerente</strong>: Pode ver o cadastro dos usuários de seu grupo, isto é, seus subordinados. Além disso, pode ver as matrizes desses usuários e sua própria. 
+					Se habilitado, pode fazer manutenção na matriz de seus subordinados. 
+				</li>
+				<li>
+					<strong>Administrador do sistema</strong>: Pode preencher os cadastros dos usuários, a hierarquia gerentes-subordinados e 
+					introduzir novas matrizes no sistema e modificá-las.
+				</li>
+			</ul>
+			
+			Um usu&aacute;rio pode estar associado a mais de um perfil.
+		</div>
+		<div class=subsubtitulo>
+			<a name="6.2.2"></a>6.2.2 - Ativação do sistema</div>
+	    <br />
+		<div class=texto>
+			Ao fornecer seu <em>login</em> (nome de usuário) e sua senha aparece um menu que depende dos perfis cadastrados. Por exemplo,
+			ao ativar o sistema, para um usuário com perfil de Administrador do Sistema aparece a seguinte tela:  
+			<br />
+			<br />
+			<img src="imagens/sigeco_tela_inicial.png" />
+		</div>
+		<div class=subsubtitulo>
+			<a name="6.2.3"></a>6.2.3 - Cadastramento de usu&aacute;rios		</div>
+	    <br />
+		<div class=texto>
+			Nesta funcionalidade um usuário com o perfil de administrador do sistema pode cadastrar usu&aacute;rios. Acionando-se a opção Cadastro de usuários da tela do item 6.2.2 aparece a tela abaixo.
+			<br />
+			<br />
+			O cadastro de um usuário contém seu nome, <em>login</em> (nome de usu&aacute;rio), email, senha e seus perfis.
+            <br />
+            <br />
+            Para cadastrar um usu&aacute;rio &eacute; necess&aacute;rio preencher um formul&aacute;rio no sistema com seus dados pessoais. N&atilde;o &eacute; poss&iacute;vel cadastrar dois usu&aacute;rios com o mesmo <em>login</em>. Com o <em>login</em> e a senha o usu&aacute;rio tem 
+            acesso ao sistema. As ações permitidas dependem de seu perfil.
+			<br />
+			<br />
+			Exibição dos usu&aacute;rios cadastrados
+			<br />
+			<img src="imagens/sigeco_gerenciamento_usuarios.PNG" />
+			<br />
+			<br />
+			Preenchimento de dados de um usu&aacute;rio
+			<br />
+			<img src="imagens/sigeco_gerenciamento_add_usuarios.PNG" />
+			<br />
+			<br />
+		</div>
+	<br />
+		<div class=subsubtitulo>
+			<a name="6.2.4"></a>6.2.4 - Cadastramento de matrizes		</div>
+	    <br />
+		<div class=texto>
+			Nesta funcionalidade um administrador do sistema pode cadastrar novas matrizes de compet&ecirc;ncia. Acionando-se a opção Cadastro de Matrizes da tela do item 6.2.2 aparece a tela abaixo.
+			<br />
+			<br />
+			Exibição das matrizes cadastradas
+			<br />
+			<img src="imagens/sigeco_gerenciamento_matrizes_lista.PNG" />
+			<br />
+			<br />
+			Uma matriz no sistema contém as compet&ecirc;ncias descritas na se&ccedil;&atilde;o 
+			<a href="monografia_grupo.html#2.5">2.5</a>.
+			<br />
+			<br />
+			Cada matriz no sistema possui:
+			<br />
+			<br />
+			<ul>
+				<li><strong>Nome</strong>: identificador &uacute;nico. N&atilde;o podem haver duas matrizes com o mesmo nome.
+				<li><strong>&Aacute;reas de conhecimentos</strong>: representam as &aacute;reas de conhecimentos associadas &agrave; matriz para as quais são cadastradas as competências. O nome de cada &aacute;rea de conhecimento deve ser &uacute;nico dentro de uma matriz.
+				<li><strong>Super-&aacute;reas de conhecimentos</strong>: uma super-&aacute;rea agrupa áreas de conhecimento e/ou outras super-áreas. 
+				No nível mais externo todos os nomes devem ser distintos. Isso significa que duas super-áreas de nível mais externo com nomes diferentes podem ter áreas com o mesmo nome.
+				<li><strong>Habilidades</strong>: representam as habilidades da matriz. O nome de cada habilidade deve ser &uacute;nico dentro da matriz.
+				<li><strong>Graus de compet&ecirc;ncia</strong>: representam os graus de competência que um usuário pode ter para cada par área de conhecimento e habilidade desta matriz.
+			</ul>
+			<br />
+			<br />
+			No sistema n&atilde;o h&aacute; restri&ccedil;&atilde;o de quantas matrizes de compet&ecirc;ncia podem ser cadastradas. Para cadastrar uma matriz um administrador do sistema deve:
+			<ul>
+				<li>Acionar o "botão" Cadastrar uma Matriz.
+				<li>Na primeira tela, especificar o nome da matriz.
+				<li>Na segunda tela, adicionar as super-&aacute;reas de conhecimentos e suas &aacute;reas. 
+				Para adicionar uma super-área ou &aacute;rea no nível mais externo &eacute; necess&aacute;rio selecionar "Áreas de Conhecimento" 
+				e digitar o nome desejado no campo "Nova super-área ou área". Em seguida, deve-se acionar o "botão" Incluir e em seguida
+				ativar um dos "botões" Super-área de conhecimento ou Área de conhecimento conforme o desejado. Para as super-áreas de outros níveis 
+				hierárquicos o procedimento é o mesmo, selecionando-se a super-área correspondente.   
+				<li>Na terceira tela, adicionar as habilidades e graus de compet&ecirc;ncia. Para adicionar uma habilidade &eacute; necess&aacute;rio preencher o nome da habilidade e acionar Incluir. 
+				Para adicionar um grau de compet&ecirc;ncia &eacute; necess&aacute;rio preencher o nome do mesmo e acionar Incluir. Nomes de habilidades e graus de competência são únicos dentro da matriz.
+				Os graus de competência devem ser incluídos na sequência do menor grau para o maior.
+				<li>Na quarta tela, indicar quais pares de &aacute;reas de conhecimentos e habilidades podem possuir grau de compet&ecirc;ncia. 
+				Cada quadradinho indica a possibilidade de se atribuir um grau de competência na célula correspondente. Inicialmente,
+				todos os quadradinhos estão selecionados. O usuário deve acionar algum quadradinho para indicar que na célula correspondente
+				não pode ser representado um grau de competência.
+			</ul>
+			<br />
+			<br />
+			Atrav&eacute;s destes passos um gerente pode definir uma nova matriz de compet&ecirc;ncia no sistema.
+			<br />
+			<br />
+			Primeira tela: preenchimento do nome da matriz
+			<br />
+			<img src="imagens/sigeco_gerenciamento_matrizes_nome.PNG" />
+			<br />
+			<br />
+			<center>
+			<img src="imagens/sigeco_gerenciamento_matrizes_conhecimento.PNG" />
+			<br />
+			Segunda tela: preenchimento das super-áreas e das áreas de conhecimento</center>
+			<br />
+			<br />
+			Terceira tela: preenchimento das abilidades e dos graus de compet&ecirc;ncia
+			<br />
+			<img src="imagens/sigeco_gerenciamento_matrizes_abilidade.PNG" />
+			<br />
+			<br />
+			Quarta tela: indicação das células que podem conter um grau de competência
+			<br />
+			<img src="imagens/sigeco_gerenciamento_matrizes_cell_mapping.PNG" />
+			<br />
+			<br />
+			
+		</div>
+	<br />
+		<div class=subsubtitulo>
+			<a name="6.2.5"></a>6.2.5 - Preenchimento de matrizes de compet&ecirc;ncias
+		</div>
+	    <br />
+		<div class=texto>
+			Nesta funcionalidade um gerente ou um usu&aacute;rio com matriz que tenham sido habilitados para essa função podem preencher os graus de competência de suas próprias matrizes de compet&ecirc;ncia
+			e, eventualmente, no primeiro caso os graus de competência das matrizes de seus subordinados. 
+			<br />
+			<br />
+			Qualquer matriz de compet&ecirc;ncia que foi cadastrada no sistema pode ser preenchida por um usu&aacute;rio com seus graus de competência se ele for habilitado para isso. 
+            <br />
+            <br />
+            Como explicado na se&ccedil;&atilde;o <a href="monografia_grupo.html#6.1">6.1</a> a forma de preenchimento de uma matriz foi inovada visando facilitar a
+            intera&ccedil;&atilde;o do usu&aacute;rio com o sistema. 
+            <br />
+            <br />
+            As linhas indicam as super-&aacute;reas e &aacute;reas de conhecimento e as colunas os graus de competencia.
+            Uma habilidade da coluna "N&atilde;o Preenchido", indica que ela não foi atribuída a nenhum grau de competência da linha da área correspondente.
+            <br />
+            <br />
+            Para preencher uma matriz o usu&aacute;rio arrasta as caixas com as habilidades para a coluna que indica o grau de compet&ecirc;ncia 
+            desejado.
+			<br />
+			<br />
+			<center>
+			<img src="imagens/sigeco_gerenciamento_matrizes_preenchimento.PNG" />
+			<br />
+			Associação de habilidades a graus de competência
+			</center>
+			<br />
+			<br />
+		</div>
+	<br />
+		<div class=subsubtitulo>
+			<a name="6.2.6"></a>6.2.6 - Exibição de uma matriz preenchida
+		</div>
+	    <br />
+		<div class=texto>
+			Nesta funcionalidade um usu&aacute;rio pode exibir suas matrizes de compet&ecirc;ncia preenchidas e um gerente pode exibir matrizes de compet&ecirc;ncias 
+			preenchidas de seus subordinados.
+			<br />
+			<br />
+            As colunas das matrizes de compet&ecirc;ncia indicam as habilidades e as linhas as &aacute;reas de conhecimentos e suas sub-&aacute;reas. 
+            As c&eacute;lulas das matrizes indicam qual o grau de compet&ecirc;ncia do usu&aacute;rio em um par indicado pela &aacute;rea de conhecimento na linha 
+            e a habilidade na coluna.
+            <br />
+            <br />
+            Para consultar uma matriz um usu&aacute;rio ou gerente necessita:
+            <ul>
+            	<li>selecionar um usu&aacute;rio. No caso do usu&aacute;rio selecionando somente ter&aacute; a op&ccedil;&atilde;o de selecionar a si pr&oacute;prio.
+            	<li>da lista de matrizes de compet&ecirc;ncias preenchidas dispon&iacute;veis selecionar uma matriz.
+            </ul>
+			<br />
+			<br />
+			Consulta de uma matriz preenchida.
+			<br />
+			<img src="imagens/sigeco_gerenciamento_matrizes_consulta.PNG" />
+			<br />
+			<br />
+		</div>
+	<br />
+		<div class=subsubtitulo>
+			<a name="6.2.7"></a>6.2.7 - Busca de usu&aacute;rios cadastrados pelas suas compet&ecirc;ncias
+		</div>
+	<br />
+		<div class=texto>
+			Nesta funcionalidade um gerente pode buscar por um usu&aacute;rio com uma certa compet&ecirc;ncia.
+			<br />
+			<br />
+			Um operador pode ser menor, menor ou igual, igual, maior, maior ou igual.
+			<br />
+			<br />
+			Um elemento de busca &eacute; composto por uma matriz, uma &aacute;rea de conhecimento, uma habilidade, um operador e um grau de compet&ecirc;ncia.
+			Um elmento de busca &eacute; satisfeito por um usu&aacute;rio quando na matriz selecionada um par da &aacute;rea de conhecimento selecionada e a 
+			abilidade selecionada tem uma rela&ccedil;&atilde;o verdadeira entre o operador selecionado e o grau de compet&ecirc;ncia selecionado.
+			Por exemplo: um elemento de busca com a matriz "l&iacute;nguas", a &aacute;rea de conhecimento "ingl&ecirc;s", a abilidade "ler", o operador "maior"
+			e o grau de compet&ecirc;ncia "bom" significa: todos os usu&aacute;rios que na matriz de l&iacute;nguas tem o par ingl&ecirc;s e ler maior que bom.
+			<br />
+			<br />
+			Um elemento de busca pode ser concatenado com outros elementos de busca por operadores l&oacute;gicos "e" formando uma express&atilde;o de busca.
+			E todas as express&otilde;es de busca definidos s&atilde;o concatenados pelo operador "ou" ao realizar a busca.
+			<br />
+			<br />
+			Para realizar uma busca um gerente necessita:
+			<ul>
+				<li>adicionar elementos de busca selecionando a matriz, &aacute;rea de conhecimento, habilidade, operador e grau de compet&ecirc;ncia 
+				e clicando em adicionar elemento de busca.
+				<li>salvar express&otilde;es de busca compostos por um ou mais elementos de buscas clicando em salvar express&atilde;o de busca.
+				<li>realizar a busca clicando em realizar a busca.
+			</ul>
+			<br />
+			<br />
+			Express&atilde;o de busca definido at&eacute; agora: ler em ingl&ecirc;s seja maior que bom e falar em ingl&ecirc;s seja maior ou igual que bom e 
+			escrever em ingl&ecirc;s seja maior que ruim, ou codificar em java maior que sem experi&ecirc;ncia e codificar em c++ seja maior 
+			que experi&ecirc;ncia de at&eacute; dois anos e codificar em .NET seja maior que experi&ecirc;ncia de mais de dois anos.
+			<br />
+			Express&atilde;o de busca sendo definido: ler em japon&ecirc;s maior ou igual que bom.
+			<br />
+			<img src="imagens/sigeco_gerenciamento_matrizes_busca.PNG" />
+			<br />
+			<br />
+		</div>
+	<br />
+	<br />
+		<div class=titulo>
+			<a name="7"></a>7 - Sugest&otilde;es de extens&otilde;es		</div>
+	<br />
+		<div class=subtitulo>
+			<a name="7.1"></a>7.1 - Subsistema de Permiss&atilde;o		</div>
+	<br />
+		<div class=texto>
+			Atualmente o usu&aacute;rio s&oacute; pode alimentar e visualizar sua pr&oacute;pria matriz de compet&ecirc;ncia. As compet&ecirc;ncia dos demais usu&aacute;rios s&oacute; s&atilde;o acess&iacute;veis a ele por meio de buscas.
+          <br />            
+            <br />
+            Com um subsistema de permiss&atilde;o, pode-se definir quais usu&aacute;rios podem visualisar e/ou alterar as matrizes de compet&ecirc;ncia de outro usu&aacute;rio. Assim, um gerente de certo departamento da empresa poderia ter acesso as matrizes de todos os seus subordinados. Utilizando esse subsistema pode-se criar hierarquia entre os usu&aacute;rios do sistema, podendo ou n&atilde;o seguir a hierarquia da empresa.		</div>
+<br />
+		<div class=subtitulo>
+			<a name="7.2"></a>7.2 - Sistemas M&uacute;ltiplos		</div>
+	<br />
+		<div class=texto>
+			Outra extens&atilde;o interessante &eacute; adaptar o sistema atual para gerenciar mais de um sistema de gerenciamento de compet&ecirc;ncias. 
+            <br />            
+            <br />
+            Essa altera&ccedil;&atilde;o seria particularmente &uacute;til para empresas especializadas em consultoria em recursos humanos, que t&ecirc;m como clientes diversas empresas. Desta forma, dentro de um &uacute;nico sistema seria poss&iacute;vel gerenciar os funcion&aacute;rios e suas matrizes de mais de uma empresa, em vez de ter um sistema rodando para cada empresa cliente.
+            <br />            
+            <br />
+            Al&eacute;m dessa vantagem, as consultas poderiam ser alteradas para receber mais um parâmetro, que seria a empresa em que o usu&aacute;rio est&aacute; associado. Desta forma pode-se fazer consulta pelos usu&aacute;rios de uma &uacute;nica empresa ou entre todos os funcion&aacute;rios das empresas cadastradas no sistema.		</div>
+	<br />
+		<div class=subtitulo>
+			<a name="7.3"></a>7.3 - Curr&iacute;culo de Compet&ecirc;ncias de Usu&aacute;rio		</div>
+	    <br />
+		<div class=texto>
+			A id&eacute;ia &eacute; gerar um relat&oacute;rio em texto listando todas as compet&ecirc;ncias cadastradas de um certo usu&aacute;rio do sistema.
+            <br />
+            <br />
+            Como j&aacute; foi dito antes nesta monografia, a utiliza&ccedil;&atilde;o deste sistema como decis&atilde;o final para escolha de um profissional &eacute; um equivoco, pois o sistema deve apenas servir como um direcionador nesta escolha, sendo necess&aacute;rio entrevistas pessoais com esses profissionais para realmente avaliar suas compet&ecirc;ncias e demais asp&eacute;ctos do seu perfil que n&atilde;o &eacute; poss&iacute;vel armazenar no sistema. Assim, um relat&oacute;rio de compet&ecirc;ncias como descrito acima, seria muito &uacute;til para essas entrevistas e outras avalia&ccedil;&otilde;es pessoais e subjetivas.		
+        </div>
+	    <br />
+		<br />
+		<div class=subtitulo>
+			<a name="7.4"></a>7.4 - Hierarquia de Habilidades</div>
+	    <br />
+		<div class=texto>
+			Permitir que habilidades tenham sub-habilidades.
+		</div>
+		<br />
+		<br />
+		<div class=titulo>
+			<a name="8"></a>8 - Refer&ecirc;ncias		
+		</div>
+	<br />
+		<div class=subtitulo>
+			<a name="8.1"></a>8.1 - Bibliografia		
+		</div>
+		<div class=texto>
+			<a name="8.SET">[SET]</a> Setzer, V.W. Dados, Informação, Conhecimento e Competência. In <em>Meios Eletrônicos e Educação: Uma visão alternativa</em>. São Paulo: Escrituras, terceira edição 2005, pp. 239-275. Disponível em <a href="http://www.ime.usp.br/~vwsetzer/dado-info.html">www.ime.usp.br/~vwsetzer/dado-info.html</a>.  
+		</div>
+		<div class=subtitulo>
+			<a name="8.2"></a>8.2 - Ferramentas e seus vínculos		
+		</div>
+		<div class=texto>
+			JAVA:
+			<ul>
+				<li><a href="http://java.sun.com">Sun</a>
+			</ul>
+			<br />
+			Subversion:
+			<ul>
+				<li><a href="http://subversion.tigris.org/">subversion</a>
+				<li><a href="http://tortoisesvn.tigris.org/">tortoise</a>
+			</ul>
+			<br />
+			Maven2:
+			<ul>
+				<li><a href="http://maven.apache.org/">Maven</a>
+			</ul>
+			<br />
+			CheckStyle:
+			<ul>
+				<li><a href="http://checkstyle.sourceforge.net/">CheckStyle</a>
+			</ul>
+			<br />
+			Spring Framework:
+			<ul>
+				<li><a href="http://www.springframework.org/">Spring Framework</a>
+			</ul>
+			<br />
+			Java Server Faces:
+			<ul>
+				<li><a href="http://java.sun.com/javaee/javaserverfaces/">Java Server Faces</a>
+				<li><a href="http://www.exadel.com/tutorial/jsf/jsftutorial-kickstart.html">JSF Kickstart Tutorial</a>
+				<li><a href="http://www.ibm.com/developerworks/java/library/j-jsf2/index.html?S_TACT=105AGX02&S_CMP=EDU">JSF for nonbelievers</a>
+				<li><a href="http://www.ibm.com/developerworks/java/library/j-jsf4/index.html?S_TACT=105AGX02&S_CMP=EDU">Component Development</a>
+			</ul>
+			<br />
+			Java Persistence API:
+			<ul>
+				<li><a href="http://java.sun.com/javaee/overview/faq/persistence.jsp">Java Persistence API</a>
+				<li>PANDA, D., R. RAHMAN e D. LANE <em>EJB 3 In Action</em> ### (local): Manning Publications, ### (ano) 
+			</ul>
+		</div>
+	<br />
+</BODY>
+</HTML>

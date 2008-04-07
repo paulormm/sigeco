@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<bean id="matrix" class="sigeco.model.Matrix" singleton="false">
+		<property name="name" value="m" />
+		<property name="knowledgeGroups">
+			<list>
+				<bean class="sigeco.model.KnowledgeGroup">
+					<property name="title" value="kg" />
+					<property name="knowledges">
+						<list>
+							<bean class="sigeco.model.Knowledge">
+								<property name="name" value="k"></property>
+							</bean>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
+		<property name="abilities">
+			<list>
+				<bean class="sigeco.model.Ability">
+					<property name="name" value="a"></property>
+				</bean>
+			</list>
+		</property>
+		<property name="grades">
+			<list>
+				<bean class="sigeco.model.Grade">
+					<property name="name" value="g"></property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="expression" class="sigeco.model.search.SearchExpression" singleton="false">
+		<property name="name" value="name"></property>
+		<property name="user" ref="user"></property>
+		<property name="publish" value="true"></property>
+		<property name="searchTerms">
+			<list>
+				<bean class="sigeco.model.search.SearchTerm">
+					<property name="searchElements">
+						<list>
+							<bean class="sigeco.model.search.SearchElement">
+							</bean>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="validExpressions" class="java.util.ArrayList">
+		<constructor-arg index="0">
+			<list>
+				<bean class="sigeco.model.search.SearchExpression">
+					<property name="name" value="name"></property>
+					<property name="user" ref="user"></property>
+					<property name="publish" value="true"></property>
+					<property name="searchTerms">
+						<list>
+							<bean class="sigeco.model.search.SearchTerm">
+								<property name="searchElements">
+									<list>
+									</list>
+								</property>
+							</bean>
+						</list>
+					</property>
+				</bean>
+				<bean class="sigeco.model.search.SearchExpression">
+					<property name="name" value="name2"></property>
+					<property name="user" ref="user"></property>
+					<property name="publish" value="true"></property>
+					<property name="searchTerms">
+						<list>
+							<bean class="sigeco.model.search.SearchTerm">
+								<property name="searchElements">
+									<list>
+									</list>
+								</property>
+							</bean>
+							<bean class="sigeco.model.search.SearchTerm">
+								<property name="searchElements">
+									<list>
+									</list>
+								</property>
+							</bean>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="invalidExpressions" class="java.util.ArrayList">
+		<constructor-arg index="0">
+			<list>
+				<bean class="sigeco.model.search.SearchExpression">
+					<property name="name" value="name"></property>
+					<property name="user" ref="user"></property>
+					<property name="publish" value="true"></property>
+					<property name="searchTerms">
+						<list>
+							<bean class="sigeco.model.search.SearchTerm">
+								<property name="searchElements">
+									<list>
+									</list>
+								</property>
+							</bean>
+						</list>
+					</property>
+				</bean>
+				<bean class="sigeco.model.search.SearchExpression">
+					<property name="name" value="name2"></property>
+					<property name="user" ref="user"></property>
+					<property name="publish" value="true"></property>
+					<property name="searchTerms">
+						<list>
+							<bean class="sigeco.model.search.SearchTerm">
+								<property name="searchElements">
+									<list>
+									</list>
+								</property>
+							</bean>
+						</list>
+					</property>
+				</bean>
+				<bean class="sigeco.model.search.SearchExpression">
+					<property name="name" value="name3"></property>
+					<property name="publish" value="true"></property>
+					<property name="searchTerms">
+						<list>
+							<bean class="sigeco.model.search.SearchTerm">
+								<property name="searchElements">
+									<list>
+									</list>
+								</property>
+							</bean>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="password" class="sigeco.utils.crypto.MD5FactoryBean">
+		<property name="message" value="password" />
+	</bean>
+	
+	<bean id="user" class="sigeco.model.User">
+		<property name="name" value="validUser1" />
+		<property name="username" value="username1" />
+		<property name="email" value="email1" />
+		<property name="password" ref="password" />
+	</bean>
+	
+</beans>

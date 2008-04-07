@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+        <!-- SQLServer Database connection settings -->
+        <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+        <property name="connection.url">jdbc:hsqldb:test.business</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password"></property>
+        <property name="connection.charset">ISO-8859-1</property>
+
+
+        <!-- SQLServer dialect 		-->
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+
+		<!-- JDBC auto commit -->
+		<property name="connection.autocommit">false</property>
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">1</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- Disable the second-level cache  -->
+		<property name="cache.provider_class">
+			org.hibernate.cache.NoCacheProvider
+		</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		
+		<!-- Check and update the database schema on startup -->
+		<property name="hbm2ddl.auto">update</property>
+		
+		<!-- Forces the use of cglib instead of javassist -->
+		<property name="hibernate.bytecode.provider">cglib</property>
+
+		<mapping class="sigeco.model.Matrix" />
+		<mapping class="sigeco.model.Ability" />
+		<mapping class="sigeco.model.Cell" />
+		<mapping class="sigeco.model.Knowledge" />
+		<mapping class="sigeco.model.KnowledgeGroup" />
+		<mapping class="sigeco.model.User" />
+		<mapping class="sigeco.model.UserGroup" />
+		<mapping class="sigeco.model.CellValue" />
+		<mapping class="sigeco.model.Grade" />
+		<mapping class="sigeco.model.search.SearchExpression" />
+		<mapping class="sigeco.model.search.SearchTerm" />
+		<mapping class="sigeco.model.search.SearchElement" />
+				
+	</session-factory>
+</hibernate-configuration>

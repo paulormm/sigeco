@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<bean id="expressionsUserA" class="java.util.ArrayList" singleton="false">
+		<constructor-arg index="0">
+			<list>
+				<bean class="sigeco.model.search.SearchExpression">
+					<property name="name" value="name"></property>
+					<property name="user" ref="userA"></property>
+					<property name="publish" value="true"></property>
+					<property name="searchTerms">
+						<list>
+						</list>
+					</property>
+				</bean>
+				<bean class="sigeco.model.search.SearchExpression">
+					<property name="name" value="name2"></property>
+					<property name="user" ref="userA"></property>
+					<property name="publish" value="false"></property>
+					<property name="searchTerms">
+						<list>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="expressionsUserB" class="java.util.ArrayList" singleton="false">
+		<constructor-arg index="0">
+			<list>
+				<bean class="sigeco.model.search.SearchExpression">
+					<property name="name" value="name3"></property>
+					<property name="user" ref="userB"></property>
+					<property name="publish" value="true"></property>
+					<property name="searchTerms">
+						<list>
+						</list>
+					</property>
+				</bean>
+				<bean class="sigeco.model.search.SearchExpression">
+					<property name="name" value="name4"></property>
+					<property name="user" ref="userB"></property>
+					<property name="publish" value="false"></property>
+					<property name="searchTerms">
+						<list>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="userA" class="sigeco.model.User" singleton="false">
+		<property name="name" value="validUser1" />
+		<property name="username" value="username1" />
+		<property name="email" value="email1" />
+		<property name="password" ref="password" />
+	</bean>
+	
+	<bean id="userB" class="sigeco.model.User" singleton="false">
+		<property name="name" value="validUser2" />
+		<property name="username" value="username2" />
+		<property name="email" value="email2" />
+		<property name="password" ref="password" />
+	</bean>
+	
+</beans>

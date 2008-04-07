@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<bean id="password" class="sigeco.utils.crypto.MD5FactoryBean">
+		<property name="message" value="password" />
+	</bean>
+	
+	<bean id="user" class="sigeco.model.User">
+		<property name="name" value="validUser1" />
+		<property name="username" value="username1" />
+		<property name="email" value="email1" />
+		<property name="password" ref="password" />
+	</bean>
+	
+	<bean id="validUsers" class="java.util.ArrayList">
+		<constructor-arg index="0">
+			<list>
+				<bean class="sigeco.model.User">
+					<property name="name" value="validUser1" />
+					<property name="username" value="username1" />
+					<property name="email" value="email1" />
+					<property name="password" ref="password" />
+				</bean>
+				
+				<bean class="sigeco.model.User">
+					<property name="name" value="validUser2" />
+					<property name="username" value="username2" />
+					<property name="email" value="email2" />
+					<property name="password" ref="password" />
+				</bean>
+				
+				<bean class="sigeco.model.User">
+					<property name="name" value="validUser3" />
+					<property name="username" value="username3" />
+					<property name="email" value="email3" />
+					<property name="password" ref="password" />
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="invalidUsers" class="java.util.ArrayList">
+		<constructor-arg index="0">
+			<list>
+				<bean class="sigeco.model.User">
+					<property name="name" value="validUser1" />
+					<property name="username" value="username1" />
+					<property name="email" value="anotheremail1" />
+					<property name="password" ref="password" />
+				</bean>
+				
+				<bean class="sigeco.model.User">
+					<property name="name" value="validUser2" />
+					<property name="username" value="anotherusername2" />
+					<property name="email" value="email2" />
+					<property name="password" ref="password" />
+				</bean>
+				
+				<bean class="sigeco.model.User">
+					<property name="username" value="another3" />
+					<property name="email" value="another3" />
+					<property name="password" ref="password" />
+				</bean>
+				
+				<bean class="sigeco.model.User">
+					<property name="name" value="another4" />
+					<property name="email" value="another4" />
+					<property name="password" ref="password" />
+				</bean>
+				
+				<bean class="sigeco.model.User">
+					<property name="name" value="another5" />
+					<property name="username" value="another5" />
+					<property name="password" ref="password" />
+				</bean>
+				
+				<bean class="sigeco.model.User">
+					<property name="name" value="another6" />
+					<property name="username" value="another6" />
+					<property name="email" value="another6" />
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+</beans>

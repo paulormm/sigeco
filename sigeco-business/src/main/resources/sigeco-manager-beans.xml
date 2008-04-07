@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="securedInterceptor" class="sigeco.business.security.SecuredMethodInterceptor" />
+
+	<bean id="userManager" class="sigeco.business.impl.UserManagerImpl" parent="abstractManager">
+	</bean>
+	
+	<bean id="userGroupManager" class="sigeco.business.impl.UserGroupManagerImpl" parent="abstractManager">
+	</bean>
+	
+	<bean id="securedUserManager" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="targetName" value="userManager" />
+		<property name="interceptorNames" value="securedInterceptor" />
+	</bean>
+	
+	<bean id="securedUserGroupManager" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="targetName" value="userGroupManager" />
+		<property name="interceptorNames" value="securedInterceptor" />
+	</bean>
+
+	<bean id="matrixManager" class="sigeco.business.impl.MatrixManagerImpl" parent="abstractManager">
+		<property name="cellValueManager" ref="cellValueManager" />
+	</bean>
+	
+	<bean id="securedMatrixManager" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="targetName" value="matrixManager" />
+		<property name="interceptorNames" value="securedInterceptor" />
+	</bean>
+	
+	<bean id="searchManager" class="sigeco.business.search.impl.SearchManagerImpl" parent="abstractManager">
+	</bean>
+	
+	<bean id="securedSearchManager" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="targetName" value="searchManager" />
+		<property name="interceptorNames" value="securedInterceptor" />
+	</bean>
+	
+	<bean id="abstractManager" abstract="true">
+		<property name="dao" ref="tdao" />
+	</bean>
+
+	<bean id="cellValueManager" class="sigeco.business.impl.CellValueManagerImpl">
+		<property name="dao" ref="tdao" />
+	</bean>
+</beans>

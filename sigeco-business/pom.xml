@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<project>
+	<parent>
+		<artifactId>sigeco-parent</artifactId>
+		<groupId>sigeco</groupId>
+		<version>0.1-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>sigeco</groupId>
+	<artifactId>sigeco-business</artifactId>
+	<name>sigeco-business</name>
+	<version>0.1-SNAPSHOT</version>
+	<dependencies>
+		<dependency>
+			<groupId>sigeco</groupId>
+			<artifactId>sigeco-model</artifactId>
+			<version>${version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>sigeco</groupId>
+			<artifactId>sigeco-utils</artifactId>
+			<version>${version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>
