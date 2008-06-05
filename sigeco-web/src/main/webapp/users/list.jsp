@@ -17,7 +17,7 @@
 						<rich:columnGroup>
 							<rich:column rowspan="2" colspan="2">
 							</rich:column>
-							<rich:column colspan="4">
+							<rich:column colspan="5">
 								<t:outputText value="#{msgs['users.list.title']}" />
 							</rich:column>
 							<rich:column breakBefore="true">
@@ -31,6 +31,8 @@
 							</rich:column>
 							<rich:column>
 								<h:outputText value="#{msgs['users.detail.email']}"></h:outputText>
+							</rich:column>
+							<rich:column>
 							</rich:column>
 						</rich:columnGroup>
 					</f:facet>
@@ -49,13 +51,16 @@
 							<t:outputText value="#{userRow.id}" />
 						</rich:column>
 						<rich:column>
-							<t:outputText value="#{userRow.name}" />
+							<a4j:commandLink action="user list" immediate="true" value="#{userRow.name}" />
 						</rich:column>
 						<rich:column>
 							<t:outputText value="#{userRow.username}" />
 						</rich:column>
 						<rich:column>
 							<t:outputText value="#{userRow.email}" />
+						</rich:column>
+						<rich:column>
+							<a4j:commandLink action="user list" immediate="true" value="#{msgs['users.detail.matrices']}" />
 						</rich:column>
 					</rich:columnGroup>
 				</rich:dataTable>

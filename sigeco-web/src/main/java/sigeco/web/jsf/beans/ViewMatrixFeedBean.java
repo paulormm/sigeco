@@ -163,7 +163,7 @@ public class ViewMatrixFeedBean {
 						map.put(a.getId(), "");
 					}
 				} else {
-					map.put(a.getId(), cv.getGrade().getName());
+					map.put(a.getId(), cv.getGrade().getName()+" "+cv.dateAsString());
 				}
 			} else {
 				map.put(a.getId(), "");
@@ -193,7 +193,7 @@ public class ViewMatrixFeedBean {
 	@SuppressWarnings("unchecked")
 	private void populateMatrix() {
 
-		//since associated sesion may be closed we search for the matrix again
+		//since associated session may be closed we search for the matrix again
 		this.selectedMatrix = this.matrixManager.get(this.selectedMatrix.getId());
 
 		this.populateRows();

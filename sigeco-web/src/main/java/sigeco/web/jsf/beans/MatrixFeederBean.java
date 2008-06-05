@@ -2,9 +2,11 @@ package sigeco.web.jsf.beans;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+
 
 import javax.faces.component.html.HtmlOutputText;
 import javax.faces.context.FacesContext;
@@ -204,6 +206,7 @@ public class MatrixFeederBean {
 							cellValue.setCell(cell);
 							cellValue.setUser(user);
 							cellValue.setGrade(null);
+							
 							cellValueMap.put(cellValue.getCell().getId(), cellValue);
 						}
 						this.updatedElements.add(cellValue);
@@ -228,6 +231,7 @@ public class MatrixFeederBean {
 		CellValue cellValue = (CellValue) event.getDragValue();
 		Grade grade = (Grade) event.getDropValue();
 		cellValue.setGrade(grade);
+		cellValue.setDate(new Date());
 		if (!this.updatedElements.contains(cellValue)) {
 			this.updatedElements.add(cellValue);
 		}

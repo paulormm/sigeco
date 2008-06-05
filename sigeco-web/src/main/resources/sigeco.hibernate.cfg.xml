@@ -7,9 +7,9 @@
 	<session-factory>
         <!-- SQLServer Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost/Sigeco</property>
-        <property name="connection.username">sigeco</property>
-        <property name="connection.password">sigeco</property>
+        <property name="connection.url">jdbc:mysql://sol/gcsl</property>
+        <property name="connection.username">gcsl</property>
+        <property name="connection.password">senhagcsl</property>
         <property name="connection.charset">ISO-8859-1</property>
 
 
