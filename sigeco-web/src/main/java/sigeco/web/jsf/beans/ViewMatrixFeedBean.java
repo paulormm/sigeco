@@ -27,6 +27,8 @@ import sigeco.model.KnowledgeGroup;
 import sigeco.model.Matrix;
 import sigeco.model.Permission;
 import sigeco.model.User;
+import sigeco.model.Row;
+import sigeco.model.RowType;
 
 
 /**
@@ -49,11 +51,25 @@ public class ViewMatrixFeedBean {
 	private List<Matrix> matrices;
 
 	private HtmlDataTable matrixDataTable;
-
+	
 	private List<Row> matrixRows;
 
 	private Map<Long, String> emptyMap;
-
+	
+	private List<RenderableMatrixBean> renderableMatrices;
+	
+	private boolean tableNull;
+	private boolean rowNull;
+	
+	/**
+	 * Returns the size of Matrices tables.
+	 * @return int
+	 */
+	public int getSizeRenderableMatrices(){
+		return this.renderableMatrices.size();
+		
+	}
+	
 	/**
 	 * Returns the list of users.
 	 * @return List
@@ -284,38 +300,8 @@ public class ViewMatrixFeedBean {
         return items;
 	}
 
-    /**
-     * Enum for defining a row type.
-     * 
-     * @author julien
-     */
-    public enum RowType {
-    	KNOWLEDGE("white"),
-    	KNOWLEDGE_GROUP("whitesmoke");
-
-    	private String color;
-
-    	/**
-    	 * C'tor 
-    	 * @param color The html color this row type should be colored with
-    	 */
-    	private RowType(final String color) {
-    		this.color = color;
-    	}
-
-    	/**
-    	 * Returns what color the row should be represented with
-    	 * @return String
-    	 */
-    	public String getColor() {
-    		return this.color;
-    	}
-    }
-
-    /**
-     * Auxiliary class for displaying feeds
-     * @author julien
-     */
+    
+/*
     public class Row {
 
     	private RowType type;
@@ -323,19 +309,10 @@ public class ViewMatrixFeedBean {
     	private Map<Long, String> levels;
     	private Map<Long, String> bgcolor;
 
-    	/**
-    	 * C'tor
-    	 */
     	public Row() {
 			super();
 		}
 
-		/**
-    	 * C'tor
-    	 * @param item String
-    	 * @param levels Map
-    	 * @param type RowType
-    	 */
 		public Row(final String item, final Map<Long, String> levels, final RowType type) {
 			super();
 			this.item = item;
@@ -352,57 +329,32 @@ public class ViewMatrixFeedBean {
 			}
 		}
 
-		/**
-		 * Returns the background color map
-		 * @return Map
-		 */
 		public Map<Long, String> getBgcolor() {
 			return this.bgcolor;
 		}
 		
-		/**
-		 * @return the levels
-		 */
 		public Map<Long, String> getLevels() {
 			return this.levels;
 		}
-		/**
-		 * @param levels the levels to set
-		 */
 		public void setLevels(final Map<Long, String> levels) {
 			this.levels = levels;
 		}
-		/**
-		 * @return the item
-		 */
 		public String getItem() {
 			return this.item;
 		}
-		/**
-		 * @param item the item to set
-		 */
 		public void setItem(final String item) {
 			this.item = item;
 		}
 
-		/**
-		 * @return the type
-		 */
 		public RowType getType() {
 			return this.type;
 		}
 
-		/**
-		 * @param type the type to set
-		 */
 		public void setType(final RowType type) {
 			this.type = type;
 		}
-
-
-
     }
-
+*/
 
 	/**
 	 * @return the userManager
@@ -461,7 +413,7 @@ public class ViewMatrixFeedBean {
 	public Matrix getSelectedMatrix() {
 		return this.selectedMatrix;
 	}
-
+	
 	/**
 	 * @param selectedMatrix the selectedMatrix to set
 	 */
@@ -512,7 +464,103 @@ public class ViewMatrixFeedBean {
 	public void setCellValueManager(final CellValueManager cellValueManager) {
 		this.cellValueManager = cellValueManager;
 	}
+	
+	
+	
+	
+	
+	/**
+	 * @return the renderableMatrices
+	 */
+	public List<RenderableMatrixBean> getRenderableMatrices() {
+		return this.renderableMatrices;
+	}
 
+	/**
+	 * @param renderableMatrices the renderableMatrices to set
+	 */
+	public void setRenderableMatrices(final List<Matrix> matrices) {
+		this.populateMatrices();
+	}
+	
+	/**
+	 * Populates the renderableMatrices with the cells of the selected matrix for the selected user.
+	 */
+	@SuppressWarnings("unchecked")
+	private void populateMatrices() {
+		
+		this.renderableMatrices = new ArrayList<RenderableMatrixBean>();
+		
+		for (Matrix m : this.matrices){
+			this.emptyMap = null;
 
+			//since associated session may be closed we search for the matrix again
+			this.selectedMatrix = this.matrixManager.get(m.getId());
 
+			this.populateRows();
+
+			this.matrixDataTable = new HtmlDataTable();
+			this.createHeader();
+			
+			for (Ability ability : this.selectedMatrix.getAbilities()) {
+
+				HtmlColumn abilityNameColumn = new HtmlColumn();
+				HtmlOutputText headerOutputText = new HtmlOutputText();
+				headerOutputText.setStyleClass("field");
+				headerOutputText.setValue(ability.getName());
+				abilityNameColumn.setHeader(headerOutputText);
+				abilityNameColumn.setValueBinding(
+						"style", 
+						this.createValueExpression(
+								"text-align: center; background-color:#{row.bgcolor[" + ability.getId() + "]};"));
+
+				HtmlOutputText abilityOutputText = new HtmlOutputText();
+				abilityOutputText.setValueBinding(
+						"value", 
+						this.createValueExpression("#{row.levels[" + ability.getId() + "]}"));
+				abilityNameColumn.getChildren().add(abilityOutputText);
+				this.matrixDataTable.getChildren().add(abilityNameColumn);
+
+			}
+			RenderableMatrixBean currentMatrix = new RenderableMatrixBean();
+			currentMatrix.setMatrixName(m.getName());
+			
+			
+						
+			currentMatrix.setMatrixDataTable(this.matrixDataTable);
+			if (currentMatrix.getMatrixDataTable() == null)
+				tableNull=true;
+			else
+				tableNull=false;
+			
+			
+			currentMatrix.setMatrixRows(this.matrixRows);
+			
+			if (currentMatrix.getMatrixRows() == null)
+				rowNull= true;
+			else
+				rowNull =false;
+			
+			this.renderableMatrices.add(currentMatrix);
+			
+		}
+	}
+	
+	public void setRowNull(boolean value){
+			rowNull=value;
+		
+		}
+	public void setTableNull(boolean value){
+		tableNull=value;
+	
+	}
+	
+	public boolean getRowNull(){
+		return rowNull;
+	
+	}
+	public boolean getTableNull(){
+		return tableNull;
+	
+	}
 }
