@@ -42,7 +42,22 @@ public class NewSearchBean {
 	private SearchManager searchManager;
 	private SearchElement elementToRemove;
 	private SearchTerm termToRemove;
+	private String stringExpression;
 
+	public String getStringExpression(){	
+		this.setStringExpression();
+		return stringExpression;
+		
+	}
+	
+	public void setStringExpression(){	
+		stringExpression = 	"Competência = " + element.getMatrix().getName() + 
+							" Área = " + element.getKnowledge().getName() +
+							" Habilidade " + element.getAbility().getName() + 							
+							" " + element.getOperator().toString() +
+							" " + element.getGrade().getName();
+	}
+	
 	/**
 	 * Starts a new search.
 	 *

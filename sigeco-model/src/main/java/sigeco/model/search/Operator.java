@@ -31,5 +31,20 @@ public enum Operator implements BundledEntity {
 	public String getBundleKey() {
 		return bundleKey;
 	}
+	
+	public String toString(){
+		if (bundleKey.compareTo("operator.greater")==0)
+			return ">";
+		else if (bundleKey.compareTo("operator.greaterEquals")==0)
+			return ">=";
+		else if (bundleKey.compareTo("operator.equals")==0)
+			return "=";	
+		else if (bundleKey.compareTo("operator.lesserEquals")==0)
+			return "<=";
+		else if (bundleKey.compareTo("operator.lesser")==0)
+			return "<";
+		else
+		return "#";
+	}
 
 }

@@ -99,8 +99,16 @@
 									value="#{msgs['search.new.element.save']}" rendered="#{newSearchBean.someMatrixSelected}">
 								</t:commandButton>
 							</h:panelGrid>	
-							
 							<h:outputText value="" rendered="#{not empty newSearchBean.term.searchElements}" />
+							
+							<h:panelGrid columns="1" rendered="#{not empty newSearchBean.term.searchElements}">
+					        	<rich:panel>
+						       		<f:facet name="header">
+						       			<h:outputText value="Expressão de Busca" />
+									</f:facet>
+								<t:outputText value="#{newSearchBean.stringExpression}" />
+							</rich:panel>
+							</h:panelGrid>
 							<rich:dataGrid 
 					        	value="#{newSearchBean.term.searchElements}" 
 					        	var="element" 
@@ -108,7 +116,7 @@
 					        	rendered="#{not empty newSearchBean.term.searchElements}"
 					        	border="0"
 					        	rules="none">
-					        	<h:panelGrid columns="1">
+					            <h:panelGrid columns="1">
 						            <rich:panel>
 						            	<f:facet name="header">
 						            		<h:panelGroup style="width:100%;">
@@ -136,6 +144,7 @@
 											
 											<t:outputLabel styleClass="field" value="#{msgs['search.new.grade.label']}" />
 											<t:outputText styleClass="fieldValue" value="#{element.grade.name}" />
+
 										</h:panelGrid>
 						            </rich:panel>
 					            </h:panelGrid>
