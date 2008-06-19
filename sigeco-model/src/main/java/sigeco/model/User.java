@@ -2,6 +2,7 @@ package sigeco.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -80,6 +81,8 @@ public class User implements IdentifiedEntity {
 	private String businessPhone;
 	private String cellPhone;
 	private String secondEmail;
+	private Date birthDate;
+	private String lattesLink;
 
 	/**
 	 * @return the id
@@ -335,5 +338,36 @@ public class User implements IdentifiedEntity {
 		this.secondEmail = secondEmail;
 	}
 	
+	/**
+	 * 
+	 * @return birthDate
+	 */
+	@Column
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	/**
+	 * @param birthDate birthDate
+	 */
+	public void setBirthDate(final Date birthDate) {
+		this.birthDate = birthDate;
+	}
+	
+	/**
+	 * 
+	 * @return lattesLink
+	 */
+	@Column
+	public String getLattesLink() {
+		return lattesLink;
+	}
+
+	/**
+	 * @param lattesLink lattesLink
+	 */
+	public void setLattesLink(final String lattesLink) {
+		this.lattesLink = lattesLink;
+	}
 	
 }

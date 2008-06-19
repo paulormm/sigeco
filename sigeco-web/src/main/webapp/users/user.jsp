@@ -104,7 +104,17 @@
 				<h:inputText id="secondEmail" value="#{userEditionBean.userOnFocus.secondEmail}"/>
 				
 				
-			
+				<h:outputLabel for="birthDate" styleClass="field">
+					<h:outputText value="#{msgs['users.form.details.birthDate']}" />
+				</h:outputLabel>
+				<t:inputDate id="birthDate" value="#{userEditionBean.userOnFocus.birthDate}" popupCalendar="false"/>
+				
+				
+				<h:outputLabel for="lattesLink" styleClass="field">
+					<h:outputText value="#{msgs['users.form.details.lattesLink']}" />
+				</h:outputLabel>
+				<h:inputText id="lattesLink" value="#{userEditionBean.userOnFocus.lattesLink}"/>
+				
 			
 			</h:panelGrid>
 			
