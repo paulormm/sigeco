@@ -76,6 +76,40 @@
 				</h:selectManyCheckbox>
 				<h:message for="grant" styleClass="error" />
 			</h:panelGrid>
+			
+			<h:panelGrid columns="2">
+				<h:outputLabel for="address" styleClass="field">
+					<h:outputText value="#{msgs['users.form.details.address']}" />
+				</h:outputLabel>
+				<h:inputText id="address" value="#{userEditionBean.userOnFocus.address}"/>
+				
+				<h:outputLabel for="homePhone" styleClass="field">
+					<h:outputText value="#{msgs['users.form.details.homePhone']}" />
+				</h:outputLabel>
+				<h:inputText id="homePhone" value="#{userEditionBean.userOnFocus.homePhone}"/>
+				
+				<h:outputLabel for="businessPhone" styleClass="field">
+					<h:outputText value="#{msgs['users.form.details.businessPhone']}" />
+				</h:outputLabel>
+				<h:inputText id="businessPhone" value="#{userEditionBean.userOnFocus.businessPhone}"/>
+				
+				<h:outputLabel for="cellPhone" styleClass="field">
+					<h:outputText value="#{msgs['users.form.details.cellPhone']}" />
+				</h:outputLabel>
+				<h:inputText id="cellPhone" value="#{userEditionBean.userOnFocus.cellPhone}"/>
+				
+				<h:outputLabel for="secondEmail" styleClass="field">
+					<h:outputText value="#{msgs['users.form.details.secondEmail']}" />
+				</h:outputLabel>
+				<h:inputText id="secondEmail" value="#{userEditionBean.userOnFocus.secondEmail}"/>
+				
+				
+			
+			
+			</h:panelGrid>
+			
+			
+			
 		</a4j:region>
 	</rich:panel>
 </h:form>

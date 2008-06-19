@@ -59,7 +59,7 @@ public class User implements IdentifiedEntity {
 	private byte[] password;
 
 	private String email;
-
+	
 	/**
 	 * Permission according to the levels related in the class Permissions.
 	 */
@@ -71,6 +71,15 @@ public class User implements IdentifiedEntity {
 	private int grants;
 	
 	private List<UserGroup> managingGroups = new ArrayList<UserGroup>();
+	
+	/**
+	 * @author marum e fabio
+	 * */
+	private String address;
+	private String homePhone;
+	private String businessPhone;
+	private String cellPhone;
+	private String secondEmail;
 
 	/**
 	 * @return the id
@@ -244,4 +253,87 @@ public class User implements IdentifiedEntity {
 	public void setGrants(final int grants) {
 		this.grants = grants;
 	}
+	
+	
+	/**
+	 * 
+	 * @return address
+	 */
+	@Column
+	public String getAddress() {
+		return address;
+	}
+
+	/**
+	 * @param address address
+	 */
+	public void setAddress(final String address) {
+		this.address = address;
+	}
+	
+	/**
+	 * 
+	 * @return homePhone
+	 */
+	@Column
+	public String getHomePhone() {
+		return homePhone;
+	}
+
+	/**
+	 * @param homePhone homePhone
+	 */
+	public void setHomePhone(final String homePhone) {
+		this.homePhone = homePhone;
+	}
+	
+	/**
+	 * 
+	 * @return businessPhone
+	 */
+	@Column
+	public String getBusinessPhone() {
+		return businessPhone;
+	}
+
+	/**
+	 * @param businessPhone businessPhone
+	 */
+	public void setBusinessPhone(final String businessPhone) {
+		this.businessPhone = businessPhone;
+	}
+	
+	/**
+	 * 
+	 * @return cellPhone
+	 */
+	@Column
+	public String getCellPhone() {
+		return cellPhone;
+	}
+
+	/**
+	 * @param cellPhone cellPhone
+	 */
+	public void setCellPhone(final String cellPhone) {
+		this.cellPhone = cellPhone;
+	}
+	
+	/**
+	 * 
+	 * @return secondEmail
+	 */
+	@Column
+	public String getSecondEmail() {
+		return secondEmail;
+	}
+
+	/**
+	 * @param secondEmail secondEmail
+	 */
+	public void setSecondEmail(final String secondEmail) {
+		this.secondEmail = secondEmail;
+	}
+	
+	
 }
