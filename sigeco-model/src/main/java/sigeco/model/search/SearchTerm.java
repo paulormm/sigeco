@@ -39,6 +39,18 @@ public class SearchTerm implements Iterable<SearchElement> {
 	private List<SearchElement> searchElements = new ArrayList<SearchElement>();
 	
 	
+	public String namedTerm () {
+		String stringExpression = "";
+		for (SearchElement e : this.searchElements) {
+			stringExpression =  e.namedElement();
+			Iterator i = this.searchElements.listIterator();
+			if (i.hasNext()) {
+			stringExpression = stringExpression + " E ";
+			}
+		}
+		return stringExpression;
+	}
+	
 	/**
 	 * Adds an Element to this Term.
 	 * 
@@ -110,6 +122,10 @@ public class SearchTerm implements Iterable<SearchElement> {
 	public void setSearchExpression(final SearchExpression searchExpression) {
 		this.searchExpression = searchExpression;
 	}
+	
+	//public SearchExpression getSearchExpression() {
+	//	return this.searchExpression;
+	//}
 	/**
 	 * @param searchElements the searchElements to set
 	 */

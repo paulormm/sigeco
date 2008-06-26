@@ -54,6 +54,7 @@ public class SearchExpression implements IdentifiedEntity, Iterable<SearchTerm> 
 	private String name;
 	private boolean publish;
 	private List<SearchTerm> searchTerms = new ArrayList<SearchTerm>();
+	private String stringExpression = "";
 
 	/**
 	 * Adds a Term to this Expression.
@@ -63,6 +64,32 @@ public class SearchExpression implements IdentifiedEntity, Iterable<SearchTerm> 
 	public void addTerm(final SearchTerm term) {
 		term.setSearchExpression(this);
 		this.searchTerms.add(term);
+	}
+	
+	public String namedExpression() {
+		
+		//this.setStringExpression(this.getTerm().namedTerm()); 
+		//String stringExpression = this.getStringExpression();
+		
+		/*if (this.searchTerms == null || this.searchTerms.size()==0)
+			stringExpression = "t eh nulo antes do for";
+		else
+			stringExpression = "terms naum eh nulo antes do FOR";*/
+		
+		for (SearchTerm t : this.searchTerms) {
+			/*if (t == null)
+				stringExpression = "t eh nulo";
+			else if (t.namedTerm().equals(""))
+				stringExpression = "t eh vazio";
+			else
+				stringExpression = "t naum nulo e nem vazio";*/
+			stringExpression = stringExpression + t.namedTerm();
+			Iterator i = this.searchTerms.listIterator();
+			if (i.hasNext()) {
+				stringExpression = stringExpression + " OU ";
+			}
+		}
+		return stringExpression;
 	}
 
 	/**
@@ -211,6 +238,14 @@ public class SearchExpression implements IdentifiedEntity, Iterable<SearchTerm> 
 		return this.searchTerms.iterator();
 	}
 
-
+	public void setStringExpression(String stringExpression){
+		this.stringExpression= this.getStringExpression() + stringExpression;
+		
+	}
+	
+	public String getStringExpression(){
+		return this.stringExpression;
+	}
+	
 
 }

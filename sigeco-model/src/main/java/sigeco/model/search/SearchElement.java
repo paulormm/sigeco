@@ -64,7 +64,15 @@ public class SearchElement {
 		super();
 	}
 
-
+	public String namedElement () {
+		String stringExpression; 
+		stringExpression = "Competência = " + this.getMatrix().getName() + " E " +
+		                   " Área = " + this.getKnowledge().getName() + " E " +
+		                   " Habilidade " + this.getAbility().getName() +							
+		                   " " + this.getOperator().toString() +  
+		                   " " + this.getGrade().getName();
+		return stringExpression;
+	}
 
 	/**
 	 * @return the id

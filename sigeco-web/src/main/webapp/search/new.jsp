@@ -97,18 +97,25 @@
 								<t:commandButton 
 									action="#{newSearchBean.saveElement}" 
 									value="#{msgs['search.new.element.save']}" rendered="#{newSearchBean.someMatrixSelected}">
+								
+								
+								<h:panelGrid columns="1" rendered="#{not empty newSearchBean.term.searchElements}">
+						        	<rich:panel>
+							       		<f:facet name="header">
+							       			<h:outputText value="Expressão de Busca Atual" />
+										</f:facet>
+									<t:outputText value="#{newSearchBean.stringExpression}" />
+									</rich:panel>
+								</h:panelGrid>
+								
 								</t:commandButton>
-							</h:panelGrid>	
-							<h:outputText value="" rendered="#{not empty newSearchBean.term.searchElements}" />
-							
-							<h:panelGrid columns="1" rendered="#{not empty newSearchBean.term.searchElements}">
-					        	<rich:panel>
-						       		<f:facet name="header">
-						       			<h:outputText value="Expressão de Busca" />
-									</f:facet>
-								<t:outputText value="#{newSearchBean.stringExpression}" />
-							</rich:panel>
+								
 							</h:panelGrid>
+											
+							
+								
+							<h:outputText value="" rendered="#{not empty newSearchBean.term.searchElements}" />
+						
 							<rich:dataGrid 
 					        	value="#{newSearchBean.term.searchElements}" 
 					        	var="element" 
