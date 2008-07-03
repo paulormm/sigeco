@@ -35,15 +35,17 @@
 				<rich:column>
 					<h:outputText value="#{matrix.matrixName}" />
 				</rich:column>
-				
 				<rich:column>
-					<rich:dataTable 
+				
+				<rich:dataTable 
 					binding="#{viewMatrixFeedBean.matrixDataTable}" 
 					value="#{viewMatrixFeedBean.matrixRows}" var="row" >
 				</rich:dataTable>
+				
 				</rich:column>
 			</rich:columnGroup>
-		</rich:dataTable>	
+		</rich:dataTable>
+		
 	</h:form>
 </body>
 </f:view>

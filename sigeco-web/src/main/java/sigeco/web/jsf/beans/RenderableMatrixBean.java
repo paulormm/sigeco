@@ -87,8 +87,3 @@ public class RenderableMatrixBean {
 	}
 }
 
-/*
- * TODO: Refatorar este bean, separando as classes internas.
- * TODO: RenderableMatrix deve ser um bean. 
- * */
-

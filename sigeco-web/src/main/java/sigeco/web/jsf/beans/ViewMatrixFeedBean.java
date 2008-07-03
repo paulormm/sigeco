@@ -300,61 +300,6 @@ public class ViewMatrixFeedBean {
         return items;
 	}
 
-    
-/*
-    public class Row {
-
-    	private RowType type;
-    	private String item;
-    	private Map<Long, String> levels;
-    	private Map<Long, String> bgcolor;
-
-    	public Row() {
-			super();
-		}
-
-		public Row(final String item, final Map<Long, String> levels, final RowType type) {
-			super();
-			this.item = item;
-			this.levels = levels;
-			this.type = type;
-			
-			this.bgcolor = new HashMap<Long, String>();
-			for (Map.Entry<Long, String> entry : levels.entrySet()) {
-				if (entry.getValue().equals("")) {
-					this.bgcolor.put(entry.getKey(), "whitesmoke");
-				} else {
-					this.bgcolor.put(entry.getKey(), this.type.color);
-				}
-			}
-		}
-
-		public Map<Long, String> getBgcolor() {
-			return this.bgcolor;
-		}
-		
-		public Map<Long, String> getLevels() {
-			return this.levels;
-		}
-		public void setLevels(final Map<Long, String> levels) {
-			this.levels = levels;
-		}
-		public String getItem() {
-			return this.item;
-		}
-		public void setItem(final String item) {
-			this.item = item;
-		}
-
-		public RowType getType() {
-			return this.type;
-		}
-
-		public void setType(final RowType type) {
-			this.type = type;
-		}
-    }
-*/
 
 	/**
 	 * @return the userManager
@@ -480,13 +425,25 @@ public class ViewMatrixFeedBean {
 	 * @param renderableMatrices the renderableMatrices to set
 	 */
 	public void setRenderableMatrices(final List<Matrix> matrices) {
-		this.populateMatrices();
+		this.renderableMatrices = new ArrayList<RenderableMatrixBean>();
+		
+		for (Matrix m : this.matrices){
+			this.selectedMatrix = m;
+			this.emptyMap = null;
+			this.populateMatrix();
+			
+			RenderableMatrixBean currentMatrix = new RenderableMatrixBean();
+			currentMatrix.setMatrixName(m.getName());
+			currentMatrix.setMatrixDataTable(this.matrixDataTable);
+			currentMatrix.setMatrixRows(this.matrixRows);
+			this.renderableMatrices.add(currentMatrix);
+		}
 	}
 	
 	/**
 	 * Populates the renderableMatrices with the cells of the selected matrix for the selected user.
 	 */
-	@SuppressWarnings("unchecked")
+	/*@SuppressWarnings("unchecked")
 	private void populateMatrices() {
 		
 		this.renderableMatrices = new ArrayList<RenderableMatrixBean>();
@@ -524,27 +481,12 @@ public class ViewMatrixFeedBean {
 			}
 			RenderableMatrixBean currentMatrix = new RenderableMatrixBean();
 			currentMatrix.setMatrixName(m.getName());
-			
-			
-						
 			currentMatrix.setMatrixDataTable(this.matrixDataTable);
-			if (currentMatrix.getMatrixDataTable() == null)
-				tableNull=true;
-			else
-				tableNull=false;
-			
-			
 			currentMatrix.setMatrixRows(this.matrixRows);
-			
-			if (currentMatrix.getMatrixRows() == null)
-				rowNull= true;
-			else
-				rowNull =false;
-			
 			this.renderableMatrices.add(currentMatrix);
 			
 		}
-	}
+	}*/
 	
 	public void setRowNull(boolean value){
 			rowNull=value;

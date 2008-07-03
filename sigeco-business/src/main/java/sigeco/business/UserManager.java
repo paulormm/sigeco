@@ -24,6 +24,15 @@ public interface UserManager {
 	void saveUser(final User user);
 	
 	/**
+	 * Saves or updates a profile of User.
+	 * @param user User
+	 */
+	/*
+	@Secured
+	void saveProfile(final User user);
+	*/
+	
+	/**
 	 * Deletes a User
 	 * @param user User
 	 */

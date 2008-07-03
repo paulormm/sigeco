@@ -72,6 +72,15 @@ public class UserEditionBean {
 	}
 	
 	/**
+	 * Invoked when the profile of user should be saved.
+	 * @param event ActionEvent
+	 */
+	public void profile(final ActionEvent event) {
+		userManager.saveUser(this.userOnFocus);
+		this.userOnFocus = null;
+	}
+	
+	/**
 	 * Removes chosen user.
 	 * @param event event
 	 */

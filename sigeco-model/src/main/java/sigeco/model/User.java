@@ -83,6 +83,8 @@ public class User implements IdentifiedEntity {
 	private String secondEmail;
 	private Date birthDate;
 	private String lattesLink;
+	private String photo;
+	private String selfDescription;
 
 	/**
 	 * @return the id
@@ -368,6 +370,38 @@ public class User implements IdentifiedEntity {
 	 */
 	public void setLattesLink(final String lattesLink) {
 		this.lattesLink = lattesLink;
+	}
+	
+	/**
+	 * 
+	 * @return photo
+	 */
+	@Column
+	public String getPhoto() {
+		return photo;
+	}
+
+	/**
+	 * @param photo photo
+	 */
+	public void setPhoto(final String photo) {
+		this.photo = photo;
+	}
+	
+	/**
+	 * 
+	 * @return selfDescription
+	 */
+	@Column
+	public String getSelfDescription() {
+		return selfDescription;
+	}
+
+	/**
+	 * @param selfDescription selfDescription
+	 */
+	public void setSelfDescription(final String selfDescription) {
+		this.selfDescription = selfDescription;
 	}
 	
 }

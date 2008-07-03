@@ -180,6 +180,17 @@ public class UserManagerImpl implements UserManager {
 		}
 	}
 
+	
+	/**
+	 * Saves the profile of given user
+	 * @param user User 
+	 */
+	/*
+	@SuppressWarnings("unchecked")
+	public void saveProfile(final User user) {
+		this.dao.save(user);
+	}
+	*/
 
 	/**
 	 * @return the dao

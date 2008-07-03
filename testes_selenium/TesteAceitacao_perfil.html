@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>TesteAceitacao_perfil</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">TesteAceitacao_perfil</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/sigeco-web/login.faces</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>loginForm:username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>loginForm:password</td>
+	<td>teste</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>loginForm:login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:cadastroUsuarios</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>_id1:cadastrar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:cadastrar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>_id1:name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>_id1:name</td>
+	<td>João Cleber</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>_id1:username</td>
+	<td>jcleber</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>_id1:email</td>
+	<td>jcleber@gmail.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>_id1:password</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@name='_id1:permissionType' and @value='GENERAL']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>document.forms[0].elements[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>document.forms[0].elements[11]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>_id1:Salvar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>jcleber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:users:1:editProfile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>URL da Foto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:Confirmar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>jcleber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:users:1:showProfile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>URL da Foto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:Voltar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>jcleber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:users:1:editProfile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>URL da Foto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>_id1:address</td>
+	<td>Rua do Abreu, 200</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>_id1:Confirmar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>jcleber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:users:1:showProfile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>URL da Foto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Rua do Abreu, 200</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:Voltar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>jcleber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:users:1:editProfile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>URL da Foto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>_id1:address</td>
+	<td>Rua Augusta, 650</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:Confirmar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>jcleber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:users:1:showProfile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>URL da Foto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Rua Augusta, 650</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:Voltar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>jcleber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:users:1:editProfile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>URL da Foto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>_id1:address</td>
+	<td>Rua Bacana, 333</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>_id1:Voltar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>jcleber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:users:1:showProfile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>URL da Foto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>Rua Bacana, 333</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Rua Augusta, 650</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:Voltar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>jcleber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:users:1:editProfile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>_id1:homePhone</td>
+	<td>5555-1234</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>_id1:businessPhone</td>
+	<td>5555-9876</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>_id1:cellPhone</td>
+	<td>9999-1346</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>_id1:secondEmail</td>
+	<td>jcleber@hotmail.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>_id1:birthDate.day</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>_id1:birthDate.month</td>
+	<td>label=Abril</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>_id1:birthDate.year</td>
+	<td>1983</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>_id1:photo</td>
+	<td>http://flick.com/jcleber.jpg</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>_id1:selfDescription</td>
+	<td>Especialista em teste de fidelidade.<br /><br /></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>_id1:Confirmar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>jcleber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:users:1:showProfile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>URL da Foto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Rua Augusta, 650</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>5555-1234</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>5555-9876</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>9999-1346</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>jcleber@hotmail.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>05/04/1983</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>http://flick.com/jcleber.jpg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Especialista em teste de fidelidade.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>_id1:Voltar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>jcleber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>_id1:users:1:removeUser</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>João Cleber</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>_id47:_id48:removeButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>_id1:sair</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
