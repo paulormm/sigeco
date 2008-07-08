@@ -18,9 +18,19 @@
 							<t:updateActionListener value="#{viewBean.expression}" property="#{resultBean.expression}"></t:updateActionListener>
 						</t:commandButton>
 					</rich:panel>
+					
+					
+								
 					<rich:panel>
 						<f:facet name="header"><f:verbatim>&nbsp;</f:verbatim></f:facet>
-						
+						<h:panelGrid columns="1" >
+					   					<rich:panel>
+					   						<f:facet name="header">
+					   							<h:outputText value="Expressão de Busca" />
+											</f:facet>
+												<t:outputText value="#{viewBean.expression.stringExpression}" />
+										</rich:panel>
+							</h:panelGrid>
 						<rich:dataTable 
 							rendered="#{not empty viewBean.expression.searchTerms}"
 							id="terms" 
@@ -34,6 +44,7 @@
 										<t:outputText value="#{msgs['search.view.expression.name.prefix']}" />
 										<t:outputText value="#{viewBean.expression.name}" />
 									</rich:column>
+									
 								</rich:columnGroup>
 							</f:facet>
 							

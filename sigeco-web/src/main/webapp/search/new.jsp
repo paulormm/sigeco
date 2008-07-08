@@ -37,7 +37,7 @@
 							
 							<h:outputText value="#{msgs['search.new.terms']}" styleClass="field" />
 							<h:panelGroup>
-								<h:commandButton rendered="#{not newSearchBean.editingTerm}" action="#{newSearchBean.newTerm}" value="#{msgs['search.new.term.new']}" />
+								<h:commandButton id="novoTermoDeBusca" rendered="#{not newSearchBean.editingTerm}" action="#{newSearchBean.newTerm}" value="#{msgs['search.new.term.new']}" />
 								<h:commandButton 
 									rendered="#{newSearchBean.editingTerm}"
 									disabled="#{empty newSearchBean.term.searchElements}"
@@ -47,7 +47,18 @@
 									rendered="#{newSearchBean.editingTerm}"
 									action="#{newSearchBean.cancelTerm}" 
 									value="#{msgs['search.new.term.cancel']}" />
+									
+								<h:panelGrid columns="1" >
+						        	<rich:panel>
+							       		<f:facet name="header">
+							       			<h:outputText value="Expressão de Busca Atual" />
+										</f:facet>
+									<t:outputText value="#{newSearchBean.stringExpression}" />
+									</rich:panel>
+								</h:panelGrid>
 							</h:panelGroup>
+							
+							
 							
 							<h:outputText value="" rendered="#{newSearchBean.editingTerm}" />
 							<h:panelGrid columns="2" rendered="#{newSearchBean.editingTerm}">
@@ -95,19 +106,10 @@
 						        
 						        <t:outputLabel value="" rendered="#{newSearchBean.someMatrixSelected}" />
 								<t:commandButton 
+									id="AdicionarElementoBusca"
 									action="#{newSearchBean.saveElement}" 
 									value="#{msgs['search.new.element.save']}" rendered="#{newSearchBean.someMatrixSelected}">
-								
-								
-								<h:panelGrid columns="1" rendered="#{not empty newSearchBean.term.searchElements}">
-						        	<rich:panel>
-							       		<f:facet name="header">
-							       			<h:outputText value="Expressão de Busca Atual" />
-										</f:facet>
-									<t:outputText value="#{newSearchBean.stringExpression}" />
-									</rich:panel>
-								</h:panelGrid>
-								
+													
 								</t:commandButton>
 								
 							</h:panelGrid>
@@ -180,7 +182,8 @@
 							            		<h:panelGroup>
 													<h:outputText value="#{msgs['search.new.term.label']}" />
 													<h:outputText value=" " />
-							            			<t:commandLink 
+							            			<t:commandLink
+							            				id="remover"
 							            				action="#{newSearchBean.removeTerm}"
 							            				value="[#{msgs['search.new.term.remove']}]">
 							            				<t:updateActionListener value="#{term}" property="#{newSearchBean.termToRemove}"></t:updateActionListener>

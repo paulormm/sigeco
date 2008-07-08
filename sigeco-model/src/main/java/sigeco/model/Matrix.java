@@ -1,4 +1,4 @@
-	package sigeco.model;
+package sigeco.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;

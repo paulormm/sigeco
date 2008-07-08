@@ -66,11 +66,11 @@ public class SearchElement {
 
 	public String namedElement () {
 		String stringExpression; 
-		stringExpression = "Competência = " + this.getMatrix().getName() + " E " +
+		stringExpression = "(Matriz = " + this.getMatrix().getName() + " E " +
 		                   " Área = " + this.getKnowledge().getName() + " E " +
 		                   " Habilidade " + this.getAbility().getName() +							
 		                   " " + this.getOperator().toString() +  
-		                   " " + this.getGrade().getName();
+		                   " " + this.getGrade().getName() + ")";
 		return stringExpression;
 	}
 

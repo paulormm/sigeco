@@ -52,8 +52,10 @@ public class NewSearchBean {
 	
 	public void setStringExpression(){
 		//if (this.getExpression()==null || this.getExpression().namedExpression().equals(""))
-		//this.stringExpression = this.getTerm().namedTerm();
-			this.stringExpression = this.getExpression().namedExpression();
+		this.stringExpression = this.getTerm().namedTerm();
+		if (!((this.getExpression().namedExpression()==null) || (this.getExpression().namedExpression().equals(""))))
+			this.stringExpression = this.stringExpression + " OU " + this.getExpression().namedExpression();
+			
 			/*this.stringExpression= "nulo ou vazio";
 		else
 			this.stringExpression="naum nulo e nem vazio";*/

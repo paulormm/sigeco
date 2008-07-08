@@ -41,12 +41,12 @@ public class SearchTerm implements Iterable<SearchElement> {
 	
 	public String namedTerm () {
 		String stringExpression = "";
+		int i=1;
 		for (SearchElement e : this.searchElements) {
-			stringExpression =  e.namedElement();
-			Iterator i = this.searchElements.listIterator();
-			if (i.hasNext()) {
-			stringExpression = stringExpression + " E ";
-			}
+			stringExpression = stringExpression + e.namedElement();			
+			if (i< (this.searchElements.size()))
+				stringExpression = stringExpression + " E ";
+			i++;
 		}
 		return stringExpression;
 	}

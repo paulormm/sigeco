@@ -24,7 +24,7 @@
 					<f:verbatim><br /></f:verbatim>
 					<h:outputText value="#{msgs['feeds.instructions']}"></h:outputText>
 					<f:verbatim><br /></f:verbatim>
-					<rich:dataTable id="elements" binding="#{matrixFeederBean.dataTable}" value="#{matrixFeederBean.elements}" var="element" >z
+					<rich:dataTable id="elements" binding="#{matrixFeederBean.dataTable}" value="#{matrixFeederBean.elements}" var="element" >
 					</rich:dataTable>
 				</rich:panel>
 			</h:form>		
