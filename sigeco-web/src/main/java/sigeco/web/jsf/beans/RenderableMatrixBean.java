@@ -48,6 +48,7 @@ public class RenderableMatrixBean {
 	 * @return the matrixDataTable
 	 */
 	public HtmlDataTable getMatrixDataTable() {
+
 		return this.matrixDataTable;
 	}
 

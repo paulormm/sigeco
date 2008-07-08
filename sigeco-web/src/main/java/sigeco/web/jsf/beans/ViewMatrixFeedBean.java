@@ -58,16 +58,29 @@ public class ViewMatrixFeedBean {
 	
 	private List<RenderableMatrixBean> renderableMatrices;
 	
-	private boolean tableNull;
-	private boolean rowNull;
+	private int n;
 	
-	/**
-	 * Returns the size of Matrices tables.
-	 * @return int
-	 */
-	public int getSizeRenderableMatrices(){
+	public RenderableMatrixBean getRenderableMatrix0(){
+		return this.renderableMatrices.get(0);
+	}
+	public RenderableMatrixBean getRenderableMatrix1(){
+		return this.renderableMatrices.get(1);
+	}
+	public RenderableMatrixBean getRenderableMatrix2(){
+		return this.renderableMatrices.get(2);
+	}
+	public RenderableMatrixBean getRenderableMatrix3(){
+		return this.renderableMatrices.get(3);
+	}
+	public RenderableMatrixBean getRenderableMatrix4(){
+		return this.renderableMatrices.get(4);
+	}
+
+	public int getRenderableMatricesSize(){
 		return this.renderableMatrices.size();
-		
+	}
+	
+	public ViewMatrixFeedBean (){
 	}
 	
 	/**
@@ -425,39 +438,59 @@ public class ViewMatrixFeedBean {
 	 * @param renderableMatrices the renderableMatrices to set
 	 */
 	public void setRenderableMatrices(final List<Matrix> matrices) {
-		this.renderableMatrices = new ArrayList<RenderableMatrixBean>();
-		
-		for (Matrix m : this.matrices){
-			this.selectedMatrix = m;
-			this.emptyMap = null;
-			this.populateMatrix();
-			
-			RenderableMatrixBean currentMatrix = new RenderableMatrixBean();
-			currentMatrix.setMatrixName(m.getName());
-			currentMatrix.setMatrixDataTable(this.matrixDataTable);
-			currentMatrix.setMatrixRows(this.matrixRows);
-			this.renderableMatrices.add(currentMatrix);
-		}
+		this.n = 0;
+		this.populateMatrices();
+	}
+	
+	/**
+	 * @return the n
+	 */
+	public int getN() {
+		return this.n;
+	}
+
+	/**
+	 * @param n the n to set
+	 */
+	public void setN(final int n) {
+		this.n = n;
 	}
 	
 	/**
 	 * Populates the renderableMatrices with the cells of the selected matrix for the selected user.
 	 */
-	/*@SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked")
 	private void populateMatrices() {
 		
 		this.renderableMatrices = new ArrayList<RenderableMatrixBean>();
 		
 		for (Matrix m : this.matrices){
+			RenderableMatrixBean currentMatrix = new RenderableMatrixBean();
+			currentMatrix.setMatrixName(m.getName());
 			this.emptyMap = null;
 
 			//since associated session may be closed we search for the matrix again
 			this.selectedMatrix = this.matrixManager.get(m.getId());
 
-			this.populateRows();
+			for (KnowledgeGroup group : this.selectedMatrix.getKnowledgeGroups()) {
+				currentMatrix.getMatrixRows().addAll(this.getRowsFor(group, 0));
+			}
 
-			this.matrixDataTable = new HtmlDataTable();
-			this.createHeader();
+			HtmlColumn knowledgeTitleColumn = new HtmlColumn();
+			knowledgeTitleColumn.setStyleClass("field");
+			HtmlOutputText knowledgeTitleHeader = new HtmlOutputText();
+			knowledgeTitleHeader.setStyleClass("field");
+			knowledgeTitleHeader.setValueBinding(
+					"value", 
+					this.createValueExpression("#{msgs['matrices.form.abilities.title']}"));
+			knowledgeTitleColumn.setHeader(knowledgeTitleHeader);
+			knowledgeTitleColumn.setStyle("background-color: lightgray;");
+
+			HtmlOutputText titleOutputText = new HtmlOutputText();
+			titleOutputText.setEscape(false);
+			titleOutputText.setValueBinding("value", this.createValueExpression("#{row.item}"));
+			knowledgeTitleColumn.getChildren().add(titleOutputText);
+			currentMatrix.getMatrixDataTable().getChildren().add(knowledgeTitleColumn);
 			
 			for (Ability ability : this.selectedMatrix.getAbilities()) {
 
@@ -476,33 +509,10 @@ public class ViewMatrixFeedBean {
 						"value", 
 						this.createValueExpression("#{row.levels[" + ability.getId() + "]}"));
 				abilityNameColumn.getChildren().add(abilityOutputText);
-				this.matrixDataTable.getChildren().add(abilityNameColumn);
+				currentMatrix.getMatrixDataTable().getChildren().add(abilityNameColumn);
 
 			}
-			RenderableMatrixBean currentMatrix = new RenderableMatrixBean();
-			currentMatrix.setMatrixName(m.getName());
-			currentMatrix.setMatrixDataTable(this.matrixDataTable);
-			currentMatrix.setMatrixRows(this.matrixRows);
 			this.renderableMatrices.add(currentMatrix);
-			
 		}
-	}*/
-	
-	public void setRowNull(boolean value){
-			rowNull=value;
-		
-		}
-	public void setTableNull(boolean value){
-		tableNull=value;
-	
-	}
-	
-	public boolean getRowNull(){
-		return rowNull;
-	
-	}
-	public boolean getTableNull(){
-		return tableNull;
-	
 	}
 }

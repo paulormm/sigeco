@@ -19,33 +19,32 @@
 	
 	<h:outputText styleClass="field" value="#{msgs['viewfeeds.grid.matrices']}" />
 	<br />
-		<rich:dataTable 
-			id="matrices" 
-			value="#{viewMatrixFeedBean.renderableMatrices}"
-			var="matrix" 
-			rendered="#{viewMatrixFeedBean.selectedUser != null && not empty viewMatrixFeedBean.renderableMatrices}">
-			<f:facet name="header">
-				<rich:columnGroup>
-					<rich:column colspan="2">
-						<h:outputText value="#{msgs['viewfeeds.grid.matrix']}" />
-					</rich:column>
-				</rich:columnGroup>
-			</f:facet>
-			<rich:columnGroup>
-				<rich:column>
-					<h:outputText value="#{matrix.matrixName}" />
-				</rich:column>
-				<rich:column>
-				
-				<rich:dataTable 
-					binding="#{viewMatrixFeedBean.matrixDataTable}" 
-					value="#{viewMatrixFeedBean.matrixRows}" var="row" >
-				</rich:dataTable>
-				
-				</rich:column>
-			</rich:columnGroup>
-		</rich:dataTable>
-		
+	
+	<br />
+	<h:outputText rendered="#{viewMatrixFeedBean.renderableMatricesSize > 0}" 
+		styleClass="field" value="#{viewMatrixFeedBean.renderableMatrix0.matrixName}" />
+	<rich:dataTable rendered="#{viewMatrixFeedBean.renderableMatricesSize > 0}"
+		value="#{viewMatrixFeedBean.renderableMatrix0.matrixRows}"
+		binding="#{viewMatrixFeedBean.renderableMatrix0.matrixDataTable}" var="row">
+	</rich:dataTable>
+	<br />
+	<h:outputText rendered="#{viewMatrixFeedBean.renderableMatricesSize > 1}" 
+		styleClass="field" value="#{viewMatrixFeedBean.renderableMatrix1.matrixName}" />
+	<rich:dataTable rendered="#{viewMatrixFeedBean.renderableMatricesSize > 1}"
+		value="#{viewMatrixFeedBean.renderableMatrix1.matrixRows}"
+		binding="#{viewMatrixFeedBean.renderableMatrix1.matrixDataTable}" var="row">
+	</rich:dataTable>
+	<br />
+	<h:outputText rendered="#{viewMatrixFeedBean.renderableMatricesSize > 2}" 
+		styleClass="field" value="#{viewMatrixFeedBean.renderableMatrix2.matrixName}" />
+	<rich:dataTable rendered="#{viewMatrixFeedBean.renderableMatricesSize > 2}"
+		value="#{viewMatrixFeedBean.renderableMatrix2.matrixRows}"
+		binding="#{viewMatrixFeedBean.renderableMatrix2.matrixDataTable}" var="row">
+	</rich:dataTable>
+	<br />
+	<h:outputText rendered="#{viewMatrixFeedBean.renderableMatricesSize > 3}" 
+		styleClass="field" value="#{viewMatrixFeedBean.renderableMatrix3.matrixName}" />
+	
 	</h:form>
 </body>
 </f:view>
